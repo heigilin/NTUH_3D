@@ -629,10 +629,11 @@ class CampusApp {
 
     if (activeBtn) activeBtn.classList.add('active');
 
-    // 關鍵修復：點選切換院區時，一律重設為「全棟 3D」，絕不殘留 7F 切片！
-    if (this.selectedBuilding) {
-      this.sliceBuildingFloor(this.selectedBuilding, 'all');
-    }
+    // Leaving a ward restores campus navigation before applying the new campus filter.
+    this.selectedBuilding = null;
+    this.selectedFloor = 'all';
+    this.selectedWard = 'ALL';
+    this.selectedRoomCode = null;
     Object.values(this.buildingMeshes).forEach(mesh => {
       if (mesh) mesh.visible = true;
     });
@@ -641,6 +642,14 @@ class CampusApp {
     this.infectionGroup.clear();
     this.arcsGroup.clear();
     this.selectedFloor = 'all';
+
+    const rightPanel = document.getElementById('right-panel');
+    rightPanel?.classList.add('panel-collapsed-right');
+    document.body.classList.remove('has-right-panel');
+    const expandRight = document.getElementById('btn-expand-right');
+    if (expandRight) expandRight.style.display = 'none';
+    if (window.canvasWhiteboardManager?.wardModal) window.canvasWhiteboardManager.wardModal.style.display = 'none';
+    if (this.collapseTimelineBar && window.innerWidth <= 900) this.collapseTimelineBar(true);
 
     const topSwitcher = document.getElementById('floor-view-switcher-bar');
     if (topSwitcher) topSwitcher.style.display = 'none'; document.body.classList.remove('has-floor-view');
