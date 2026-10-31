@@ -1,0 +1,200 @@
+{
+  "05PW_05PE": {
+    "pdf": "05PW_05PE.pdf",
+    "image": "floorplans/05PW_05PE.jpg",
+    "width": 765,
+    "height": 1098
+  },
+  "06PE": {
+    "pdf": "06PE.pdf",
+    "image": "floorplans/06PE.jpg",
+    "width": 765,
+    "height": 1098
+  },
+  "08PE": {
+    "pdf": "08PE.pdf",
+    "image": "floorplans/08PE.jpg",
+    "width": 765,
+    "height": 1098
+  },
+  "09PW": {
+    "pdf": "09PW.pdf",
+    "image": "floorplans/09PW.jpg",
+    "width": 765,
+    "height": 1098
+  },
+  "0PNO_0PNI": {
+    "pdf": "0PNO_0PNI.pdf",
+    "image": "floorplans/0PNO_0PNI.jpg",
+    "width": 765,
+    "height": 1098
+  },
+  "11PE_11PW": {
+    "pdf": "11PE_11PW.pdf",
+    "image": "floorplans/11PE_11PW.jpg",
+    "width": 765,
+    "height": 1098
+  },
+  "12PE_12PW": {
+    "pdf": "12PE_12PW.pdf",
+    "image": "floorplans/12PE_12PW.jpg",
+    "width": 765,
+    "height": 1098
+  },
+  "13PE_13PW": {
+    "pdf": "13PE_13PW.pdf",
+    "image": "floorplans/13PE_13PW.jpg",
+    "width": 765,
+    "height": 1098
+  },
+  "3E2": {
+    "pdf": "3E2.pdf",
+    "image": "floorplans/3E2.jpg",
+    "width": 1108,
+    "height": 765
+  },
+  "3W2": {
+    "pdf": "3W2.pdf",
+    "image": "floorplans/3W2.jpg",
+    "width": 1108,
+    "height": 765
+  },
+  "4E1": {
+    "pdf": "4E1.pdf",
+    "image": "floorplans/4E1.jpg",
+    "width": 1108,
+    "height": 765
+  },
+  "4E2": {
+    "pdf": "4E2.pdf",
+    "image": "floorplans/4E2.jpg",
+    "width": 1108,
+    "height": 765
+  },
+  "4W1": {
+    "pdf": "4W1.pdf",
+    "image": "floorplans/4W1.jpg",
+    "width": 3243,
+    "height": 4605
+  },
+  "4W2": {
+    "pdf": "4W2.pdf",
+    "image": "floorplans/4W2.jpg",
+    "width": 1108,
+    "height": 765
+  },
+  "5E3": {
+    "pdf": "5E3.pdf",
+    "image": "floorplans/5E3.jpg",
+    "width": 1591,
+    "height": 1108
+  },
+  "5W1": {
+    "pdf": "5W1.pdf",
+    "image": "floorplans/5W1.jpg",
+    "width": 1108,
+    "height": 765
+  },
+  "5W2": {
+    "pdf": "5W2.pdf",
+    "image": "floorplans/5W2.jpg",
+    "width": 1108,
+    "height": 765
+  },
+  "5W3_6W3": {
+    "pdf": "5W3_6W3.pdf",
+    "image": "floorplans/5W3_6W3.jpg",
+    "width": 1591,
+    "height": 1108
+  },
+  "5W4": {
+    "pdf": "5W4.pdf",
+    "image": "floorplans/5W4.jpg",
+    "width": 1591,
+    "height": 1108
+  },
+  "6E1": {
+    "pdf": "6E1.pdf",
+    "image": "floorplans/6E1.jpg",
+    "width": 1591,
+    "height": 1108
+  },
+  "6E2": {
+    "pdf": "6E2.pdf",
+    "image": "floorplans/6E2.jpg",
+    "width": 1108,
+    "height": 765
+  },
+  "E_03F": {
+    "pdf": "E_03F.pdf",
+    "image": "floorplans/E_03F.jpg",
+    "width": 2277,
+    "height": 3233
+  },
+  "E_04F": {
+    "pdf": "E_04F.pdf",
+    "image": "floorplans/E_04F.jpg",
+    "width": 1108,
+    "height": 1581
+  },
+  "E_05F": {
+    "pdf": "E_05F.pdf",
+    "image": "floorplans/E_05F.jpg",
+    "width": 4615,
+    "height": 3243
+  },
+  "E_06F": {
+    "pdf": "E_06F.pdf",
+    "image": "floorplans/E_06F.jpg",
+    "width": 765,
+    "height": 1098
+  },
+  "E_07F": {
+    "pdf": "E_07F.pdf",
+    "image": "floorplans/E_07F.jpg",
+    "width": 1108,
+    "height": 1581
+  },
+  "E_08F": {
+    "pdf": "E_08F.pdf",
+    "image": "floorplans/E_08F.jpg",
+    "width": 1108,
+    "height": 1581
+  },
+  "E_09F": {
+    "pdf": "E_09F.pdf",
+    "image": "floorplans/E_09F.jpg",
+    "width": 1108,
+    "height": 1581
+  },
+  "E_11F": {
+    "pdf": "E_11F.pdf",
+    "image": "floorplans/E_11F.jpg",
+    "width": 1108,
+    "height": 1581
+  },
+  "E_12F": {
+    "pdf": "E_12F.pdf",
+    "image": "floorplans/E_12F.jpg",
+    "width": 1108,
+    "height": 1581
+  },
+  "E_13F": {
+    "pdf": "E_13F.pdf",
+    "image": "floorplans/E_13F.jpg",
+    "width": 1108,
+    "height": 1581
+  },
+  "E_14F": {
+    "pdf": "E_14F.pdf",
+    "image": "floorplans/E_14F.jpg",
+    "width": 1108,
+    "height": 1581
+  },
+  "E_15F": {
+    "pdf": "E_15F.pdf",
+    "image": "floorplans/E_15F.jpg",
+    "width": 1108,
+    "height": 1581
+  }
+}

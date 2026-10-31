@@ -1,0 +1,7 @@
+.ward-canvas-header { height:auto; flex-shrink:0; flex-wrap:wrap; gap:5px; padding:8px 12px; }
+.ward-canvas-title-group { width:100%; min-width:0; flex-wrap:wrap; }
+.ward-canvas-badge { white-space:nowrap; }
+.ward-canvas-tools-bar { flex:1 1 100%; min-width:0; overflow-x:auto; padding:4px 0 8px; }
+.ward-canvas-tools-bar > * { flex-shrink:0; }
+.ward-canvas-tools-bar button { white-space:nowrap; }
+.ward-canvas-legend { max-width:calc(100% - 36px); box-sizing:border-box; }

@@ -1,0 +1,548 @@
+﻿<!DOCTYPE html>
+
+<html lang="zh-TW">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>臺大醫院 3D 智慧院區導覽系統 (Campus 3D Guide)</title>
+
+  <link rel="stylesheet" href="css/style.css?v=20261031-joystick-small-handle-5">
+  <link rel="stylesheet" href="css/ward-plan-2d.css">
+
+  <!-- Three.js 核心庫與控制器 (支援本地離線與 CDN 備用) -->
+
+  <script src="libs/three.min.js"></script>
+
+  <script src="libs/OrbitControls.js"></script>
+
+  <script src="libs/tween.umd.js"></script>
+
+  <!-- 備用 Import Map (相容標準 ES Module CDN) -->
+
+  <script type="importmap">
+
+  {
+
+    "imports": {
+
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+
+    }
+
+  }
+
+  </script>
+
+</head>
+
+<body>
+
+  <!-- WebGL 3D 畫布容器 -->
+
+  <div id="canvas-container"></div>
+  <!-- 建物動態畫布卡片 (依照動態畫布顯示樓層，點選樓層直接下鑽進到該樓層) -->
+
+  <div id="building-hover-canvas-card">
+
+    <div class="hover-card-header">
+
+      <div style="display:flex;align-items:center;gap:6px;">
+
+        <span id="hover-card-title" class="hover-card-title">建物名稱</span>
+
+        <span id="hover-card-badge" class="hover-card-badge">樓層</span>
+
+      </div>
+
+      <button id="btn-close-hover-card" class="btn-hover-card-close" title="關閉卡片">✕</button>
+
+    </div>
+
+    <div class="hover-card-floors-label">🏢 選擇樓層進入：</div>
+
+    <div id="hover-card-floor-chips" class="hover-card-floor-chips">
+
+      <!-- 動態插入樓層膠囊按鈕，點選直接下鑽進入該樓層 -->
+
+    </div>
+
+  </div>
+
+  <!-- 頂部樓層下鑽控制列 (3D 鳥瞰透視 / 2D 俯瞰圖 切換與返回院區) -->
+
+  <div id="floor-view-switcher-bar" style="display:none;">
+
+    <div class="switcher-group">
+
+      <button id="switcher-btn-3d" class="switcher-btn active">🏢 3D 鳥瞰透視圖</button>
+
+      <button id="switcher-btn-2d" class="switcher-btn">🗺️ 2D 俯瞰圖 (畫布)</button>
+
+    </div>
+
+    <button id="switcher-btn-back" class="switcher-btn back" title="返回院區巨觀">↩️ 返回院區</button>
+
+  </div>
+
+  <!-- 頂部智慧導航列 -->
+
+  
+
+    <!-- 搖桿與選用按鈕調向面板 -->
+
+  <div id="orientation-joystick-dock" class="orientation-joystick-dock" aria-label="視角搖桿">
+      <button id="orientation-joystick-move" class="orientation-joystick-move" type="button"
+              aria-label="移動搖桿；拖曳搬移，方向鍵微調位置，Home 鍵回到預設位置"
+              title="按住拖曳搬移搖桿；雙擊回到預設位置"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M3 12h18M8.5 6.5 12 3l3.5 3.5M8.5 17.5 12 21l3.5-3.5M6.5 8.5 3 12l3.5 3.5M17.5 8.5 21 12l-3.5 3.5"/></svg></button>
+      <!-- 搖桿：左右控制水平方位，上下控制俯仰 -->
+
+      <div class="orientation-joystick-control">
+        <div id="orientation-joystick" class="orientation-joystick-pad" role="group" tabindex="0"
+             aria-label="視角搖桿；拖曳中央握球或點按仰、俯、左、右；方向鍵也可微調"
+             title="拖曳中央握球，也可點按方向文字；向上俯看配置，向下仰看立面">
+          <button type="button" class="orientation-joystick-axis top" data-direction="down" aria-label="俯看" title="點按低頭看屋頂與配置">俯</button>
+          <button type="button" class="orientation-joystick-axis right" data-direction="right" aria-label="向右轉" title="點按向右轉動視角">右</button>
+          <button type="button" class="orientation-joystick-axis bottom" data-direction="up" aria-label="仰看" title="點按抬頭看建築立面">仰</button>
+          <button type="button" class="orientation-joystick-axis left" data-direction="left" aria-label="向左轉" title="點按向左轉動視角">左</button>
+          <span id="orientation-joystick-stem" class="orientation-joystick-stem" aria-hidden="true"></span>
+          <span class="orientation-joystick-pivot" aria-hidden="true"></span>
+          <span id="orientation-joystick-knob" class="orientation-joystick-knob" aria-hidden="true"></span>
+        </div>
+      </div>
+
+  </div>
+
+  <div id="view-orientation-widget" class="view-orientation-widget hidden">
+
+    <div class="orient-header" id="orient-header" title="按住標題或面板空白處可自由拖曳移動位置，雙擊可收起/展開">
+
+      <div style="display:flex;align-items:center;gap:6px;">
+
+        <span class="orient-drag-icon" title="按住拖曳移動">⋮⋮</span>
+
+        <span class="orient-title">🧭 調向面板</span>
+
+      </div>
+
+      <div style="display:flex;align-items:center;gap:4px;">
+        <button id="btn-toggle-orient" class="btn-orient-toggle" title="收起或展開調向面板">收起 ▾</button>
+        <button id="btn-close-orient" class="btn-orient-toggle" title="隱藏調向面板" style="padding:2px 7px;">✕</button>
+      </div>
+
+    </div>
+
+    <div class="orient-body" id="orient-body">
+
+      <!-- 滑鼠拖曳模式：預設【左鍵移動畫面】，方便隨意移動尋找建物 -->
+      <div class="drag-mode-segmented-bar">
+        <button id="btn-drag-pan" class="drag-mode-btn active" title="滑鼠左鍵拖曳移動畫面 (平移地圖尋找建物)">✋ 左鍵移動畫面</button>
+        <button id="btn-drag-rotate" class="drag-mode-btn" title="滑鼠左鍵拖曳旋轉 3D 視角">🔄 旋轉視角</button>
+      </div>
+
+      <!-- 標準角度預設 -->
+
+      <div class="orient-compass-row">
+
+        <div class="orient-presets-col">
+
+          <button id="btn-view-top" class="orient-btn" title="90° 正上方垂直俯視 (Top-down)">📐 90° 俯視</button>
+
+          <button id="btn-view-iso" class="orient-btn active" title="45° 經典建築等角透視 (Isometric)">🌐 45° 等角</button>
+
+          <button id="btn-view-front" class="orient-btn" title="0° 正立面平視角 (Front)">🏢 0° 正視</button>
+
+        </div>
+
+      </div>
+
+      <div class="orient-direction-buttons" aria-label="按鈕調整視角">
+        <button id="btn-pitch-up" class="orient-btn" title="抬頭看建築立面">▲ 仰看</button>
+        <button id="btn-yaw-left" class="orient-btn" title="向左轉動視角">◀ 左轉</button>
+        <button id="btn-yaw-right" class="orient-btn" title="向右轉動視角">右轉 ▶</button>
+        <button id="btn-pitch-down" class="orient-btn" title="低頭看屋頂與配置">▼ 俯看</button>
+      </div>
+
+      <div class="xyz-controls-box">
+
+        <!-- Z 軸：鏡頭推進拉遠 (Zoom) -->
+
+        <div class="xyz-axis-row">
+
+          <span class="axis-tag z" title="Z軸：拉近推進或縮小拉遠">Z 景深</span>
+
+          <button id="btn-zoom-in" class="xyz-btn" title="推進鏡頭 (拉近)">🔍 推進</button>
+
+          <button id="btn-zoom-out" class="xyz-btn" title="拉遠鏡頭 (遠景)">🔎 拉遠</button>
+
+        </div>
+
+      </div>
+
+      <!-- 一鍵置中重置 -->
+
+      <button id="btn-reset-orientation" class="btn-panic-reset" title="點擊回到標準透視角">
+
+        🎯 視角一鍵置中
+
+      </button>
+
+      
+
+      <!-- 鍵盤快捷提示 -->
+
+      <div class="orient-key-hint">
+
+        <span>按鈕調整方向與俯仰；滾輪縮放</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <header id="top-navbar">
+
+    <div class="brand-section">
+
+
+      <span class="app-title">臺大醫院 3D 智慧院區導覽系統</span>
+
+    </div>
+
+    <!-- 院區切換器 (同一個網頁自由切換 東址 / 西址 / 兒醫 / 全院總覽) -->
+
+    <div class="campus-selector-group">
+
+      <button id="btn-campus-west" class="btn-campus campus-west">🏛️ 西址</button>
+
+      <button id="btn-campus-east" class="btn-campus campus-east">🏢 東址</button>
+
+      <button id="btn-campus-children" class="btn-campus campus-children">🧸 兒醫</button>
+
+      <button id="btn-campus-all" class="btn-campus campus-all active">🗺️ 全院</button>
+
+    </div>
+
+    <!-- 搜尋框 (Phase 3: 支援病室號碼 12A-21 / 5W2-01、處室、建物) -->
+
+    <div class="search-container">
+
+      <div class="search-input-wrap">
+
+        <span class="search-icon">🔍</span>
+
+        <input type="text" id="search-input" class="search-input" placeholder="搜尋病室 (如 12A-21, 5W2-01)、處室或建物..." autocomplete="off">
+
+      </div>
+
+      <div id="search-dropdown" class="search-dropdown"></div>
+
+    </div>
+
+    <!-- 視角與模式切換按鈕群組 -->
+
+    <div class="nav-actions">
+
+      <div class="btn-group">
+
+        <button id="btn-mode-orbit" class="btn-pill active" title="3D 全區鳥瞰模式 (階段 1)">🏢 3D 鳥瞰</button>
+
+      </div>
+
+      <button id="btn-toggle-xray" class="btn-pill" style="border: 1px solid rgba(239, 68, 68, 0.45);background:rgba(239, 68, 68, 0.12);color:#991b1b;font-weight:700;" title="透視整棟大樓玻璃帷幕，直接穿透檢視各樓層感染個案密集度與熱區分布">🔬 全棟透視 (個案密集度)</button>
+      <button id="btn-nav-orient" class="btn-pill" style="border: 1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.15);" title="開啟按鈕調向面板；關閉後回到搖桿">🧭 調向面板</button>
+      <button id="btn-toggle-canvas" class="btn-pill" style="border: 1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.15);" title="開啟建築物、樓層與病房手繪標註畫布">🎨 畫布功能</button>
+
+      <button id="btn-reset-view" class="btn-pill" style="border: 1px solid rgba(255,255,255,0.15);" title="重設鏡頭視角">🔄 重設</button>
+
+    </div>
+
+  </header>
+
+  <button id="btn-expand-right" class="panel-floating-tab right" style="display:none;" title="展開樓層監控面板">◀ 樓層空間監控 🏥</button>
+
+  <!-- 右側邊欄面板 (3D 樓層配置與感管空間監控台，支援收起) -->
+
+  <aside id="right-panel" class="floating-panel">
+
+    <div class="building-header">
+
+      <div class="building-title-row">
+
+        <div>
+
+          <span id="b-detail-name" class="building-name">西五棟 (5W2)</span>
+
+          <span id="b-detail-badge" class="building-badge">住院病房 | 4 層樓</span>
+
+        </div>
+
+        <button id="btn-collapse-right" class="panel-collapse-pill" title="收起面板以獲得完整 3D 視野">收起 ▶</button>
+
+      </div>
+
+      
+
+      <div style="display:none;" id="b-detail-desc"></div>
+
+    </div>
+
+    <!-- 樓層切換按鈕群組 (步驟 1: 樓層選擇) -->
+
+    <div class="floor-switcher-wrap" id="step-1-floor-wrap">
+
+      <div style="font-size:12px;color:var(--color-primary);font-weight:700;">1️⃣ 樓層選擇：</div>
+
+      <div id="b-floor-buttons" class="floor-buttons">
+
+        <!-- 動態插入樓層標籤 -->
+
+      </div>
+
+    </div>
+
+    <!-- 步驟 2: 病房分區選擇 (選完樓層後出現，如 12A, 12B, 12C, 12D) -->
+    <div class="ward-switcher-wrap" id="step-2-ward-wrap" style="display:none;margin-top:10px;padding:8px 10px;background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;">
+      <div style="font-size:12px;color:#0369a1;font-weight:700;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;">
+        <span>2️⃣ 病房選擇：</span>
+        <span id="selected-ward-badge" style="font-size:11px;background:#0284c7;color:#fff;padding:1px 6px;border-radius:4px;font-weight:normal;">全部分區</span>
+      </div>
+      <div id="b-ward-buttons" style="display:flex;flex-wrap:wrap;gap:6px;">
+        <!-- 動態插入病房分區標籤 -->
+      </div>
+    </div>
+
+    <!-- 步驟 3: 檢視模式選擇 (3D 透視 或 2D 平面圖) -->
+    <div class="mode-switcher-wrap" id="step-3-mode-wrap" style="display:none;margin-top:10px;padding:8px 10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;">
+      <div style="font-size:12px;color:#334155;font-weight:700;margin-bottom:6px;">3️⃣ 檢視模式選擇：</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <button id="btn-view-mode-3d" class="btn-pill" style="background:#0284c7;color:#ffffff;border:none;font-size:12px;font-weight:700;padding:8px 6px;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;" title="以 3D 透視視角檢視該病房分區">
+          🏢 3D 透視
+        </button>
+        <button id="btn-view-mode-2d" class="btn-pill" style="background:#059669;color:#ffffff;border:none;font-size:12px;font-weight:700;padding:8px 6px;border-radius:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;" title="開啟高解析真實 2D 平面圖畫布">
+          🗺️ 2D 平面圖
+        </button>
+      </div>
+    </div>
+
+    <!-- 3D 樓層空間配置統計 (病室、床數、污物室、清潔間、負壓隔離房) -->
+
+    <div id="floor-3d-stats-wrap" style="display:none !important;">
+
+      <div style="font-size:12px;color:var(--text-secondary);font-weight:700;margin-top:4px;">📊 3D 空間配置指標：</div>
+
+      <div class="ward-stats-grid">
+
+        <div class="stat-chip">
+
+          <div class="stat-chip-label">病室數</div>
+
+          <div class="stat-chip-val" id="stat-rooms-count">--</div>
+
+        </div>
+
+        <div class="stat-chip">
+
+          <div class="stat-chip-label">病床總數</div>
+
+          <div class="stat-chip-val" id="stat-beds-count" style="color:var(--color-east);">--</div>
+
+        </div>
+
+        <div class="stat-chip">
+
+          <div class="stat-chip-label">負壓隔離房</div>
+
+          <div class="stat-chip-val" id="stat-iso-count" style="color:#d97706;">--</div>
+
+        </div>
+
+      </div>
+
+      <div style="display:flex;gap:6px;font-size:11px;margin-bottom:8px;">
+
+        <span style="background:#fef3c7;color:#92400e;padding:2px 8px;border-radius:4px;border:1px solid #fde68a;">🧯 污物室 (DIRTY)</span>
+
+        <span style="background:#d1fae5;color:#065f46;padding:2px 8px;border-radius:4px;border:1px solid #a7f3d0;">🧼 清潔間 (CLEAN)</span>
+
+        <span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:4px;border:1px solid #fecaca;">⚠️ 隔離房 (ISO)</span>
+
+      </div>
+
+    </div>
+      <div style="margin-top:10px;display:none;">
+        <button id="btn-open-ward-canvas" class="btn-pill" style="width:100%;background:#0284c7;color:#ffffff;border:none;font-size:12px;font-weight:700;padding:8px 12px;border-radius:6px;display:flex;justify-content:center;align-items:center;cursor:pointer;" title="開啟本層樓與病房名稱 2D 專屬畫布">🎨 開啟 2D 樓層/病房平面圖 (畫布)</button>
+      </div>
+
+        <!-- 東西向床位與個案屬性多重定義標示圖例 (依使用者需求：專屬於 2D 平面圖畫布標註呈現) -->
+    <div id="bed-attr-legend-panel" style="display:none;background:#f8fafc;padding:8px 10px;border-radius:8px;border:1px solid #e2e8f0;margin:10px 0 6px 0;">
+      <div style="font-size:12px;font-weight:700;color:#0f172a;margin-bottom:4px;">🛏️ 東西向床位個案屬性標示圖例：</div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;font-size:11px;color:#334155;">
+        <span style="display:inline-flex;align-items:center;gap:3px;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#ef4444;"></span>CRAB (鮮紅)</span>
+        <span style="display:inline-flex;align-items:center;gap:3px;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#f97316;"></span>CRE (橙橘)</span>
+        <span style="display:inline-flex;align-items:center;gap:3px;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#a855f7;"></span>VRE (紫色)</span>
+        <span style="display:inline-flex;align-items:center;gap:3px;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#eab308;"></span>MRSA (金黃)</span>
+        <span style="display:inline-flex;align-items:center;gap:3px;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#ec4899;"></span>接觸隔離 (桃紅)</span>
+        <span style="display:inline-flex;align-items:center;gap:3px;"><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#10b981;"></span>導管留置 (翠綠)</span>
+      </div>
+      <div style="font-size:10px;color:#64748b;margin-top:4px;line-height:1.4;">✨ 規則：床正面邊框上色＋圓點；若同時符合2種以上定義，自動疊加多層邊框並並列多色圓點。</div>
+    </div>
+    <!-- 本樓層感管個案即時分布清單 -->
+
+    <div id="floor-cases-wrap" style="display:none;">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+
+        <span style="font-size:12px;color:var(--text-primary);font-weight:700;">🦠 本層感染個案監控 (<span id="cases-count-label">0</span> 例)：</span>
+
+        <span style="font-size:11px;color:var(--text-muted);">點選鏡頭飛往病床</span>
+
+      </div>
+
+      <div id="floor-cases-list" class="cases-scroll-list">
+
+        <!-- 動態插入個案卡片 -->
+
+      </div>
+
+    </div>
+
+    <!-- 樓層病房分區與房間點選面板 (依需求完全取代原始圖面，全向量現代醫療空間架構) -->
+
+    <div id="ward-directory-panel" class="ward-directory-panel" style="display:none !important;">
+
+      <div class="ward-directory-header">
+
+        <span class="ward-directory-title" id="wd-title">🏥 樓層病房分區與即時點選</span>
+
+        <span class="ward-directory-badge" id="wd-count-badge">84 間病室</span>
+
+      </div>
+
+      <!-- 病房翼區切換 (7A / 7B / 7C / 7D 等) -->
+
+      <div id="wd-wing-tabs" class="wd-wing-tabs"></div>
+
+      <!-- 該分區所有病室快速點選清單 -->
+
+      <div id="wd-rooms-grid" class="wd-rooms-grid"></div>
+
+    </div>
+
+  </aside>
+
+  <!-- 底部感管動態空間監測時間軸列 (支援自動收合與展開) -->
+
+  <div id="ipc-timeline-bar" class="collapsed">
+
+    <div class="timeline-header-row" id="timeline-header-bar">
+
+      <div class="timeline-title-wrap">
+        <span class="timeline-title">⏱️ 感管動線時間軸監測</span>
+        <span class="timeline-date-badge" id="timeline-date-display">📅 2026-10-15</span>
+        <span class="timeline-case-badge" id="timeline-case-badge">⚠️ 監控中：2 例</span>
+      </div>
+
+      <div class="timeline-right-actions">
+
+        <!-- 菌種過濾按鈕群組 -->
+
+        <div class="pathogen-filter-group" id="timeline-pathogen-group">
+
+          <button class="pathogen-pill active all" data-pathogen="ALL">全部菌種</button>
+
+          <button class="pathogen-pill crab" data-pathogen="CRAB">CRAB</button>
+
+          <button class="pathogen-pill cre" data-pathogen="CRE">CRE</button>
+
+          <button class="pathogen-pill vre" data-pathogen="VRE">VRE</button>
+
+          <button class="pathogen-pill mrsa" data-pathogen="MRSA">MRSA</button>
+
+        </div>
+
+        <!-- 收合 / 展開按鈕 -->
+
+        <button id="btn-toggle-timeline" class="btn-toggle-timeline" title="展開或收合時間軸監測列">
+
+          <span id="timeline-toggle-text">展開 ▴</span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+    <div class="timeline-controls-row" id="timeline-controls-body">
+
+      <button id="btn-timeline-play" class="btn-timeline-play">▶ 播放動線</button>
+
+      <input type="range" id="timeline-slider" class="timeline-slider" min="1" max="31" value="15" step="1">
+
+    </div>
+
+  </div>
+
+  
+
+  
+
+  <!-- 提示訊息 Toast -->
+
+  <div id="toast-msg">提示訊息</div>
+
+  <!-- 獨立資料庫檔案 -->
+
+  <script src="js/data/ground-texture-base64.js"></script>
+
+  <script src="js/data/campus-data.js?v=20261031-child-road-clearance-1"></script>
+
+  <script src="js/data/rooms-data.js"></script>
+
+  <script src="js/data/floorplans-data.js"></script>
+
+  <script src="js/data/ward-3d-layout-data.js"></script>
+
+  <script src="js/data/ipc-movements-data.js"></script>
+
+  <!-- 階段 3 引擎模組 -->
+
+  <!-- <script src="js/minimap.js"></script> 即時小地圖已刪除 -->
+
+  <script src="js/data/ward-bed-ids.js"></script>
+  <script src="js/ward-source-traces.js?v=20261031-all-campus-1"></script>
+  <script src="js/ward-source-6f.js?v=20261031-6f-doors-2"></script><script src="js/ward-source-icu-3-4.js?v=20261031-icu34-4"></script>
+<script src="js/ward-source-floor-review.js?v=20261031-all-campus-1"></script>
+<script src="js/ward-source-children.js?v=20261031-child-compass-ns-1"></script>
+<script src="js/ward-source-west.js?v=20261031-west-wall-beds-2"></script>
+<script src="js/ward-source-coverage.js?v=20261031-child-west-overlap-1"></script>
+<script src="js/data/ward-proportion-review-data.js?v=20261031-proportions-4"></script><script src="js/ward-source-proportions.js?v=20261031-proportions-5"></script>
+<script src="js/ward-plan-layout.js?v=20261031-twin-bed-spacing-1"></script><script src="js/ward-door-layout.js?v=20261031-6f-doors-2"></script>
+  <script src="js/ward-plan-geometry.js?v=20261031-visible-ward-fit-1"></script>
+  <script src="js/ward-plan-2d.js?v=20261031-twin-bed-spacing-1"></script>
+  <script src="js/canvas-whiteboard.js?v=20261031-child-compass-ns-1"></script>
+
+  <!-- 標誌性積木造型 3D 建築建構器 -->
+
+  <script src="js/building-models.js?v=20261031-west-wing-road-clearance-4"></script>
+
+  <script src="js/campus-life.js?v=20261031-turn-signals-1"></script>
+  <script src="js/campus-garden.js?v=20261031-child-road-clearance-1"></script>
+
+  <script src="js/campus-immersion.js?v=20261031-college-adjacent-2"></script>
+
+  <!-- 應用程式主邏輯腳本 -->
+
+  <script src="js/app.js?v=20261031-east-south-road-clear-1"></script>
+
+  <script src="js/ward-bed-main-audit.js?v=20261031-child-compass-ns-1"></script>
+</body>
+
+</html>
+
