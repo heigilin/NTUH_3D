@@ -1,4 +1,4 @@
-﻿// js/app.js - 3D 智慧院區導覽與感管動態空間監測系統 (鳥瞰擬 3D 配置圖、時間軸轉床動線、感管個案監控)
+// js/app.js - 3D 智慧院區導覽與感管動態空間監測系統 (鳥瞰擬 3D 配置圖、時間軸轉床動線、感管個案監控)
 
 class CampusApp {
 
@@ -1526,6 +1526,15 @@ class CampusApp {
     this.buildWard3DLayout(buildingId, floorTarget);
 
     this.renderWardDirectory(buildingId, floorTarget);
+
+    // Floor layouts need the canvas on compact screens, where the controls are floating overlays.
+    if (window.innerWidth <= 900) {
+      if (this.collapseTimelineBar) this.collapseTimelineBar(true);
+      const rightPanel = document.getElementById('right-panel');
+      if (rightPanel && !rightPanel.classList.contains('panel-collapsed-right')) {
+        document.getElementById('btn-collapse-right')?.click();
+      }
+    }
 
   }
 
@@ -4133,7 +4142,8 @@ class CampusApp {
     const sx=width/(base.width||width), sy=height/(base.height||height);
     const panel=document.getElementById('right-panel');
     const pr=panel?.getBoundingClientRect();
-    const panelWidth=pr?.height && panel.style.display!=='none' && !panel.classList.contains('panel-collapsed-right') ? pr.width*sx+24 : 0;
+    // On narrow screens the right panel floats over the canvas; it does not reduce the camera viewport.
+    const panelWidth=base.width>900 && pr?.height && panel.style.display!=='none' && !panel.classList.contains('panel-collapsed-right') ? pr.width*sx+24 : 0;
     let top=16, bottom=16;
     for(const id of ['top-navbar','floor-view-switcher-bar']){
       const r=document.getElementById(id)?.getBoundingClientRect();
