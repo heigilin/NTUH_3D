@@ -1,0 +1,36 @@
+{
+  "selectionMode": "single",
+  "overlayEnabled": false,
+  "orderReview": {
+    "available": false,
+    "presentation": "annotation-on-current-topic",
+    "subjects": [
+      "MDRO",
+      "special-microorganisms-configured-by-hospital"
+    ],
+    "join": [
+      "patientStableKey",
+      "encounterKey",
+      "clinicalReferenceTime"
+    ],
+    "neverJoinByBedAlone": true,
+    "orderMatch": {
+      "referenceTime": "to-be-defined-with-user",
+      "effectiveIntervalRequired": true,
+      "compatibleIsolationType": "hospital-configured-policy"
+    },
+    "states": [
+      "active-order",
+      "no-active-order-found",
+      "unknown-data"
+    ],
+    "unknownDataIncludes": [
+      "orders-feed-not-connected",
+      "incomplete-order-history",
+      "unmatched-encounter",
+      "undefined-reference-time",
+      "unconfigured-policy"
+    ],
+    "noActiveOrderIsNotAnAutomaticClinicalNoncomplianceDecision": true
+  }
+}

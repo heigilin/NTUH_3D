@@ -2097,10 +2097,10 @@ window.WARD_PROPORTION_REVIEW_DATA=[
     "source": "E_04F.pdf",
     "image": "scratch/floor-source-review/E_04F.png",
     "roomRects": {},
-    "roomCheck": "病室床區與外框逐圖疊合，前室／浴廁帶與床區分開保留",
+    "roomCheck": "依來源牆線分開西、東兩個床區；匿名用途示意，10個正式床號未有可靠位置對照",
     "corridorCheck": "沿本病房原圖走道邊界核對；未以建築縮放結果代替比例核對",
-    "stationCheck": "原圖內接範圍，圓弧、斜角保留近似",
-    "status": "source-reviewed-rectangular-approximation"
+    "stationCheck": "中央採開放護理地坪，與兩側床區及東側樓梯分開",
+    "status": "bed-location-unresolved"
   },
   {
     "building": "E01_MAIN",

@@ -3367,13 +3367,13 @@ class CampusApp {
 
   initUI() {
 
-    document.getElementById('btn-campus-west').addEventListener('click', () => this.switchCampusView('west'));
+    document.getElementById('btn-campus-west')?.addEventListener('click', () => this.switchCampusView('west'));
 
-    document.getElementById('btn-campus-east').addEventListener('click', () => this.switchCampusView('east'));
+    document.getElementById('btn-campus-east')?.addEventListener('click', () => this.switchCampusView('east'));
 
-    document.getElementById('btn-campus-children').addEventListener('click', () => this.switchCampusView('children'));
+    document.getElementById('btn-campus-children')?.addEventListener('click', () => this.switchCampusView('children'));
 
-    document.getElementById('btn-campus-all').addEventListener('click', () => this.switchCampusView('all'));
+    document.getElementById('btn-campus-all')?.addEventListener('click', () => this.switchCampusView('all'));
 
     document.getElementById('btn-mode-orbit').addEventListener('click', () => {
 

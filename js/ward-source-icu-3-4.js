@@ -42,10 +42,12 @@
  ],[['北排前室',518,848,231,14,'anteroom'],['前室（東）',752,849,35,15,'anteroom'],['護理長室／醫材儲藏室',560,892,74,49],['家屬諮詢室',550,943,84,19],['污物室及清潔間',550,965,84,18],['機房／管道間',550,987,84,21],['加護病房（3）／儀器空間',742,950,45,35]],
  [['04C2北排走道',518,866,269,18],['04C2開放護理區',638,889,101,86],['04C2護理區西側通路',550,884,86,7]],
  {notes:['依E_04F.pdf東側4C2分隔線恢復北排11、10、09、08、07、06，保留原床號。','原圖部分文字只標11／9／7，但分隔線仍有相鄰格位；依床號清單保留完整北排。','原圖東側（3）未有03床號，不改號補造床位，依其空間保留。']});
- const d=add(4,'04D1', [['加護病房區',518,1311,270,66,false]],
- [['主治醫師及辦公空間',199,1188,77,52],['會議室',281,1188,75,52],['衛教室',360,1190,48,50],['更衣／檔案／醫材空間',254,1261,103,49],['診察室2',435,1261,40,39],['診察室1',477,1261,39,39],['換液室3及1',435,1304,81,31],['檢查及治療空間',238,1337,230,40],['醫師休息及辦公／更衣空間',625,1190,163,30],['庫房／檢查室',758,1222,41,54]],
- [['04D1開放護理區',518,1252,236,56],['04D1西側走道',410,1188,23,147]],
- {roomBeds:{'加護病房區':Object.values(window.WARD_BED_IDS['04D1']).flat().sort((a,b)=>a.localeCompare(b,'en',{numeric:true}))},bedGrids:{'加護病房區':{columns:5}},notes:['E_04F.pdf的4D1為開放護理及加護區，沒有按床號清單虛構9間帶牆病室。','全部10個來源床位識別碼原樣保留在加護病房區，5列2排床位僅為區內示意，不宣稱原圖已標出每個床位的精確座標。','辦公、會議、衛教、診察、換液、檢查及設備空間依原圖相對位置保留。']});
+ // Only the two side bays have source-confirmed patient-space outlines.
+ // Keep registry beds unplaced until a current bedside-to-plan mapping exists.
+ add(4,'04D1', [['加護病房（西）',512,1312,42,65,false],['加護病房（東）',706,1312,42,65,false]],
+ [['主治醫師及辦公空間',199,1188,77,52],['會議室',281,1188,75,52],['衛教室',360,1190,48,50],['更衣／檔案／醫材空間',254,1261,103,49],['診察室2',430,1248,42,38],['診察室1',474,1248,41,38],['換液室3及2',430,1289,59,30],['換液室1',491,1289,24,22],['檢查及治療空間',238,1337,230,40],['醫師休息及辦公／更衣空間',625,1190,163,30],['庫房／檢查室',758,1222,41,54],['污物及更衣空間',550,1190,74,28],['廁所（西床區側）',493,1314,17,22],['安全梯（東）',751,1298,49,79]],
+ [['04D1開放護理區',556,1220,148,157],['04D1開放護理區西側',518,1220,38,90],['04D1開放護理區東側',704,1220,44,90],['04D1西側走道',410,1188,18,147],['04D1東側通路',748,1220,9,77]],
+ {notes:['依原圖分開中央開放護理區與西、東兩側加護床區；不再以整條南側矩形代替病室。','兩側各一個匿名床位圖示僅表示用途，不代表實際床數。','現有10個正式床號全數保留為待定位，原圖舊床區標示與清單不能逐一對應；未猜配床號。','辦公、會議、診察、換液及檢查空間保留來源相對位置；東側床區止於樓梯西側牆線。']});
  const previous=api.apply;
  api.apply=function(root){
   // Normalize the higher resolution 3F scan to the main-building footprint.
@@ -69,7 +71,7 @@
     ['4B1內側入口連接',202,500,1,29],['4B1內側南連接',203,529,55,2],['4B中央走道',258,500,143,29],
     ['4B2內側入口連接',472,500,1,32],['4B2內側南連接',401,532,71,1],['4B2東側出口連接',595,516,31,28],
     ['4C1西北側走道',199,867,118,12],['4C北排中央連接',513,866,5,13],['4C2護理區入口連接',638,884,101,5],['4C2西側通路連接',636,884,2,7],
-    ['南棟C/D東側走道',802,884,21,411],['4D1東側入口走道',754,1277,69,18],['4D1西側入口走道',410,1241,108,18]
+    ['南棟C/D東側走道',802,884,21,411],['4D1東側入口走道',754,1277,69,18],['4D1西側入口走道',410,1228,108,17]
    ];
    l.sourceTraceCorridors.push(...core.map(([name,x,y,w,h],i)=>{
     const owned=f===3&&name.startsWith('3C')?'03C':/^4[ABCD][12]/.test(name)?'0'+name.match(/^4[ABCD][12]/)[0]:f+'CORE';
@@ -87,7 +89,7 @@
    }
    // Retain reviewed 3A/4A/4B outlines; replace all legacy C/D room imports.
    l.sourceTracePartialCorridors=false;
-   for(const r of l.rooms.filter(r=>r.sourceTrace)){r.sourceFitBeds=!r.bedClearance;if(r.ward==='04D1'){r.openBay=true;r.roomName='04D1 加護病房區';}}
+   for(const r of l.rooms.filter(r=>r.sourceTrace)){r.sourceFitBeds=!r.bedClearance;if(r.ward==='04D1'){r.openBay=false;r.roomName=r.roomCode;r.displayRoomLabel=r.roomCode;r.bedSymbolOnly=true;r.isSchematic=true;r.bedCount=1;r.bedClearance=.3;r.bedSymbolBasis='來源床區用途示意；正式床號位置待確認，非實際床數';}}
    for(const fac of l.facilities.filter(fac=>fac.sourceTrace&&fac.sourceRect))fac.bounds={...fac.bounds,...project(f,fac.sourceRect.x,fac.sourceRect.y,fac.sourceRect.w,fac.sourceRect.h)};
    const hit=(a,b)=>Math.min(a.x+a.width/2,b.x+b.width/2)-Math.max(a.x-a.width/2,b.x-b.width/2)>1e-6&&Math.min(a.z+a.depth/2,b.z+b.depth/2)-Math.max(a.z-a.depth/2,b.z-b.depth/2)>1e-6;
    const valid=[...l.rooms,...l.facilities,...l.nursingStations,...l.sourceTraceCorridors.filter(c=>c.mainSpine)].filter(q=>q.sourceTrace);

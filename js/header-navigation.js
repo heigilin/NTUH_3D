@@ -35,9 +35,6 @@
       if (button.closest('.campus-selector-group, .nav-actions')) close();
     });
     const sync = () => {
-      const active = nav.querySelector('.btn-campus.active');
-      const campus = document.getElementById('header-campus-value');
-      if (active && campus) campus.textContent = active.textContent.replace(/^[^\u4e00-\u9fff]+/, '').trim();
       const view = document.getElementById('header-view-value');
       if (view) view.textContent = document.getElementById('btn-toggle-xray')?.classList.contains('active') ? '全棟透視' : '3D 鳥瞰';
     };
