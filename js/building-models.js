@@ -325,15 +325,19 @@
 
       });
 
-      // 頂樓鋼構遮陽屋架 (Pergola Roof)
-
-      const roofGeom = new THREE.BoxGeometry(towerW * 0.82, 0.6, towerD * 0.82);
-
-      const roofMesh = new THREE.Mesh(roofGeom, matWhite);
-
-      roofMesh.position.set(px, podiumH + towerH + 6.5, towerZ);
-
-      parent.add(roofMesh);
+      // Open rooftop pergola: keep the roof garden visible instead of covering
+      // it with the oversized solid slab used by the earlier block model.
+      const pergolaY=podiumH+towerH+6.5;
+      const beamH=.42,beamD=.42,roofW=towerW*.82,roofD=towerD*.82;
+      const edgeX=roofW/2,edgeZ=roofD/2;
+      const beams=[
+        {w:roofW,h:beamH,d:beamD,x:px,z:towerZ-edgeZ},
+        {w:roofW,h:beamH,d:beamD,x:px,z:towerZ+edgeZ},
+        {w:beamD,h:beamH,d:roofD,x:px-edgeX,z:towerZ},
+        {w:beamD,h:beamH,d:roofD,x:px+edgeX,z:towerZ}
+      ];
+      for(let i=-3;i<=3;i++)beams.push({w:beamD,h:.3,d:roofD*.88,x:px+i*roofW/7,z:towerZ});
+      for(const q of beams){const beam=new THREE.Mesh(new THREE.BoxGeometry(q.w,q.h,q.d),matWhite);beam.position.set(q.x,pergolaY,q.z);parent.add(beam);}
 
     },
 
