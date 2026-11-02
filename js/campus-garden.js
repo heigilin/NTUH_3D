@@ -1,4 +1,4 @@
-﻿/* Decorative landscape only: never changes campus footprints, routes or ward data. */
+/* Decorative landscape only: never changes campus footprints, routes or ward data. */
 (function(){
  const T=window.THREE;
  window.CampusGarden={create(app){
@@ -186,8 +186,23 @@
    horizon.add(g);clouds.push({object:g,origin:g.position.clone(),phase:i,mat,alpha:.66});
   }
   for(let i=0;i<3;i++){
-   const silhouette=new T.Shape();silhouette.moveTo(-4.8,1.35);silhouette.quadraticCurveTo(-3.5,.35,-2.5,-.65);silhouette.lineTo(-.95,-.25);silhouette.lineTo(0,-.85);silhouette.lineTo(.95,-.25);silhouette.lineTo(2.5,-.65);silhouette.quadraticCurveTo(3.5,.35,4.8,1.35);silhouette.lineTo(1.75,.45);silhouette.lineTo(0,.05);silhouette.lineTo(-1.75,.45);silhouette.closePath();
-   const mat=new T.MeshBasicMaterial({color:0x465b64,side:T.DoubleSide,transparent:true,opacity:.96,depthTest:false,depthWrite:false});const bird=new T.Mesh(new T.ShapeGeometry(silhouette),mat);bird.name='distant-bird';bird.renderOrder=10;horizon.add(bird);birds.push({object:bird,mat,phase:i*2.1,alpha:.96});
+   const silhouette=new T.Shape();
+   silhouette.moveTo(0,-.62);
+   silhouette.quadraticCurveTo(-.2,-.4,-.48,-.18);
+   silhouette.quadraticCurveTo(-1.3,.18,-2.25,.12);
+   silhouette.quadraticCurveTo(-3.55,.02,-4.65,1.05);
+   silhouette.quadraticCurveTo(-4.12,.18,-3.55,-.24);
+   silhouette.quadraticCurveTo(-2.65,-.78,-1.42,-.4);
+   silhouette.quadraticCurveTo(-.58,-.12,0,-.28);
+   silhouette.quadraticCurveTo(.58,-.12,1.42,-.4);
+   silhouette.quadraticCurveTo(2.65,-.78,3.55,-.24);
+   silhouette.quadraticCurveTo(4.12,.18,4.65,1.05);
+   silhouette.quadraticCurveTo(3.55,.02,2.25,.12);
+   silhouette.quadraticCurveTo(1.3,.18,.48,-.18);
+   silhouette.quadraticCurveTo(.2,-.4,0,-.62);
+   silhouette.closePath();
+   const mat=new T.MeshBasicMaterial({color:0x52656a,side:T.DoubleSide,transparent:true,opacity:.78,depthTest:false,depthWrite:false});
+   const bird=new T.Mesh(new T.ShapeGeometry(silhouette,12),mat);bird.name='distant-bird';bird.renderOrder=10;bird.scale.setScalar([.78,.68,.62][i]);bird.rotation.z=[-.04,.07,-.09][i];horizon.add(bird);birds.push({object:bird,mat,phase:i*2.1,alpha:.78,baseY:bird.scale.y,tilt:[-.04,.07,-.09][i]});
   }
   const sky=document.createElement('canvas');sky.width=8;sky.height=256;const context=sky.getContext('2d'),gradient=context.createLinearGradient(0,0,0,256);gradient.addColorStop(0,'#cfe4ee');gradient.addColorStop(.6,'#e3edf0');gradient.addColorStop(1,'#e2eadb');context.fillStyle=gradient;context.fillRect(0,0,8,256);
   const skyTexture=new T.CanvasTexture(sky),originalBackground=app.scene.background,originalFog=app.scene.fog?.color.clone();let overview;
@@ -206,7 +221,7 @@
    for(const c of clouds){const wind=reduceMotion?0:time*.003;c.object.position.set(c.origin.x+Math.sin(wind+c.phase)*8,c.origin.y+(reduceMotion?0:Math.sin(time*.28+c.phase)*1.2),c.origin.z+Math.cos(wind+c.phase)*5);const p=c.object.position,hidden=protectedAreas.some(b=>overlap(rect(p.x,p.y-12,p.z,100,28,35),b.box));c.alpha=T.MathUtils.lerp(c.alpha,hidden?0:.66,Math.min(1,delta*6));c.mat.opacity=c.alpha;}
    app.camera.getWorldDirection(birdForward);birdRight.set(1,0,0).applyQuaternion(app.camera.quaternion);birdUp.set(0,1,0).applyQuaternion(app.camera.quaternion);
    birdCenter.copy(cameraPosition).addScaledVector(birdForward,160).addScaledVector(birdUp,43);
-   for(const b of birds){b.object.visible=!reduceMotion;const drift=Math.sin(time*.075+b.phase)*32,lift=Math.cos(time*.075+b.phase)*3;b.object.position.copy(birdCenter).addScaledVector(birdRight,drift).addScaledVector(birdUp,lift);b.object.rotation.copy(app.camera.rotation);const obscures=app.immersionEnvironment?.blocksSkyObject(b.object);b.object.visible=!reduceMotion&&!obscures;b.mat.opacity=reduceMotion||obscures?0:.96;}
+   for(const b of birds){b.object.visible=!reduceMotion;const drift=Math.sin(time*.075+b.phase)*32,lift=Math.cos(time*.075+b.phase)*3;b.object.position.copy(birdCenter).addScaledVector(birdRight,drift).addScaledVector(birdUp,lift);b.object.rotation.copy(app.camera.rotation);b.object.rotation.z+=b.tilt+(reduceMotion?0:Math.sin(time*.52+b.phase)*.035);b.object.scale.y=b.baseY*(1+(reduceMotion?0:Math.sin(time*1.8+b.phase)*.07));const obscures=app.immersionEnvironment?.blocksSkyObject(b.object);b.object.visible=!reduceMotion&&!obscures;b.mat.opacity=reduceMotion||obscures?0:b.alpha;}
    if(verify)document.body.dataset.gardenStatus=JSON.stringify({visible:true,flowerbeds:low.children.filter(o=>o.name==='low-flowerbed').length,benches:low.children.filter(o=>o.name==='garden-bench').length,trees:trees.length,landmarkTrees:trees.filter(t=>t.landmark).length,visibleLandmarkTrees:trees.filter(t=>t.landmark&&t.object.visible).length,visibleTrees:trees.filter(t=>t.alpha>.05).length,treeTypes:[...new Set(trees.map(t=>t.object.userData.treeType).filter(Boolean))],clouds:clouds.length,birds:birds.length,blockingTrees:trees.filter(t=>t.alpha>.05&&blocked(t)).length,streetLife:streetLife?.root.userData.status});
   }
   // Expose compact status for visual QA without adding controls or labels to the map.
