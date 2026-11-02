@@ -2094,13 +2094,13 @@ window.WARD_PROPORTION_REVIEW_DATA=[
     "building": "E01_MAIN",
     "floor": "4F",
     "ward": "04D1",
-    "source": "E_04F.pdf",
-    "image": "scratch/floor-source-review/E_04F.png",
+    "source": "使用者提供4D1配置草圖（2026-11-02）",
+    "image": null,
     "roomRects": {},
-    "roomCheck": "依來源牆線分開西、東兩個床區；匿名用途示意，10個正式床號未有可靠位置對照",
-    "corridorCheck": "沿本病房原圖走道邊界核對；未以建築縮放結果代替比例核對",
-    "stationCheck": "中央採開放護理地坪，與兩側床區及東側樓梯分開",
-    "status": "bed-location-unresolved"
+    "roomCheck": "9間病室，01雙床；10個正式床號依使用者手繪配置定位，尺寸為估算",
+    "corridorCheck": "上下排之間保持中央通道，不將護理站放入通道",
+    "stationCheck": "護理站位於08西側、01／02對面；07前室與東側醫材室分開",
+    "status": "user-sketch-proportional-estimate"
   },
   {
     "building": "E01_MAIN",

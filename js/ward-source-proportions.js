@@ -103,7 +103,7 @@
    }
    const station=l.nursingStations.find(n=>n.ward===p.ward);
    if(station&&p.reviewStationParts){station.parts=p.reviewStationParts.map(r=>project(p,r));station.sourceParts=[p.station.slice(1),...p.reviewStationParts];if(p.reviewStationOutline)station.outline=p.reviewStationOutline.map(([x,y])=>{const q=project(p,[x,y,0,0]);return q;});}
-   l.sourceProportionReviews={...(l.sourceProportionReviews||{}),[p.ward]:{...e,roomEnvelopes:Object.keys(p.reviewBedRects||{}).length,sourcePixelEvidence:true}};
+   l.sourceProportionReviews={...(l.sourceProportionReviews||{}),[p.ward]:{...e,roomEnvelopes:Object.keys(p.reviewBedRects||{}).length,sourcePixelEvidence:!p.userSketch}};
   }
  };
  window.WARD_PROPORTION_REVIEW=entries;
