@@ -622,6 +622,13 @@ window.FLOORPLANS_DATA = {
 
 };
 
+// Complete 14F source was supplied after the copied demo was withdrawn.
+window.FLOORPLANS_DATA.CHILD_HOSPITAL['14F'] = {
+  title:'兒童醫療大樓 14F 病房平面圖 (14PW / 14PE)',
+  image:'floorplans/14PE_14PW.jpg',pdf:'素材/14PE_14PW.pdf',wards:['14PW','14PE'],
+  summary:'依14樓完整內嵌原圖重建14PW及14PE，來源床號完整保留。'
+};
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = window.FLOORPLANS_DATA;
 }

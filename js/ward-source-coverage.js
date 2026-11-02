@@ -19,7 +19,7 @@
         for(const ward of ['14PW','14PE'])for(const[roomCode,ids]of Object.entries(window.WARD_BED_IDS?.[ward]||{}))
           for(const bedId of ids)if(!saved.has(bedId)){l.sourceUnplacedBeds.push({ward,roomCode,bedId,reason:'缺兒醫14樓原圖，保留來源床號待定位'});saved.add(bedId);}
         l.rooms=[];l.nursingStations=[];l.facilities=[];l.corridors=[];l.beds=[];l.displayCorridors=[];
-        l.sourceCoverage={status:'excluded',message:'依使用者指示忽略兒醫14樓；已撤下混用5樓的錯誤套圖，來源床號仍保留'};
+        l.sourceCoverage={status:'missing-source',message:'缺本層來源配置時不顯示舊套圖，來源床號保留待定位'};
         continue;
       }
       if(!sources.length&&(l.rooms||[]).length&&(l.rooms||[]).every(r=>!(window.WARD_BED_IDS?.[r.ward]&&Object.keys(window.WARD_BED_IDS[r.ward]).length))){
