@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="css/style.css?v=9aca8beea09a">
   <link rel="stylesheet" href="css/ward-plan-2d.css?v=f83ab02a121b">
+  <link rel="stylesheet" href="css/header-navigation.css?v=fba286b542eb">
 
   <!-- Three.js 核心庫與控制器 (支援本地離線與 CDN 備用) -->
 
@@ -206,8 +207,7 @@
 
   </div>
 
-  <header id="top-navbar">
-
+  <header id="top-navbar" class="hierarchical-navbar">
     <div class="brand-section">
 
 
@@ -215,8 +215,11 @@
 
     </div>
 
-    <!-- 院區切換器 (同一個網頁自由切換 東址 / 西址 / 兒醫 / 全院總覽) -->
-
+    <nav class="header-navigation" aria-label="系統主選單">
+      <details class="header-menu" id="header-location-menu">
+        <summary><span class="header-menu-label">院區與位置</span><span class="header-menu-value" id="header-campus-value">全院</span><span aria-hidden="true">⌄</span></summary>
+        <div class="header-menu-panel header-location-panel">
+          <p class="header-panel-heading">選擇院區</p>
     <div class="campus-selector-group">
 
       <button id="btn-campus-west" class="btn-campus campus-west">🏛️ 西址</button>
@@ -229,8 +232,7 @@
 
     </div>
 
-    <!-- 搜尋框 (Phase 3: 支援病室號碼 12A-21 / 5W2-01、處室、建物) -->
-
+          <p class="header-panel-heading">尋找建築、病房或病室</p>
     <div class="search-container">
 
       <div class="search-input-wrap">
@@ -245,8 +247,43 @@
 
     </div>
 
-    <!-- 視角與模式切換按鈕群組 -->
-
+          <p class="header-menu-hint">選擇建築後，可再依樓層 → 病房 → 病室查看。</p>
+        </div>
+      </details>
+      <details class="header-menu" id="header-data-menu" data-selection-mode="single" data-overlay-enabled="false">
+        <summary><span class="header-menu-label">監測資料</span><span class="header-menu-value">動線示範</span><span aria-hidden="true">⌄</span></summary>
+        <div class="header-menu-panel header-data-panel">
+          <div class="header-selection-mode">單一主題檢視<span>疊加模式預留</span></div>
+          <div class="header-data-current"><span>目前資料</span><strong>動線示範</strong><span class="header-status-badge">示範</span></div>
+          <p class="header-menu-hint">以下為預留資料主題；待串接後可切換，不代表目前監測結果。</p>
+          <details class="header-data-branch">
+            <summary>隔離醫囑<span class="header-status-badge pending">待串接</span></summary>
+            <div class="header-branch-body"><p>依實際隔離醫囑提供隔離別及狀態篩選。</p><button type="button" class="header-data-option" disabled>隔離醫囑資料</button></div>
+          </details>
+          <details class="header-data-branch" open>
+            <summary>醫療照護相關感染（HAI）<span class="header-status-badge pending">待串接</span></summary>
+            <div class="header-branch-body header-hai-options">
+              <button type="button" class="header-data-option" data-topic="hai" data-subtype="BSI" disabled>BSI</button>
+              <button type="button" class="header-data-option" data-topic="hai" data-subtype="UTI" disabled>UTI</button>
+              <button type="button" class="header-data-option" data-topic="hai" data-subtype="SSI" disabled>SSI</button>
+              <button type="button" class="header-data-option" data-topic="hai" data-subtype="CDI" disabled>CDI</button>
+              <button type="button" class="header-data-option" data-topic="hai" data-subtype="RTI" disabled>RTI</button>
+              <button type="button" class="header-data-option" data-topic="hai" data-subtype="others" disabled>Others</button>
+            </div>
+          </details>
+          <details class="header-data-branch">
+            <summary>微生物<span class="header-status-badge pending">待串接</span></summary>
+            <div class="header-branch-body header-microbe-options">
+              <button type="button" class="header-data-option" data-topic="microbiology" data-subtype="bacteria" disabled>細菌</button>
+              <button type="button" class="header-data-option" data-topic="microbiology" data-subtype="viruses" disabled>病毒</button>
+            </div>
+          </details>
+        </div>
+      </details>
+      <details class="header-menu" id="header-view-menu">
+        <summary><span class="header-menu-label">檢視與工具</span><span class="header-menu-value" id="header-view-value">3D 鳥瞰</span><span aria-hidden="true">⌄</span></summary>
+        <div class="header-menu-panel header-tools-panel">
+          <p class="header-panel-heading">呈現方式與操作工具</p>
     <div class="nav-actions">
 
       <div class="btn-group">
@@ -263,6 +300,10 @@
 
     </div>
 
+          <p class="header-menu-hint">進入病房後，可切換 2D 畫布與 3D 病房圖。</p>
+        </div>
+      </details>
+    </nav>
   </header>
 
   <button id="btn-expand-right" class="panel-floating-tab right" style="display:none;" title="展開樓層監控面板">◀ 樓層空間監控 🏥</button>
@@ -542,6 +583,7 @@
 
   <script src="js/app.js?v=1b2afb5469bb"></script>
 
+  <script src="js/header-navigation.js?v=dd35659bdd78"></script>
   <script src="js/ward-bed-main-audit.js?v=02dbe7203dca"></script>
 </body>
 
