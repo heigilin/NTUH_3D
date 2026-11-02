@@ -3498,7 +3498,7 @@ class CampusApp {
 
       const matches = [];
       const normalizeWard = value => String(value || '').toUpperCase().replace(/^0+(?=\d)/, '');
-      const wardCodes = [...val.matchAll(/\d{1,2}[A-Z]\d{0,2}/g)]
+      const wardCodes = [...val.matchAll(/\d{1,2}[A-Z]{1,2}\d{0,2}/g)]
         .map(match => normalizeWard(match[0]))
         .filter(code => !/^\d{1,2}F\d*$/.test(code));
       const requestedCampus = /兒醫/.test(val) ? 'children' : /東址/.test(val) ? 'east' : /西址/.test(val) ? 'west' : null;
