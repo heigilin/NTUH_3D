@@ -49,12 +49,12 @@
    {name:'irregular-branching',bark:0x9b866a,leaf:0x8b9e65,accent:0x8b9d6f}
   ];
   // Open sprays of individual pointed leaves replace solid spherical crowns.
-  const foliageGeometry=(phase)=>{
+  const foliageGeometry=(phase,branchCount=9,leavesPerBranch=24)=>{
    const vertices=[],tri=(a,b,c)=>vertices.push(...a,...b,...c);
    const rand=n=>{const v=Math.sin(n*127.1+phase*311.7)*43758.5453;return v-Math.floor(v);};
-   for(let branch=0;branch<9;branch++){
+   for(let branch=0;branch<branchCount;branch++){
     const angle=branch*2.39996+phase,reach=.55+rand(branch+7)*.5;
-    for(let j=0;j<24;j++){
+    for(let j=0;j<leavesPerBranch;j++){
      const t=.15+.85*rand(branch*53+j),a=angle+(rand(j+branch*31)-.5)*1.3;
      const center=new T.Vector3(Math.cos(a)*t*reach,(rand(j*7+branch)-.5)*.65+.2*Math.sin(t*3),Math.sin(a)*t*reach);
      const length=.13+rand(j+branch*83)*.16,width=length*(.35+rand(j*3)*.2);
@@ -66,7 +66,28 @@
    }
    const geo=new T.BufferGeometry();geo.setAttribute('position',new T.Float32BufferAttribute(vertices,3));geo.computeVertexNormals();return geo;
   };
-  const roundGeo=foliageGeometry(.8),coneGeo=new T.ConeGeometry(1,1,8),crownGeo=foliageGeometry(2.3);
+  const coneGeo=new T.ConeGeometry(1,1,8),
+   twigGeo=new T.CylinderGeometry(1,1.45,1,5),leafSprigGeo=foliageGeometry(5.1,5,14);
+  function airyCanopy(parent,{radius,centerY,startY,height,seed,bark,leaf,arms=7}){
+   const up=new T.Vector3(0,1,0),delta=new T.Vector3(),mid=new T.Vector3(),q=new T.Quaternion(),scale=new T.Vector3(),matrix=new T.Matrix4();
+   const branches=new T.InstancedMesh(twigGeo,bark,arms*2),sprigs=new T.InstancedMesh(leafSprigGeo,leaf,arms*4);
+   let branchIndex=0,sprigIndex=0;
+   const addBranch=(from,to,width)=>{delta.copy(to).sub(from);mid.copy(from).add(to).multiplyScalar(.5);q.setFromUnitVectors(up,delta.clone().normalize());scale.set(width,delta.length(),width);matrix.compose(mid,q,scale);branches.setMatrixAt(branchIndex++,matrix);};
+   for(let i=0;i<arms;i++){
+    const a=i*2.39996+seed*.013,reach=radius*(.88+((i*7+seed)%5)*.035);
+    const base=new T.Vector3(0,startY,0),tip=new T.Vector3(Math.cos(a)*reach,centerY+Math.sin(a*1.8+seed)*radius*.1,Math.sin(a)*reach*.9);
+    addBranch(base,tip,radius*.024);
+    const split=base.clone().lerp(tip,.58),sideAngle=a+(i%2?-.72:.72),sideTip=split.clone().add(new T.Vector3(Math.cos(sideAngle)*radius*.27,height*.07,Math.sin(sideAngle)*radius*.25));
+    addBranch(split,sideTip,radius*.013);
+    for(let j=0;j<4;j++){
+     const t=.38+j*.19,pos=base.clone().lerp(tip,t),spread=(j%2?1:-1)*radius*.055;
+     pos.x+=Math.cos(a+Math.PI/2)*spread;pos.z+=Math.sin(a+Math.PI/2)*spread;pos.y+=Math.sin(seed*.11+i+j)*radius*.035;
+     const size=radius*(.115+((seed+i*5+j*3)%4)*.012),spin=(i*4+j)*2.39996+seed*.03;
+     q.setFromAxisAngle(up,spin);scale.set(size*1.12,size*.78,size*.94);matrix.compose(pos,q,scale);sprigs.setMatrixAt(sprigIndex++,matrix);
+    }
+   }
+   branches.instanceMatrix.needsUpdate=true;sprigs.instanceMatrix.needsUpdate=true;parent.add(branches,sprigs);
+  }
   function tree(x,z,height=4.8){if(!clear(x,z,5,5))return;
    const seed=Math.abs(Math.round(x*37+z*19)),kind=trees.length%treeStyles.length,style=treeStyles[kind];
    const inPark=x>-188&&x<-54&&z>-65&&z<125;
@@ -80,35 +101,20 @@
    const trunkH=actualHeight*(kind===1?.78:.35),trunk=mesh(new T.CylinderGeometry(actualHeight*.017,actualHeight*.028,trunkH,7),bark,0,trunkH/2,0,g);
    trunk.rotation.z=((seed%7)-3)*.025;
    const crownY=actualHeight*.72;
-   const crown=(geo,mat,px,py,pz,sx,sy,sz)=>{const m=mesh(geo,mat,px,py,pz,g);m.scale.set(sx,sy,sz);return m;};
    if(kind===0){
-    crown(crownGeo,leaf,0,crownY,0,crownRadius*.95,crownRadius*.62,crownRadius*.9);
-    for(let i=0;i<6;i++){const a=i*2.39996+seed*.013,r=crownRadius*(.39+(i%3)*.035),s=.64+((seed+i*7)%4)*.045;crown(i%2?roundGeo:crownGeo,i%3?leaf:accent,Math.cos(a)*r,crownY+Math.sin(a*1.7)*crownRadius*.2,Math.sin(a)*r*.92,crownRadius*s,crownRadius*s*(.68+(i%2)*.07),crownRadius*s*.82);}
+    airyCanopy(g,{radius:crownRadius,centerY:crownY,startY:trunkH*.58,height:actualHeight,seed,bark,leaf});
    }else if(kind===1){
     for(let i=0;i<4;i++){const t=i/3,r=crownRadius*(1-t*.74),h=actualHeight*(.28-t*.035),y=actualHeight*.43+i*actualHeight*.135;const layer=mesh(coneGeo,i%2?accent:leaf,0,y,0,g);layer.scale.set(r,h,r);}
    }else if(kind===2){
-    crown(crownGeo,leaf,0,crownY,0,crownRadius*1.38,crownRadius*.58,crownRadius*1.12);
-    for(let i=0;i<4;i++){const a=i*2.39996+seed*.009,r=crownRadius*.38;crown(roundGeo,i%3?leaf:accent,Math.cos(a)*r,crownY+crownRadius*(.12+Math.sin(a*1.4)*.12),Math.sin(a)*r*.86,crownRadius*.56,crownRadius*.38,crownRadius*.58);}
+    airyCanopy(g,{radius:crownRadius*1.08,centerY:crownY,startY:trunkH*.57,height:actualHeight,seed,bark,leaf,arms:8});
    }else if(kind===3){
-    for(let i=0;i<5;i++){const a=i*2.4;crown(crownGeo,leaf,Math.cos(a)*crownRadius*.46,crownY+Math.sin(i*2)*crownRadius*.27,Math.sin(a)*crownRadius*.48,crownRadius*.65,crownRadius*.57,crownRadius*.65);}
-    for(let i=0;i<6;i++){const a=i*Math.PI/3+seed*.01,t=i/6;crown(roundGeo,accent,Math.cos(a)*crownRadius*.72,crownY+(i%2?1:-1)*crownRadius*.34,Math.sin(a)*crownRadius*.72,crownRadius*.16,crownRadius*.13,crownRadius*.16);}
+    airyCanopy(g,{radius:crownRadius,centerY:crownY,startY:trunkH*.56,height:actualHeight,seed,bark,leaf,arms:8});
    }
    if(kind===4){
-    crown(crownGeo,leaf,0,actualHeight*.71,0,crownRadius*.77,actualHeight*.38,crownRadius*.75);
-    for(let i=0;i<4;i++){const a=i*2.4; crown(roundGeo,i%2?accent:leaf,Math.cos(a)*crownRadius*.45,actualHeight*(.56+i*.1),Math.sin(a)*crownRadius*.42,crownRadius*.6,crownRadius*.85,crownRadius*.55);}
+    airyCanopy(g,{radius:crownRadius*.9,centerY:actualHeight*.71,startY:trunkH*.59,height:actualHeight,seed,bark,leaf,arms:6});
    }
    if(kind===5){
-    for(let i=0;i<4;i++){
-     const a=i*2.1,tip=new T.Vector3(Math.cos(a)*crownRadius*.83,actualHeight*(.68+(i%3)*.1),Math.sin(a)*crownRadius*.8),base=new T.Vector3(0,trunkH*.7,0),delta=tip.clone().sub(base);
-     const branch=mesh(new T.CylinderGeometry(.075,.14,delta.length(),6),bark,0,0,0,g);branch.position.copy(base).add(tip).multiplyScalar(.5);branch.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),delta.normalize());
-     crown(crownGeo,i%2?accent:leaf,tip.x,tip.y,tip.z,crownRadius*(.7+i*.05),crownRadius*.7,crownRadius*.7);
-    }
-   }
-   if(kind!==1&&kind!==5){
-    for(let i=0;i<3;i++){
-     const a=i*2.3+seed*.1,base=new T.Vector3(0,trunkH*.58,0),tip=new T.Vector3(Math.cos(a)*crownRadius*.62,crownY+Math.sin(i)*crownRadius*.1,Math.sin(a)*crownRadius*.62),d=tip.clone().sub(base);
-     const limb=mesh(new T.CylinderGeometry(actualHeight*.009,actualHeight*.019,d.length(),6),bark,0,0,0,g);limb.position.copy(base).add(tip).multiplyScalar(.5);limb.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),d.normalize());
-    }
+    airyCanopy(g,{radius:crownRadius*1.04,centerY:actualHeight*.7,startY:trunkH*.64,height:actualHeight,seed,bark,leaf,arms:6});
    }
    const bounds=new T.Box3().setFromObject(g),size=bounds.getSize(new T.Vector3()),center=bounds.getCenter(new T.Vector3());
    trees.push({object:g,mats,height:size.y,radius:Math.max(size.x,size.z)/2,center,baseY:bounds.min.y,alpha:1,swayPhase:seed*.17,sway:.012,baseRotation:g.rotation.z});
@@ -125,7 +131,6 @@
   // Per-tree instancing keeps overlapping crowns to one draw per tree and
   // preserves individual fading when a crown crosses a hospital sightline.
   const groveTrunkGeo=new T.CylinderGeometry(.25,.42,1,7);
-  const groveMatrix=new T.Matrix4(),grovePosition=new T.Vector3(),groveScale=new T.Vector3(),groveRotation=new T.Quaternion();
   function matureParkTree(x,z,seed) {
    if(!clear(x,z,10,10))return;
    const height=12+(seed%9)*.55,radius=4.5+(seed%5)*.35;
@@ -133,22 +138,8 @@
    const bark=material(0x82765f),leaf=material([0x6e8967,0x78916c,0x647f61,0x819773][seed%4]);
    for(const m of [bark,leaf]){m.transparent=true;m.depthWrite=false;m.side=T.DoubleSide;}
    const trunk=mesh(groveTrunkGeo,bark,0,height*.17,0,g);trunk.scale.y=height*.34;
-   for(let k=0;k<6;k++){
-    const a=k*2.4+seed*.7,base=new T.Vector3(0,height*.23,0),tip=new T.Vector3(Math.cos(a)*radius*.72,height*(.6+(k%3)*.08),Math.sin(a)*radius*.72),delta=tip.clone().sub(base);
-    const limb=mesh(new T.CylinderGeometry(.10,.26,delta.length(),6),bark,0,0,0,g);limb.position.copy(base).add(tip).multiplyScalar(.5);limb.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),delta.normalize());
-   }
-   // One broad core with overlapping, uneven outer sprays reads as a connected leafy crown.
-   const canopyLobes=[
-    [0,.65,0,1.12,.62,1.02],[-.43,.68,.10,.76,.49,.78],[.48,.73,-.16,.83,.55,.76],[-.15,.82,.49,.72,.51,.74],[.22,.61,-.48,.77,.47,.83]
-   ];
-   const crowns=new T.InstancedMesh(crownGeo,leaf,canopyLobes.length);
-   for(let i=0;i<canopyLobes.length;i++){
-    const [ox,oy,oz,sx,sy,sz]=canopyLobes[i],a=seed*.37;
-    grovePosition.set((ox*Math.cos(a)-oz*Math.sin(a))*radius,height*oy,(ox*Math.sin(a)+oz*Math.cos(a))*radius);
-    groveScale.set(radius*sx,radius*sy,radius*sz);
-    groveMatrix.compose(grovePosition,groveRotation,groveScale);crowns.setMatrixAt(i,groveMatrix);
-   }
-   g.add(crowns);trees.push({object:g,mats:[bark,leaf],height:height+2,radius:radius*1.5,alpha:1,swayPhase:seed*.23,sway:.022,baseRotation:g.rotation.z});
+   airyCanopy(g,{radius,centerY:height*.68,startY:height*.31,height,seed:seed+groveSeed,bark,leaf,arms:9});
+   trees.push({object:g,mats:[bark,leaf],height:height+2,radius:radius*1.5,alpha:1,swayPhase:seed*.23,sway:.022,baseRotation:g.rotation.z});
   }
   let groveSeed=0;
   for(let row=0;row<12;row++)for(let col=0;col<8;col++) {
