@@ -1205,6 +1205,11 @@ class CampusApp {
       return;
     }
 
+    const previousBuildingId = this.selectedBuilding;
+    if (previousBuildingId && previousBuildingId !== buildingId && this.buildingMeshes[previousBuildingId]) {
+      this.buildingMeshes[previousBuildingId].visible = true;
+    }
+
     const b = this.campusData.buildings.find(item => item.id === buildingId);
 
     if (!b) return;
@@ -1269,6 +1274,11 @@ class CampusApp {
     selectBuilding(buildingId, openPanel = false) {
     const b = this.campusData.buildings.find(item => item.id === buildingId);
     if (!b) return;
+
+    const previousBuildingId = this.selectedBuilding;
+    if (previousBuildingId && previousBuildingId !== buildingId && this.buildingMeshes[previousBuildingId]) {
+      this.buildingMeshes[previousBuildingId].visible = true;
+    }
 
     if(buildingId==='W01_LOBBY'){
       this.selectedFloor=null;this.camera.clearViewOffset();
@@ -3487,6 +3497,12 @@ class CampusApp {
       dropdown.innerHTML = '';
 
       const matches = [];
+      const normalizeWard = value => String(value || '').toUpperCase().replace(/^0+(?=\d)/, '');
+      const wardCodes = [...val.matchAll(/\d{1,2}[A-Z]\d{0,2}/g)]
+        .map(match => normalizeWard(match[0]))
+        .filter(code => !/^\d{1,2}F\d*$/.test(code));
+      const requestedCampus = /兒醫/.test(val) ? 'children' : /東址/.test(val) ? 'east' : /西址/.test(val) ? 'west' : null;
+      const planQuery = val.replace(/東址|西址|兒醫|大樓?/g, '').trim();
 
       const nonWardSearchIds = ['JINGFU_GATE', 'W01_LOBBY', 'W_CORRIDOR', 'W01_SPINE', 'JINGFU_TUNNEL', 'W01_WEST', 'W01_EAST'];
 
@@ -3502,6 +3518,29 @@ class CampusApp {
 
       });
 
+      // Search each building's ward layout so a ward code opens that ward
+      // directly across East, West, and the Children's Hospital.
+      if (wardCodes.length) {
+        this.campusData.buildings.forEach(b => {
+          if (requestedCampus && b.campus !== requestedCampus) return;
+          const bName = b.name.split(' (')[0];
+          Object.entries(this.ward3DData[b.id] || {}).forEach(([floor, layout]) => {
+            const wards = new Set([
+              ...(layout.rooms || []).map(room => room.ward),
+              ...Object.keys(layout.sourceTraceWards || {}),
+              ...(layout.nursingStations || []).map(station => station.ward)
+            ].filter(Boolean));
+            wards.forEach(ward => {
+              if (!wardCodes.includes(normalizeWard(ward))) return;
+              matches.push({
+                type: '病房區', title: `${bName} ${ward} 病房區 (${floor})`,
+                buildingId: b.id, floor, ward, isWard: true
+              });
+            });
+          });
+        });
+      }
+
       Object.keys(this.floorplansData).forEach(bId => {
 
         const bPlans = this.floorplansData[bId];
@@ -3514,13 +3553,13 @@ class CampusApp {
 
           const fp = bPlans[fTag];
 
-          const hasWardMatch = fp.wards && fp.wards.some(w => w.toUpperCase().includes(val));
+          const hasWardMatch = !wardCodes.length && fp.wards && fp.wards.some(w => w.toUpperCase().includes(val));
 
-          const hasTitleMatch = fp.title.toUpperCase().includes(val);
+          const hasTitleMatch = fp.title.toUpperCase().includes(planQuery || val);
 
-          const hasSummaryMatch = fp.summary && fp.summary.toUpperCase().includes(val);
+          const hasSummaryMatch = fp.summary && fp.summary.toUpperCase().includes(planQuery || val);
 
-          const hasFloorMatch = fTag.toUpperCase().includes(val);
+          const hasFloorMatch = fTag.toUpperCase().includes(planQuery || val);
 
           if (hasWardMatch || hasTitleMatch || hasSummaryMatch || hasFloorMatch) {
 
@@ -3550,13 +3589,12 @@ class CampusApp {
 
           item.className = 'search-item';
 
-          item.innerHTML = `
-
-            <span>${m.title}</span>
-
-            <span style="font-size:11px;color:#9e4635;font-weight:700;">${m.type}</span>
-
-          `;
+          const title = document.createElement('span');
+          title.textContent = m.title;
+          const type = document.createElement('span');
+          type.textContent = m.type;
+          type.style.cssText = 'font-size:11px;color:#9e4635;font-weight:700;';
+          item.append(title, type);
 
           item.onclick = () => {
 
@@ -3565,16 +3603,16 @@ class CampusApp {
             input.value = m.title.split(' (')[0];
 
             if (m.isBuilding) {
-
+              this.selectedWard = 'ALL';
               this.selectBuilding(m.id, true);
 
             } else {
 
-              this.selectBuilding(m.buildingId, true);
-
-              this.sliceBuildingFloor(m.buildingId, m.floor);
-
-              this.showToast(`已切換至 ${m.floor} 鳥瞰擬 3D 配置圖：${m.title}`);
+              this.selectedWard = m.ward || 'ALL';
+              this.drillDownToFloor(m.buildingId, m.floor);
+              this.renderWardWingSelector(m.buildingId, m.floor);
+              this.focusWardIn3D(m.buildingId, m.floor, this.selectedWard);
+              if (!m.isWard) this.showToast(`已切換至 ${m.floor} 鳥瞰擬 3D 配置圖：${m.title}`);
 
             }
 
