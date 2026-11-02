@@ -260,7 +260,7 @@
         const perSide=slots.length===4?2:slots.length;
         const displayLength=r.bedDisplaySize?.length||1.8,displayWidth=r.bedDisplaySize?.width||.9;
         const fitWidth=Math.max(.1,(rb.width-2*headGap-(slots.length===4?.3:0))/(slots.length===4?2:1));
-        const width=fourBed?Math.min(displayLength,fitWidth):clearance?Math.min(displayLength,fitWidth,(rb.width-clearance*2-(slots.length===4?.6:0))/(slots.length===4?2:1)):Math.min(displayLength,fitWidth);
+        const width=Math.min(displayLength,fitWidth);
         // Preserve a realistic bed width first; reduce edge clearance when a
         // narrow room cannot fit both the target beds and the requested gaps.
         const between=fourBed?.25:slots.length===3?.12:.2;
