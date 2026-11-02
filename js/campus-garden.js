@@ -190,9 +190,10 @@
    silhouette.moveTo(0,-.62);
    silhouette.quadraticCurveTo(-.2,-.4,-.48,-.18);
    silhouette.quadraticCurveTo(-1.3,.18,-2.25,.12);
-   silhouette.quadraticCurveTo(-3.55,.02,-4.65,1.05);
-   silhouette.quadraticCurveTo(-4.12,.18,-3.55,-.24);
-   silhouette.quadraticCurveTo(-2.65,-.78,-1.42,-.4);
+   silhouette.quadraticCurveTo(-3.72,.04,-4.55,.84);
+   silhouette.quadraticCurveTo(-4.46,.54,-4.05,.22);
+   silhouette.quadraticCurveTo(-3.62,-.24,-3.02,-.43);
+   silhouette.quadraticCurveTo(-2.1,-.68,-1.42,-.4);
    silhouette.quadraticCurveTo(-.58,-.12,0,-.28);
    silhouette.quadraticCurveTo(.58,-.12,1.42,-.4);
    silhouette.quadraticCurveTo(2.65,-.78,3.55,-.24);
@@ -202,7 +203,15 @@
    silhouette.quadraticCurveTo(.2,-.4,0,-.62);
    silhouette.closePath();
    const mat=new T.MeshBasicMaterial({color:0x52656a,side:T.DoubleSide,transparent:true,opacity:.78,depthTest:false,depthWrite:false});
-   const bird=new T.Mesh(new T.ShapeGeometry(silhouette,12),mat);bird.name='distant-bird';bird.renderOrder=10;bird.scale.setScalar([.78,.68,.62][i]);bird.rotation.z=[-.04,.07,-.09][i];horizon.add(bird);birds.push({object:bird,mat,phase:i*2.1,alpha:.78,baseY:bird.scale.y,tilt:[-.04,.07,-.09][i]});
+   const bird=new T.Group();bird.name='distant-bird';
+   const wings=new T.Mesh(new T.ShapeGeometry(silhouette,16),mat);wings.renderOrder=10;bird.add(wings);
+   const torsoShape=new T.Shape();torsoShape.ellipse(0,-.1,.62,.22,0,Math.PI*2,false,0);
+   const torso=new T.Mesh(new T.ShapeGeometry(torsoShape,10),mat);torso.position.z=.02;torso.renderOrder=11;bird.add(torso);
+   const headShape=new T.Shape();headShape.ellipse(.49,.17,.17,.15,0,Math.PI*2,false,0);
+   const head=new T.Mesh(new T.ShapeGeometry(headShape,8),mat);head.position.z=.025;head.renderOrder=12;bird.add(head);
+   const beakShape=new T.Shape();beakShape.moveTo(.61,.22);beakShape.lineTo(.9,.28);beakShape.lineTo(.62,.33);beakShape.closePath();
+   const beak=new T.Mesh(new T.ShapeGeometry(beakShape),mat);beak.position.z=.03;beak.renderOrder=12;bird.add(beak);
+   const size=[.78,.68,.62][i];bird.scale.set(size*(i===1?-1:1),size,1);bird.rotation.z=[-.04,.07,-.09][i];horizon.add(bird);birds.push({object:bird,mat,phase:i*2.1,alpha:.78,baseY:bird.scale.y,tilt:[-.04,.07,-.09][i]});
   }
   const sky=document.createElement('canvas');sky.width=8;sky.height=256;const context=sky.getContext('2d'),gradient=context.createLinearGradient(0,0,0,256);gradient.addColorStop(0,'#cfe4ee');gradient.addColorStop(.6,'#e3edf0');gradient.addColorStop(1,'#e2eadb');context.fillStyle=gradient;context.fillRect(0,0,8,256);
   const skyTexture=new T.CanvasTexture(sky),originalBackground=app.scene.background,originalFog=app.scene.fog?.color.clone();let overview;
