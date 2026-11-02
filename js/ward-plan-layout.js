@@ -260,7 +260,7 @@
         const sideGap=Math.min(clearance!=null?clearance+.55:window.WardBedPlacement.sideClearance,Math.max(.01,(rb.depth-.1*perSide-between*(perSide-1))/2));
         const depth=Math.min(displayWidth,Math.max(.1,(rb.depth-sideGap*2-between*(perSide-1))/perSide));
         const edge=rb.depth/2-depth/2-sideGap;
-        const slot=window.WardBedPlacement.slot(slots.length,i);
+        const slot={...window.WardBedPlacement.slot(slots.length,i),...(r.bedHeadSide?{headSide:r.bedHeadSide}:{})};
         const z=rb.z+(r.upper?1:-1)*(edge-slot.fraction*edge*2);
         const sign=slot.headSide==='west'?-1:1;
         beds.push({bedId:r.bedIds[i],displayLabel:r.bedSymbolOnly?`${r.roomName||r.ward+r.roomCode} 床位示意（非實際床數）`:`${r.ward}${r.roomCode}-${seq}`,roomCode:r.roomCode,ward:r.ward,x:rb.x+sign*(rb.width/2-width/2-headGap),y:0.35,z,width,depth,height:0.7,rotation:0,headSide:slot.headSide,...(r.bedAxis?{axis:r.bedAxis}:{}),isSchematic:!bySeq.has(seq),...(r.bedSymbolOnly?{symbolOnly:true,bedLabel:'示意'}:{}),...(clearance?{clearance}:{})});

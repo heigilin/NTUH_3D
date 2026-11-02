@@ -42,16 +42,32 @@
  ],[['北排前室',518,848,231,14,'anteroom'],['前室（東）',752,849,35,15,'anteroom'],['護理長室／醫材儲藏室',560,892,74,49],['家屬諮詢室',550,943,84,19],['污物室及清潔間',550,965,84,18],['機房／管道間',550,987,84,21],['加護病房（3）／儀器空間',742,950,45,35]],
  [['04C2北排走道',518,866,269,18],['04C2開放護理區',638,889,101,86],['04C2護理區西側通路',550,884,86,7]],
  {notes:['依E_04F.pdf東側4C2分隔線恢復北排11、10、09、08、07、06，保留原床號。','原圖部分文字只標11／9／7，但分隔線仍有相鄰格位；依床號清單保留完整北排。','原圖東側（3）未有03床號，不改號補造床位，依其空間保留。']});
- // Current 4D1 relationships supplied in the user's 2026-11-02 sketch.
- // Fit the sketch into the existing floor envelope; dimensions are estimates.
+ // Authoritative 04D1 engineering image, in raw image pixels.
+ // Uniform scale retains aspect ratio; campus placement is approximate.
+ const d1Scale=.022,d1Origin=[105-14.64/d1Scale,78-34.4/d1Scale];
  add(4,'04D1', [
-  ['01',199,1285,101,92,false],['02',300,1300,100,77,false],['03',400,1300,80,77,false],
-  ['05',480,1300,100,77,false],['06',580,1300,100,77,false],['07',680,1300,118,77,false],
-  ['08',380,1200,90,60,true],['09',470,1200,90,60,true],['10',560,1200,90,60,true]
- ],[['07前室',680,1280,118,20,'anteroom'],['醫材室',700,1190,98,70]],
- [['04D1中央通道',199,1260,624,20],['04D1病室側通道',300,1280,380,20],['04D1雙床房入口通道',199,1280,101,5]],
- {station:['04D1 護理站',199,1188,181,72],source:'使用者提供4D1配置草圖（2026-11-02）',image:null,userSketch:true,
- notes:['以本次使用者手繪配置取代舊原圖及前次匿名床區推定。','下排由左至右為01、02、03、05、06、07；上排為護理站、08、09、10，右側為醫材室。','01為兩床，07前室位於通道側；9間病室共10個原始床號完整對應。','位置與尺寸按手繪相對關係估算，非實測；照片轉正僅為閱讀，未據此新增實際羅盤方位或門扇方向。']});
+  ['01',106,647,130,228,false],['02',242,683,124,192,false],['03',373,683,118,192,false],
+  ['05',498,683,163,192,false],['06',668,683,131,192,false],['07',806,693,138,182,false],
+  ['08',384,362,156,176,true],['09',548,362,113,176,true],['10',669,362,132,176,true]
+ ],[
+  ['緩衝區',110,184,112,120,'anteroom'],['污物室',229,188,102,112],
+  ['更衣室',519,96,169,85],['值班室',694,96,126,85],['護理長室',519,185,108,79],
+  ['工作區',632,185,56,79],['更衣及休息空間',693,185,109,79],['醫師辦公室',808,184,56,113],
+  ['休息區',870,184,69,113],['討論／休息室',944,184,185,113],
+  ['廁所及附屬空間',571,318,187,39],['準備室',906,360,91,76],['儀器室',1003,307,126,255],
+  ['07前室',806,626,138,64,'anteroom'],['安全梯（東）',1020,570,112,305]
+ ],[
+  ['04D1入口走廊',110,2,112,182],['04D1西側通道',106,304,116,341],
+  ['04D1護理站北側通道',222,304,296,50],['04D1工作區通道',520,266,282,48],
+  ['04D1工作區南側連接',518,304,52,53],['04D1工作區東側連接',802,266,5,91],
+  ['04D1病房東側通道',807,305,95,243],['04D1中央通道',222,548,725,78],
+  ['04D1南排入口通道',236,626,563,57]
+ ],{origin:d1Origin,scale:d1Scale,station:['04D1 護理站',228,359,149,187],
+ source:'素材/04D1.png',image:'素材/04D1.png',engineeringSource:true,
+ notes:['依使用者指定04D1.png工程圖重新描繪隔間、護理站、走道與工作空間，不沿用手繪長條配置。',
+ '工程圖病房(1)至(9)，依使用者先前現況及正式清單對應01、02、03、05、06、07、08、09、10；01兩床，共10床。',
+ '07保留獨立前室及隔離用途；北側08／09／10下方與南排病室之間為中央通道。',
+ '使用單一比例投影；來源外框與床區分開，局部斜角採內接矩形，門寬及床具為示意，樓層定位非實測。']});
  const previous=api.apply;
  api.apply=function(root){
   // Normalize the higher resolution 3F scan to the main-building footprint.
@@ -91,9 +107,27 @@
     if(/^04B[12]$/.test(c.ward)||c.name.startsWith('4B'))c.connects=['04B1','04B2'];
     if(/^04C[12]$/.test(c.ward)||c.name.startsWith('4C'))c.connects=['04C1','04C2'];
    }
+   // The engineering image stops at the ward entrance. This connector is
+   // floor-context geometry, kept separate from the source-traced ward view.
+   if(f===4){
+    const entryX=(166-d1Origin[0])*d1Scale,entryTop=(2-d1Origin[1])*d1Scale;
+    const right=(823-335)*.08,top=(1150-758)*.08,bottom=top+1;
+    for(const [i,q]of [{x:(entryX+right)/2,z:(top+bottom)/2,width:right-entryX,depth:1},
+      {x:entryX,z:(bottom+entryTop)/2,width:112*d1Scale,depth:entryTop-bottom}].entries()){
+     l.sourceTraceCorridors.push({id:'SOURCE-4F-D1-EXTERNAL-'+i,name:'4D1外部連接示意',ward:'4CORE',sourceTrace:true,mainSpine:true,
+      bounds:{...q,y:0,height:.05},geometryBasis:'floor-context-connection-estimate',sourcePlan:'原樓層區位連接示意，非04D1工程圖內部通道'});
+    }
+   }
    // Retain reviewed 3A/4A/4B outlines; replace all legacy C/D room imports.
    l.sourceTracePartialCorridors=false;
-   for(const r of l.rooms.filter(r=>r.sourceTrace)){r.sourceFitBeds=!r.bedClearance;if(r.ward==='04D1'){r.openBay=false;r.roomName='04D1'+r.roomCode;r.displayRoomLabel=r.roomCode;r.isSchematic=false;r.positionIsSchematic=true;r.geometryBasis='user-sketch-proportional';delete r.bedSymbolOnly;delete r.bedSymbolBasis;r.door={side:r.upper?'south':'north',offset:.5,sourceChecked:true,sourcePlan:'使用者4D1配置草圖',basis:'手繪所示面向中央通道／07前室；門寬與位置為示意'};}}
+   for(const r of l.rooms.filter(r=>r.sourceTrace)){r.sourceFitBeds=!r.bedClearance;if(r.ward==='04D1'){
+    const heads={'01':'west','02':'west','03':'east','05':'west','06':'east','07':'east','08':'west','09':'east','10':'west'};
+    const entries={'01':['north',.55],'02':['north',.78],'03':['north',.18],'05':['north',.82],'06':['north',.18],'07':['north',.5],'08':['south',.8],'09':['south',.22],'10':['south',.8]};
+    r.openBay=false;r.roomName='04D1'+r.roomCode;r.displayRoomLabel=r.roomCode;r.isSchematic=false;
+    r.positionIsSchematic=true;r.geometryBasis='engineering-image-rectangular-approximation';r.bedHeadSide=heads[r.roomCode];r.bedClearance=.2;
+    if(r.roomCode==='07')r.category='ISOLATION';delete r.bedSymbolOnly;delete r.bedSymbolBasis;
+    r.door={side:entries[r.roomCode][0],offset:entries[r.roomCode][1],sourceChecked:true,sourcePlan:'素材/04D1.png',basis:'工程圖入口側與相對位置；門寬及斜角採示意'};
+   }}
    for(const fac of l.facilities.filter(fac=>fac.sourceTrace&&fac.sourceRect))fac.bounds={...fac.bounds,...project(f,fac.sourceRect.x,fac.sourceRect.y,fac.sourceRect.w,fac.sourceRect.h)};
    const hit=(a,b)=>Math.min(a.x+a.width/2,b.x+b.width/2)-Math.max(a.x-a.width/2,b.x-b.width/2)>1e-6&&Math.min(a.z+a.depth/2,b.z+b.depth/2)-Math.max(a.z-a.depth/2,b.z-b.depth/2)>1e-6;
    const valid=[...l.rooms,...l.facilities,...l.nursingStations,...l.sourceTraceCorridors.filter(c=>c.mainSpine)].filter(q=>q.sourceTrace);
