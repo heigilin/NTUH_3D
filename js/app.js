@@ -3588,6 +3588,7 @@ class CampusApp {
           const item = document.createElement('div');
 
           item.className = 'search-item';
+          item.dataset.resultType = m.isWard ? 'ward' : m.isBuilding ? 'building' : 'floor';
 
           const title = document.createElement('span');
           title.textContent = m.title;
@@ -3630,6 +3631,14 @@ class CampusApp {
 
       }
 
+    });
+
+    input.addEventListener('keydown', event => {
+      if (event.key !== 'Enter') return;
+      const result = dropdown.querySelector('.search-item[data-result-type="ward"]') || dropdown.querySelector('.search-item');
+      if (!result || dropdown.style.display === 'none') return;
+      event.preventDefault();
+      result.click();
     });
 
     document.addEventListener('click', (e) => {
