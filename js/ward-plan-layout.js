@@ -223,11 +223,16 @@
         const bedZone=r.bedBounds||r.bounds;
         const rb=turnChildBed?{...bedZone,x:bedZone.z,z:bedZone.x,width:bedZone.depth,depth:bedZone.width}:bedZone;
         if(['north-one-south-two','west-wall-north-south'].includes(r.bedArrangement)&&slots.length<=4){
-          const gap=(r.bedClearance||.45)+.25,rowGap=r.bedRowGap??.25;
+          const fourBed=slots.length===4;
+          const gap=fourBed?(r.bedClearance??.45):(r.bedClearance||.45)+.25;
           const rowCount=slots.length===1?1:2;
           const groupCount=slots.length===3?2:slots.length===4?2:1;
-          const bedLength=Math.max(.35,Math.min(r.bedDisplaySize?.length||1.8,(rb.depth-gap*2-(rowCount===2?rowGap:0))/rowCount));
-          const bedWidth=Math.max(.25,Math.min(r.bedDisplaySize?.width||.9,(rb.width-gap*2-(groupCount===2?.2:0))/groupCount,bedLength*.55));
+          const targetLength=r.bedDisplaySize?.length||1.8,targetWidth=r.bedDisplaySize?.width||.9;
+          const requestedRowGap=r.bedRowGap??.25;
+          const rowGap=fourBed&&rowCount>1?Math.max(0,Math.min(requestedRowGap,(rb.depth-gap*2-rowCount*targetLength)/(rowCount-1))):requestedRowGap;
+          const bedLength=Math.max(.35,Math.min(targetLength,(rb.depth-gap*2-(rowCount===2?rowGap:0))/rowCount));
+          const bedWidthLimit=fourBed?targetWidth:Math.min(targetWidth,bedLength*.55);
+          const bedWidth=Math.max(.25,Math.min(bedWidthLimit,(rb.width-gap*2-(groupCount===2?.2:0))/groupCount));
           const north=slots.length===1?true:slots.length===3?i===0:slots.length===4?i<2:i===0;
           const column=slots.length===3?(i===1?-1:1):slots.length===4?(i%2===0?-1:1):0;
           const x=rb.x+(groupCount===1?0:column*(rb.width/2-gap-bedWidth/2));
@@ -250,14 +255,16 @@
         }
         // Keep head and side clearance within each source bedroom envelope.
         const clearance=r.bedClearance;
+        const fourBed=slots.length===4;
         const headGap=window.WardBedPlacement.headClearance(rb.width,slots.length);
         const perSide=slots.length===4?2:slots.length;
         const displayLength=r.bedDisplaySize?.length||1.8,displayWidth=r.bedDisplaySize?.width||.9;
         const fitWidth=Math.max(.1,(rb.width-2*headGap-(slots.length===4?.3:0))/(slots.length===4?2:1));
-        const width=clearance?Math.min(displayLength,fitWidth,(rb.width-clearance*2-(slots.length===4?.6:0))/(slots.length===4?2:1)):Math.min(displayLength,fitWidth);
+        const width=fourBed?Math.min(displayLength,fitWidth):clearance?Math.min(displayLength,fitWidth,(rb.width-clearance*2-(slots.length===4?.6:0))/(slots.length===4?2:1)):Math.min(displayLength,fitWidth);
         // Leave a label-sized gap between schematic beds in shallow rooms.
-        const between=clearance!=null ? .8 : .2;
-        const sideGap=Math.min(clearance!=null?clearance+.55:window.WardBedPlacement.sideClearance,Math.max(.01,(rb.depth-.1*perSide-between*(perSide-1))/2));
+        const between=fourBed?.25:clearance!=null?.8:.2;
+        const desiredSideGap=fourBed?(clearance??.45):clearance!=null?clearance+.55:window.WardBedPlacement.sideClearance;
+        const sideGap=Math.min(desiredSideGap,Math.max(.01,(rb.depth-.1*perSide-between*(perSide-1))/2));
         const depth=Math.min(displayWidth,Math.max(.1,(rb.depth-sideGap*2-between*(perSide-1))/perSide));
         const edge=rb.depth/2-depth/2-sideGap;
         const slot={...window.WardBedPlacement.slot(slots.length,i),...(r.bedHeadSide?{headSide:r.bedHeadSide}:{})};

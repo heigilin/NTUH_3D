@@ -1899,6 +1899,7 @@ class CampusApp {
         const labelBeds=(wardLayout.beds||[]).filter(bed=>bed.ward===rm.ward&&bed.roomCode===rm.roomCode).map(bed=>({x:bed.x-(bed.width||1.8)/2,y:bed.z-(bed.depth||0.9)/2,w:bed.width||1.8,h:bed.depth||0.9}));
         labelBeds.push(...(rm.annexBounds||[]).map(q=>({x:q.x-q.width/2,y:q.z-q.depth/2,w:q.width,h:q.depth})));
         const isServiceSpace=rm.openBay||/DIRTY|CLEAN/i.test(rm.roomCode)||(!rm.bedCount&&!/^\d+$/.test(rm.roomCode));
+        const compactMultiBedRoom=(rm.bedCount||0)>=3&&rm.bounds.width*rm.bounds.depth<18;
         const labelArea={x:rb.x-rb.width/2,y:rb.z-rb.depth/2,w:rb.width,h:rb.depth};
         const labelBox=rm.openBay?window.WardPlanLabels.place(labelArea,labelBeds):isServiceSpace?window.WardPlanLabels.spaceBox(labelArea):window.WardPlanLabels.place(labelArea,labelBeds,window.WardPlanLabels.room(rm));
         const roomCanvas = document.createElement('canvas');
@@ -1908,7 +1909,7 @@ class CampusApp {
         const rctx = roomCanvas.getContext('2d');
         rctx.fillStyle = '#102f43';
         const westFiveSixRoom=buildingId==='W04_WEST'&&/^(?:0?[56]W)/.test(String(rm.ward||''));
-        const roomLabelLimit=isServiceSpace ? window.WardPlanLabels.spaceFontSize(window.WardPlanLabels.room(rm),labelDensity) : (westFiveSixRoom ? 0.65 : 0.92)*labelDensity;
+        const roomLabelLimit=isServiceSpace ? window.WardPlanLabels.spaceFontSize(window.WardPlanLabels.room(rm),labelDensity) : (compactMultiBedRoom ? 0.55 : westFiveSixRoom ? 0.65 : 0.92)*labelDensity;
         window.WardPlanLabels.draw(rctx,window.WardPlanLabels.room(rm),roomCanvas.width/2,roomCanvas.height/2,roomCanvas.width,roomCanvas.height,roomLabelLimit);
         const rLabelMesh = new THREE.Mesh(
           new THREE.PlaneGeometry(labelBox.w,labelBox.h),
@@ -3518,13 +3519,14 @@ class CampusApp {
 
       });
 
-      // Search each building's ward layout so a ward code opens that ward
-      // directly across East, West, and the Children's Hospital.
+      // Search every building's actual ward layout so a ward code opens and
+      // focuses that ward directly, independent of the campus/building.
       if (wardCodes.length) {
         this.campusData.buildings.forEach(b => {
           if (requestedCampus && b.campus !== requestedCampus) return;
           const bName = b.name.split(' (')[0];
-          Object.entries(this.ward3DData[b.id] || {}).forEach(([floor, layout]) => {
+          const floors = this.ward3DData[b.id] || {};
+          Object.entries(floors).forEach(([floor, layout]) => {
             const wards = new Set([
               ...(layout.rooms || []).map(room => room.ward),
               ...Object.keys(layout.sourceTraceWards || {}),
@@ -3533,8 +3535,12 @@ class CampusApp {
             wards.forEach(ward => {
               if (!wardCodes.includes(normalizeWard(ward))) return;
               matches.push({
-                type: '病房區', title: `${bName} ${ward} 病房區 (${floor})`,
-                buildingId: b.id, floor, ward, isWard: true
+                type: '病房區',
+                title: `${bName} ${ward} 病房區 (${floor})`,
+                buildingId: b.id,
+                floor,
+                ward,
+                isWard: true
               });
             });
           });

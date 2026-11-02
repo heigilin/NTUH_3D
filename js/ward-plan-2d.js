@@ -32,6 +32,8 @@
       s.rooms.push(r);
       const ids=registry(sourceWard,code);
       const modelRoom=(data.rooms||[]).find(q=>q.ward===sourceWard&&q.roomCode===code);
+      r.bedCount=modelRoom?.bedCount||ids.length;
+      r.compactMultiBedRoom=r.bedCount>=3&&!!modelRoom?.bounds&&modelRoom.bounds.width*modelRoom.bounds.depth<18;
       const pixelsPerUnit=modelRoom?.bounds ? w/modelRoom.bounds.width : 24;
       r.door=window.WardRoomDoors?.get(modelRoom||{bounds:{width:w/24,depth:h/24},upper});
       r.pixelsPerUnit=pixelsPerUnit; r.openBay=!!modelRoom?.openBay;
@@ -186,7 +188,7 @@
     s.rooms.forEach(r=>{
       const label=window.WardPlanLabels.place(r,[...s.beds.filter(b=>b.room===r),...(r.annexes||[])]);
       ctx.fillStyle=C.ink;
-      const roomFontLimit=manager.wardActiveBuildingId==='W04_WEST'?15:23;
+      const roomFontLimit=r.compactMultiBedRoom?12:manager.wardActiveBuildingId==='W04_WEST'?15:23;
       window.WardPlanLabels.draw(ctx,r.label,label.x+label.w/2,label.y+label.h/2,label.w,label.h,roomFontLimit);
     });
     if(s.notice)txt(s.notice,50,s.height-22,16,'#526c7c','left');
