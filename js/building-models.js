@@ -108,21 +108,23 @@
 
       const pz = b.position.z;
 
-      // 暖磚橘杏色調，對比鮮明絕不與白色背景吃色
+      // Match the photographed pale stone wings, dark atrium glass, yellow
+      // frame, red bay windows and salmon podium.
+      const matPodium = new THREE.MeshStandardMaterial({ color: 0xd7a497, roughness: 0.62 });
 
-      const matPodium = new THREE.MeshStandardMaterial({ color: 0xd6a27e, roughness: 0.55 }); // 活潑暖杏磚橘基座
+      const matTower = new THREE.MeshStandardMaterial({ color: 0xd7c7a5, roughness: 0.58 });
 
-      const matTower = new THREE.MeshStandardMaterial({ color: 0xe2bd96, roughness: 0.50 });  // 暖磚橘黃外牆主體
+      const matGlass = new THREE.MeshStandardMaterial({ color: 0x17495a, roughness: 0.24, metalness: 0.18, emissive: 0x0b202b, emissiveIntensity: 0.1 });
 
-      const matGlass = new THREE.MeshStandardMaterial({ color: 0xa4c9d7, roughness: 0.38, metalness: 0.08, emissive: 0x536f80, emissiveIntensity: 0.12 }); // 明亮淡藍玻璃，四面皆可辨識
+      const matYellow = new THREE.MeshStandardMaterial({ color: 0xe6bd26, roughness: 0.38, metalness: 0.12 });
 
-      const matYellow = new THREE.MeshStandardMaterial({ color: 0xd8b56b, roughness: 0.35, metalness: 0.25 }); // 亮黃標誌性倒V鋼柱
+      const matRedBox = new THREE.MeshStandardMaterial({ color: 0xc54d56, roughness: 0.44 });
 
-      const matRedBox = new THREE.MeshStandardMaterial({ color: 0xb98177, roughness: 0.40 }); // 積木紅凸窗
+      const matOrangeBox = new THREE.MeshStandardMaterial({ color: 0xd48b54, roughness: 0.46 });
 
-      const matOrangeBox = new THREE.MeshStandardMaterial({ color: 0xc59a71, roughness: 0.40 }); // 積木橙凸窗
+      const matWhite = new THREE.MeshStandardMaterial({ color: 0xf0ebdc, roughness: 0.48 });
 
-      const matWhite = new THREE.MeshStandardMaterial({ color: 0xede5d8, roughness: 0.45 }); // 暖白窗台橫帶飾線
+      const matPink = new THREE.MeshStandardMaterial({ color: 0xd77f89, roughness: 0.52 });
 
       const matGarden = new THREE.MeshStandardMaterial({ color: 0x667f62, roughness: 0.85 }); // 空中花園
 
@@ -137,6 +139,17 @@
       podMesh.position.set(px, podiumH / 2, pz);
 
       parent.add(podMesh);
+
+      // The real podium has a rounded salmon-pink entrance volume below the
+      // tower. Keep it attached to the east-facing facade instead of floating
+      // beyond the building footprint.
+      const podiumFrontZ=pz+d/2;
+      const pinkBase=new THREE.Mesh(new THREE.BoxGeometry(w*.68,5.2,2.1),matPink);
+      pinkBase.position.set(px,6.2,podiumFrontZ+.28);
+      parent.add(pinkBase);
+      const pinkWrap=new THREE.Mesh(new THREE.BoxGeometry(2.2,5.2,d*.6),matPink);
+      pinkWrap.position.set(px+w*.34,6.2,pz);
+      parent.add(pinkWrap);
 
       // 基座採光橫窗
 
@@ -178,7 +191,7 @@
 
       const cwW = towerW * 0.72;
 
-      const cwGeom = new THREE.BoxGeometry(cwW, towerH * 0.95, 0.8);
+      const cwGeom = new THREE.BoxGeometry(cwW, towerH * 0.98, 1.05);
 
       const cwMesh = new THREE.Mesh(cwGeom, matGlass);
 
@@ -222,13 +235,13 @@
 
       // 從 1F 向上延伸至 4F 頂部形成壯觀的黃色斜撐倒V門架
 
-      const vH = 15.5;
+      const vH = 29.0;
 
-      const vGeom = new THREE.BoxGeometry(1.6, vH, 1.6);
+      const vGeom = new THREE.BoxGeometry(0.95, vH, 0.95);
 
       const leftV = new THREE.Mesh(vGeom, matYellow);
 
-      leftV.position.set(px - 6.5, vH / 2, pz + d / 2 + 1.2);
+      leftV.position.set(px - cwW * 0.58, vH / 2, frontZ + 1.55);
 
       leftV.rotation.z = -0.22;
 
@@ -236,7 +249,7 @@
 
       const rightV = new THREE.Mesh(vGeom, matYellow);
 
-      rightV.position.set(px + 6.5, vH / 2, pz + d / 2 + 1.2);
+      rightV.position.set(px + cwW * 0.58, vH / 2, frontZ + 1.55);
 
       rightV.rotation.z = 0.22;
 
@@ -244,11 +257,11 @@
 
       // 入口 1F 弧形玻璃門廊雨遮
 
-      const canopyGeom = new THREE.BoxGeometry(18, 0.8, 6.0);
+      const canopyGeom = new THREE.BoxGeometry(20, 0.8, 4.0);
 
       const canopy = new THREE.Mesh(canopyGeom, matWhite);
 
-      canopy.position.set(px, 3.8, pz + d / 2 + 3.0);
+      canopy.position.set(px, 3.8, frontZ + 2.25);
 
       parent.add(canopy);
 

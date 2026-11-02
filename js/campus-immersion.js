@@ -27,17 +27,20 @@
  // Southeast of the hospital: a distant, simplified orientation landmark.
  // White walls / blue octagonal roof: travel.taipei/zh-tw/attraction/details/23.
  const cks=new T.Group();cks.name='city-chiang-kai-shek-memorial';cks.position.set(330,0,570);cks.rotation.y=-Math.PI*3/4;city.add(cks);
- const memorialWhite=mat(0xe6e4da),memorialBlue=mat(0x65768e),memorialStone=mat(0xc8c8bd),doorBronze=mat(0x58625c);
+ const memorialWhite=mat(0xe8e6dc),memorialBlue=mat(0x2453a2),memorialStone=mat(0xbfc0b8),doorBronze=mat(0x58625c);
  box(cks,136,.25,180,memorialStone,0,.12,92);
- for(let i=0;i<3;i++)box(cks,70-i*6,3.2,70-i*6,memorialWhite,0,1.6+i*3.2,0);
- box(cks,50,30,50,memorialWhite,0,24.6,0);
- box(cks,54,2.4,54,memorialWhite,0,40.8,0);
- const lowerRoof=new T.Mesh(new T.CylinderGeometry(33,40,6,8),memorialBlue);lowerRoof.position.y=45;cks.add(lowerRoof);
- const upperRoof=new T.Mesh(new T.ConeGeometry(35,20,8),memorialBlue);upperRoof.position.y=57;cks.add(upperRoof);
- cylinder(cks,1,3,mat(0xb9ad88),0,68.5,0);
+ for(let i=0;i<3;i++)box(cks,76-i*7,4.5,76-i*7,memorialWhite,0,2.25+i*4.5,0);
+ // Three-tier plinth and the gently tapered square marble hall.
+ const hall=new T.Mesh(new T.CylinderGeometry(30.4,35.35,30,4,1,false),memorialWhite);
+ hall.rotation.y=Math.PI/4;hall.position.set(0,24.6,0);cks.add(hall);
+ const eave=new T.Mesh(new T.CylinderGeometry(31.8,34.8,1.8,8),memorialWhite);eave.position.y=40.5;cks.add(eave);
+ const lowerRoof=new T.Mesh(new T.CylinderGeometry(31,36,5,8),memorialBlue);lowerRoof.position.y=44;cks.add(lowerRoof);
+ const upperRoof=new T.Mesh(new T.ConeGeometry(28,20,8),memorialBlue);upperRoof.position.y=56.5;cks.add(upperRoof);
+ const roofRidge=new T.Mesh(new T.CylinderGeometry(21,24,1.2,8),memorialBlue);roofRidge.position.y=66.4;cks.add(roofRidge);
+ const finial=new T.Mesh(new T.SphereGeometry(.9,12,8),mat(0xc39d42));finial.position.set(0,68,0);cks.add(finial);
  const doorway=new T.Shape();doorway.moveTo(-7,0);doorway.lineTo(7,0);doorway.lineTo(7,13);doorway.absarc(0,13,7,0,Math.PI,false);doorway.lineTo(-7,0);
  const door=new T.Mesh(new T.ShapeGeometry(doorway),doorBronze);door.position.set(0,9.7,25.15);cks.add(door);
- for(let i=0;i<10;i++)box(cks,34,1,2,memorialWhite,0,9.3-i*.9,26+i*1.8);
+ for(let i=0;i<14;i++)box(cks,38,.9,1.5,memorialWhite,0,13.1-i*.94,25.8+i*1.45);
  // Forecourt edge trees establish ground contact without billboard labels.
  for(const x of [-75,75])for(let i=0;i<8;i++){
   cylinder(cks,.32,7,wood,x,3.5,18+i*22);
