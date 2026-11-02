@@ -120,8 +120,9 @@
       for(let i=0;i<3;i++)lane.cars.push({...car(vehicleSpecs[(lanes.length+i)%vehicleSpecs.length],colors[(lanes.length+i*2)%colors.length]),p:start+dir*i*Math.abs(end-start)/3,stopped:false,cruise:1.7+i*.17});
       lanes.push(lane);
     }
-    const ringRoad=new T.Mesh(new T.RingGeometry(24.4,32.5,96),mat(0x62666a));ringRoad.name='roundabout-carriageway';ringRoad.rotation.x=-Math.PI/2;ringRoad.position.set(13.7,.115,138.9);root.add(ringRoad);
-    const point=(x,z)=>new T.Vector3(x,.12,z),cx=13.7,cz=138.9,r=28.4;
+    const southernRoadOffset=window.CAMPUS_DATA?.sceneLayout?.southernRoadOffset||0;
+    const ringRoad=new T.Mesh(new T.RingGeometry(24.4,32.5,96),mat(0x62666a));ringRoad.name='roundabout-carriageway';ringRoad.rotation.x=-Math.PI/2;ringRoad.position.set(13.7,.115,138.9+southernRoadOffset);root.add(ringRoad);
+    const point=(x,z)=>new T.Vector3(x,.12,z+southernRoadOffset),cx=13.7,cz=138.9,r=28.4;
     const ringPoint=a=>point(cx+Math.cos(a)*r,cz+Math.sin(a)*r);
     const routes=[];
     function makeRoute(name,source,destination,startAngle,endAngle){

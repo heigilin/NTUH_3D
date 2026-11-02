@@ -2,14 +2,15 @@
 class CampusPathfinding {
   constructor() {
     const childPosition=window.CAMPUS_DATA?.buildings?.find(b=>b.id==='CHILD_HOSPITAL')?.position||{x:-4,z:-56};
+    const southernRoadOffset=window.CAMPUS_DATA?.sceneLayout?.southernRoadOffset||0;
     this.walkingSpeed = 1.3; // 步行速度：每秒 1.3 公尺
     
     // 院區道路與廊道路網節點
     this.nodes = {
       // 景福門與南端幹道 (凱達格蘭大道 / 仁愛路一段)
-      'N_JINGFU_GATE': { id: 'N_JINGFU_GATE', name: '景福門圓環 (凱道/仁愛路口)', x: 13.7, z: 138.9 },
-      'N_KAIDA': { id: 'N_KAIDA', name: '凱達格蘭大道 (往總統府/二二八)', x: -50.0, z: 138.9 },
-      'N_RENAI': { id: 'N_RENAI', name: '仁愛路一段 (往醫學院/林森南路)', x: 75.0, z: 138.9 },
+      'N_JINGFU_GATE': { id: 'N_JINGFU_GATE', name: '景福門圓環 (凱道/仁愛路口)', x: 13.7, z: 138.9+southernRoadOffset },
+      'N_KAIDA': { id: 'N_KAIDA', name: '凱達格蘭大道 (往總統府/二二八)', x: -50.0, z: 138.9+southernRoadOffset },
+      'N_RENAI': { id: 'N_RENAI', name: '仁愛路一段 (往醫學院/林森南路)', x: 75.0, z: 138.9+southernRoadOffset },
 
       // 常德街幹道
       'N_CHANGDE_W': { id: 'N_CHANGDE_W', name: '常德街西側 (公園路口)', x: -45.0, z: 82.0 },

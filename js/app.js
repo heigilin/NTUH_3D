@@ -400,7 +400,8 @@ class CampusApp {
       new THREE.CylinderGeometry(24.0, 24.0, 0.12, 36),
       matCourtyardGrass
     );
-    jingfuLawnRing.position.set(13.7, 0.06, 138.9);
+    const southernRoadOffset=this.campusData.sceneLayout?.southernRoadOffset||0;
+    jingfuLawnRing.position.set(13.7, 0.06, 138.9+southernRoadOffset);
     groundGroup.add(jingfuLawnRing);
 
     // 6. 【周邊幹道道路系統】(整齊俐落的柏油道路貫穿綠意草坪，對比清爽分明)
@@ -444,7 +445,7 @@ class CampusApp {
       new THREE.BoxGeometry(180.0, 0.10, 15.0),
       matRoadAsphalt
     );
-    ketagalanBlvd.position.set(-55.0, 0.05, 134.0);
+    ketagalanBlvd.position.set(-55.0, 0.05, 134.0+southernRoadOffset);
     groundGroup.add(ketagalanBlvd);
 
     // E. 仁愛路一段 (Ren'ai Rd. Sec. 1)
@@ -452,7 +453,8 @@ class CampusApp {
       new THREE.BoxGeometry(180.0, 0.10, 15.0),
       matRoadAsphalt
     );
-    renaiRoad.position.set(95.0, 0.05, 134.0);
+    renaiRoad.name='renai-carriageway';
+    renaiRoad.position.set(95.0, 0.05, 134.0+southernRoadOffset);
     groundGroup.add(renaiRoad);
 
     // F. 青島西路 / 青島東路 (北側界線幹道)
@@ -463,18 +465,19 @@ class CampusApp {
     qingdaoRoad.position.set(0.0, 0.05, -78.0);
     groundGroup.add(qingdaoRoad);
 
-    // G. 徐州路 (東址南側幹道)
+    // G. 徐州路 is NORTH of East Hospital. The former south-side road
+    // incorrectly separated the South ward from the College of Medicine.
+    // Reference: NTUH East 1F plan and NTU downtown-campus map B_03_A.pdf.
     const eastBuilding=this.campusData.buildings.find(b=>b.id==='E01_MAIN');
+    const eastNorth=eastBuilding.position.z-eastBuilding.dimensions.depth/2;
     const eastSouth=eastBuilding.position.z+eastBuilding.dimensions.depth/2;
     const southWalkWidth=1.5,xuzhouWidth=8.5;
     const xuzhouRoad = new THREE.Mesh(
       new THREE.BoxGeometry(110.0, 0.10, xuzhouWidth),
       matRoadAsphalt
     );
-    // Keep both the exterior podium and the ward floor footprint north of
-    // the carriageway; the former fixed z=108 cut through the south wall.
-    xuzhouRoad.name='xuzhou-south-carriageway';
-    xuzhouRoad.position.set(88.0, 0.05, eastSouth+southWalkWidth+xuzhouWidth/2);
+    xuzhouRoad.name='xuzhou-north-carriageway';
+    xuzhouRoad.position.set(94.0, 0.05, eastNorth-southWalkWidth-xuzhouWidth/2);
     groundGroup.add(xuzhouRoad);
     const southWalk=new THREE.Mesh(
       new THREE.BoxGeometry(eastBuilding.dimensions.width,.08,southWalkWidth),
@@ -629,7 +632,7 @@ class CampusApp {
 
     if (activeBtn) activeBtn.classList.add('active');
 
-    // Leaving a ward restores campus navigation before applying the new campus filter.
+    // Leaving a ward must fully restore campus navigation before applying the new campus filter.
     this.selectedBuilding = null;
     this.selectedFloor = 'all';
     this.selectedWard = 'ALL';
@@ -1229,6 +1232,14 @@ class CampusApp {
 
     // 顯示頂部 3D/2D 浮動切換列
 
+    const rightPanel = document.getElementById('right-panel');
+    rightPanel?.classList.add('panel-collapsed-right');
+    document.body.classList.remove('has-right-panel');
+    const expandRight = document.getElementById('btn-expand-right');
+    if (expandRight) expandRight.style.display = 'none';
+    if (window.canvasWhiteboardManager?.wardModal) window.canvasWhiteboardManager.wardModal.style.display = 'none';
+    if (this.collapseTimelineBar && window.innerWidth <= 900) this.collapseTimelineBar(true);
+
     const topSwitcher = document.getElementById('floor-view-switcher-bar');
 
     if (topSwitcher) topSwitcher.style.display = 'flex'; document.body.classList.add('has-floor-view');
@@ -1323,7 +1334,15 @@ class CampusApp {
       const step2 = document.getElementById('step-2-ward-wrap'); if (step2) step2.style.display = 'none';
       const step3 = document.getElementById('step-3-mode-wrap'); if (step3) step3.style.display = 'none';
       this.sliceBuildingFloor(buildingId, 'all');
-      const topSwitcher = document.getElementById('floor-view-switcher-bar');
+      const rightPanel = document.getElementById('right-panel');
+    rightPanel?.classList.add('panel-collapsed-right');
+    document.body.classList.remove('has-right-panel');
+    const expandRight = document.getElementById('btn-expand-right');
+    if (expandRight) expandRight.style.display = 'none';
+    if (window.canvasWhiteboardManager?.wardModal) window.canvasWhiteboardManager.wardModal.style.display = 'none';
+    if (this.collapseTimelineBar && window.innerWidth <= 900) this.collapseTimelineBar(true);
+
+    const topSwitcher = document.getElementById('floor-view-switcher-bar');
       if (topSwitcher) topSwitcher.style.display = 'none'; document.body.classList.remove('has-floor-view');
     };
     pillRow.appendChild(allBtn);
@@ -1342,7 +1361,15 @@ class CampusApp {
           this.selectedFloor = f.tag;
           this.sliceBuildingFloor(buildingId, f.tag);
           this.renderWardWingSelector(buildingId, f.tag);
-          const topSwitcher = document.getElementById('floor-view-switcher-bar');
+          const rightPanel = document.getElementById('right-panel');
+    rightPanel?.classList.add('panel-collapsed-right');
+    document.body.classList.remove('has-right-panel');
+    const expandRight = document.getElementById('btn-expand-right');
+    if (expandRight) expandRight.style.display = 'none';
+    if (window.canvasWhiteboardManager?.wardModal) window.canvasWhiteboardManager.wardModal.style.display = 'none';
+    if (this.collapseTimelineBar && window.innerWidth <= 900) this.collapseTimelineBar(true);
+
+    const topSwitcher = document.getElementById('floor-view-switcher-bar');
           if (topSwitcher) topSwitcher.style.display = 'flex'; document.body.classList.add('has-floor-view');
         };
         pillRow.appendChild(btn);
@@ -4274,6 +4301,14 @@ class CampusApp {
   // 退出樓層下鑽，返回全院區鳥瞰
 
   exitFloorDrillDown() {
+
+    const rightPanel = document.getElementById('right-panel');
+    rightPanel?.classList.add('panel-collapsed-right');
+    document.body.classList.remove('has-right-panel');
+    const expandRight = document.getElementById('btn-expand-right');
+    if (expandRight) expandRight.style.display = 'none';
+    if (window.canvasWhiteboardManager?.wardModal) window.canvasWhiteboardManager.wardModal.style.display = 'none';
+    if (this.collapseTimelineBar && window.innerWidth <= 900) this.collapseTimelineBar(true);
 
     const topSwitcher = document.getElementById('floor-view-switcher-bar');
 

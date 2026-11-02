@@ -1,5 +1,6 @@
 ﻿window.CAMPUS_DATA = {
   "name": "國立臺灣大學醫學院附設醫院 (NTUH)",
+  "sceneLayout": {"southernRoadOffset": 10},
   "campuses": {
     "west": {
       "id": "west",
@@ -40,7 +41,7 @@
       "roofColor": "#27ae60",
       "position": {
         "x": 13.7,
-        "z": 138.9
+        "z": 148.9
       },
       "dimensions": {
         "width": 26.0,

@@ -72,52 +72,9 @@
  const ring=new T.Mesh(new T.TorusGeometry(3.1,.75,8,24),stone);ring.position.set(0,8,0);memorial.add(ring);
  const pavilion=new T.Group();pavilion.position.set(-147,.1,64);park.add(pavilion);cylinder(pavilion,5,.3,stone,0,.15,0);
  for(let i=0;i<6;i++){const a=i*Math.PI/3;cylinder(pavilion,.18,4,wood,Math.cos(a)*3.6,2,Math.sin(a)*3.6);}const roof=new T.Mesh(new T.ConeGeometry(5.6,2,6),mat(0x7c9d91));roof.position.y=5;pavilion.add(roof);
- // College campus east of the hospital, north of Renai Road. Photo-led,
- // simplified massing, not a surveyed floor plan: mc.ntu.edu.tw/ntucm/Index.action;
- // tcmb.culture.tw historic record 19980325000002 (old college arcade).
- const college=new T.Group();college.name='city-ntu-college-of-medicine';college.position.set(163,0,78);college.scale.setScalar(.75);city.add(college);
- const collegeWall=mat(0xcbbb9d),collegeTrim=mat(0xe0d5bd),collegeGlass=mat(0x798d91),collegeRoof=mat(0x92958a);
- const collegeWindows=[],windowPose=new T.Object3D();
- function collegeBlock(w,h,d,x,z){
-  box(college,w,h,d,collegeWall,x,h/2,z);box(college,w+.5,.65,d+.5,collegeTrim,x,h+.15,z);
-  for(let y=5;y<h-2;y+=3.4){
-   for(let xx=-w/2+2.5;xx<w/2-1;xx+=4.3)for(const side of [-1,1])collegeWindows.push([x+xx,y,z+side*(d/2+.03),0]);
-   for(let zz=-d/2+2.5;zz<d/2-1;zz+=4.3)for(const side of [-1,1])collegeWindows.push([x+side*(w/2+.03),y,z+zz,Math.PI/2]);
-  }
- }
- collegeBlock(34,43,45,-18,-6);collegeBlock(34,47,52,18,-2.5);
- box(college,70,7,16,collegeWall,0,3.5,22);box(college,71,.7,17,collegeTrim,0,7.2,22);
- for(let x=-30;x<=30;x+=4.3)collegeWindows.push([x,3.6,30.04,0]);
- const collegeGlazing=new T.InstancedMesh(new T.PlaneGeometry(2.5,1.75),collegeGlass,collegeWindows.length);collegeGlazing.name='college-grid-windows';
- collegeWindows.forEach(([x,y,z,rotation],i)=>{windowPose.position.set(x,y,z);windowPose.rotation.set(0,rotation,0);windowPose.updateMatrix();collegeGlazing.setMatrixAt(i,windowPose.matrix);});
- collegeGlazing.material.side=T.DoubleSide;college.add(collegeGlazing);
- // Old school wing, on the southwest corner: cream pilasters, arched openings,
- // a restrained slate-coloured hipped roof and a small central entrance.
- const oldCollege=new T.Group();oldCollege.name='college-old-school-wing';oldCollege.position.set(4,0,38);college.add(oldCollege);
- box(oldCollege,36,8,15,collegeWall,0,4,0);box(oldCollege,37,.6,16,collegeTrim,0,8,0);
- const hipGeo=new T.CylinderGeometry(.68,1,3,4);hipGeo.rotateY(Math.PI/4);hipGeo.scale(26,1,12);
- const hip=new T.Mesh(hipGeo,collegeRoof);hip.position.y=9.7;oldCollege.add(hip);
- const arch=new T.Shape();arch.moveTo(-1.25,0);arch.lineTo(1.25,0);arch.lineTo(1.25,2.7);arch.absarc(0,2.7,1.25,0,Math.PI,false);arch.lineTo(-1.25,0);
- const archGeo=new T.ShapeGeometry(arch);
- for(let x=-15;x<=15;x+=5){const a=new T.Mesh(archGeo,collegeGlass);a.position.set(x,.5,7.54);oldCollege.add(a);box(oldCollege,.45,7.3,.5,collegeTrim,x-2.2,4,7.65);box(oldCollege,2.7,1.6,.1,collegeGlass,x,6.2,7.56);}
- box(oldCollege,7,.6,3,collegeTrim,0,4.8,8.6);for(const x of [-2.8,2.8])cylinder(oldCollege,.23,4.5,collegeTrim,x,2.25,9.5);
- // Low planting frames the frontage without hiding the arcade or spanning roads.
- for(const x of [40])for(const z of [-20,18]){cylinder(college,.22,5,wood,x,2.5,z);const crown=new T.Mesh(new T.SphereGeometry(3.8,8,6),leaf);crown.position.set(x,6.5,z);crown.scale.y=.8;college.add(crown);}
- // The research block belongs beside the East hospital, rather than leaving
- // an empty lawn between the hospital and college (ntu.edu.tw/about/map/B_03_A.pdf).
- // Overall scene scale is schematic; this block has no invented ward plans.
- const research=new T.Group();research.name='city-east-medical-research';research.position.set(123,0,72);city.add(research);
- const researchWall=mat(0xcab895),researchTrim=mat(0xdcd0b8),researchGlass=mat(0x839498);
- box(research,22,37,52,researchWall,0,18.5,0);box(research,23,.7,53,researchTrim,0,37.3,0);
- box(research,22,4,52,researchTrim,0,2,0);
- const researchWindows=[],researchPose=new T.Object3D();
- for(let y=6;y<36;y+=3.4){
-  for(let z=-22;z<=22;z+=4.4)for(const side of [-1,1])researchWindows.push([side*11.04,y,z,Math.PI/2]);
-  for(let x=-7.5;x<=7.5;x+=5)for(const side of [-1,1])researchWindows.push([x,y,side*26.04,0]);
- }
- const researchGlazing=new T.InstancedMesh(new T.PlaneGeometry(2.8,1.9),researchGlass,researchWindows.length);researchGlazing.name='research-grid-windows';researchGlass.side=T.DoubleSide;
- researchWindows.forEach(([x,y,z,r],i)=>{researchPose.position.set(x,y,z);researchPose.rotation.set(0,r,0);researchPose.updateMatrix();researchGlazing.setMatrixAt(i,researchPose.matrix);});research.add(researchGlazing);
- const landmarks={palace:{object:palace},park:{object:park},tower:{object:tower},cks:{object:cks},college:{object:college},research:{object:research}};
+ // Medical campus is a connected precinct south/east of the hospital.
+ const {college,research,convention,museum,entrance}=window.CampusMedical.create(city,app.campusData);
+ const landmarks={palace:{object:palace},park:{object:park},tower:{object:tower},cks:{object:cks},college:{object:college},research:{object:research},convention:{object:convention},museum:{object:museum}};
  // Warm entrance lights are overview-only and do not alter ward lighting.
  const childBuilding=app.campusData.buildings.find(b=>b.id==='CHILD_HOSPITAL'),childPosition=childBuilding?.position||{x:-4,z:-56};
  for(const[x,y,z]of[[-8.9,4,68],[50,4,70.8],[childPosition.x+(childBuilding?.dimensions.width||38)/2+1.8,3,childPosition.z]]){const light=new T.PointLight(0xffd9a4,.32,15,2);light.position.set(x,y,z);root.add(light);}
@@ -149,7 +106,7 @@
   if(!bounds||bounds.isEmpty())bounds=new T.Box3(new T.Vector3(b.position.x-b.dimensions.width/2,0,b.position.z-b.dimensions.depth/2),new T.Vector3(b.position.x+b.dimensions.width/2,b.exteriorDisplayHeight||b.height,b.position.z+b.dimensions.depth/2));
   return{id:b.id,object,bounds};
  });
- for(const object of [palace,tower,cks,college,research]){object.updateWorldMatrix(true,true);protectedBuildings.push({id:object.name,object,bounds:new T.Box3().setFromObject(object)});}
+ for(const object of [palace,tower,cks,college,research,convention,museum]){object.updateWorldMatrix(true,true);protectedBuildings.push({id:object.name,object,bounds:new T.Box3().setFromObject(object)});}
  let protectedFrame=-1,protectedCache=[];
  function protectedBoxes(){
   const result=protectedBuildings.filter(b=>b.object?.visible!==false).map(({bounds})=>{const c=bounds.getCenter(new T.Vector3()),s=bounds.getSize(new T.Vector3());return projectBox(c.x,bounds.min.y,c.z,s.x,s.y,s.z);});
