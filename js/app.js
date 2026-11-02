@@ -1909,7 +1909,7 @@ class CampusApp {
         const rctx = roomCanvas.getContext('2d');
         rctx.fillStyle = '#102f43';
         const westFiveSixRoom=buildingId==='W04_WEST'&&/^(?:0?[56]W)/.test(String(rm.ward||''));
-        const roomLabelLimit=isServiceSpace ? window.WardPlanLabels.spaceFontSize(window.WardPlanLabels.room(rm),labelDensity) : (compactMultiBedRoom ? 0.55 : westFiveSixRoom ? 0.65 : 0.92)*labelDensity;
+        const roomLabelLimit=isServiceSpace ? window.WardPlanLabels.spaceFontSize(window.WardPlanLabels.room(rm),labelDensity) : (compactMultiBedRoom ? 0.38 : westFiveSixRoom ? 0.65 : 0.92)*labelDensity;
         window.WardPlanLabels.draw(rctx,window.WardPlanLabels.room(rm),roomCanvas.width/2,roomCanvas.height/2,roomCanvas.width,roomCanvas.height,roomLabelLimit);
         const rLabelMesh = new THREE.Mesh(
           new THREE.PlaneGeometry(labelBox.w,labelBox.h),

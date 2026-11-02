@@ -188,7 +188,7 @@
     s.rooms.forEach(r=>{
       const label=window.WardPlanLabels.place(r,[...s.beds.filter(b=>b.room===r),...(r.annexes||[])]);
       ctx.fillStyle=C.ink;
-      const roomFontLimit=r.compactMultiBedRoom?12:manager.wardActiveBuildingId==='W04_WEST'?15:23;
+      const roomFontLimit=r.compactMultiBedRoom?9:manager.wardActiveBuildingId==='W04_WEST'?15:23;
       window.WardPlanLabels.draw(ctx,r.label,label.x+label.w/2,label.y+label.h/2,label.w,label.h,roomFontLimit);
     });
     if(s.notice)txt(s.notice,50,s.height-22,16,'#526c7c','left');
