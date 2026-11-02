@@ -82,12 +82,13 @@
    const crownY=actualHeight*.72;
    const crown=(geo,mat,px,py,pz,sx,sy,sz)=>{const m=mesh(geo,mat,px,py,pz,g);m.scale.set(sx,sy,sz);return m;};
    if(kind===0){
-    for(let i=0;i<7;i++){const a=i*2.4+seed*.013,s=.49+(i%3)*.09;crown(i%2?roundGeo:crownGeo,i%3?leaf:accent,Math.cos(a)*crownRadius*.55,crownY+Math.sin(i*1.8)*crownRadius*.35,Math.sin(a)*crownRadius*.58,crownRadius*s,crownRadius*s*.85,crownRadius*s*.9);}
+    crown(crownGeo,leaf,0,crownY,0,crownRadius*.95,crownRadius*.62,crownRadius*.9);
+    for(let i=0;i<6;i++){const a=i*2.39996+seed*.013,r=crownRadius*(.39+(i%3)*.035),s=.64+((seed+i*7)%4)*.045;crown(i%2?roundGeo:crownGeo,i%3?leaf:accent,Math.cos(a)*r,crownY+Math.sin(a*1.7)*crownRadius*.2,Math.sin(a)*r*.92,crownRadius*s,crownRadius*s*(.68+(i%2)*.07),crownRadius*s*.82);}
    }else if(kind===1){
     for(let i=0;i<4;i++){const t=i/3,r=crownRadius*(1-t*.74),h=actualHeight*(.28-t*.035),y=actualHeight*.43+i*actualHeight*.135;const layer=mesh(coneGeo,i%2?accent:leaf,0,y,0,g);layer.scale.set(r,h,r);}
    }else if(kind===2){
-    crown(crownGeo,leaf,0,crownY,0,crownRadius*1.45,crownRadius*.52,crownRadius*1.12);
-    for(let i=0;i<3;i++){const a=i*Math.PI*2/3+seed*.009;crown(roundGeo,accent,Math.cos(a)*crownRadius*.55,crownY+crownRadius*.35,Math.sin(a)*crownRadius*.55,crownRadius*.68,crownRadius*.5,crownRadius*.66);}
+    crown(crownGeo,leaf,0,crownY,0,crownRadius*1.38,crownRadius*.58,crownRadius*1.12);
+    for(let i=0;i<4;i++){const a=i*2.39996+seed*.009,r=crownRadius*.38;crown(roundGeo,i%3?leaf:accent,Math.cos(a)*r,crownY+crownRadius*(.12+Math.sin(a*1.4)*.12),Math.sin(a)*r*.86,crownRadius*.56,crownRadius*.38,crownRadius*.58);}
    }else if(kind===3){
     for(let i=0;i<5;i++){const a=i*2.4;crown(crownGeo,leaf,Math.cos(a)*crownRadius*.46,crownY+Math.sin(i*2)*crownRadius*.27,Math.sin(a)*crownRadius*.48,crownRadius*.65,crownRadius*.57,crownRadius*.65);}
     for(let i=0;i<6;i++){const a=i*Math.PI/3+seed*.01,t=i/6;crown(roundGeo,accent,Math.cos(a)*crownRadius*.72,crownY+(i%2?1:-1)*crownRadius*.34,Math.sin(a)*crownRadius*.72,crownRadius*.16,crownRadius*.13,crownRadius*.16);}
@@ -136,11 +137,15 @@
     const a=k*2.4+seed*.7,base=new T.Vector3(0,height*.23,0),tip=new T.Vector3(Math.cos(a)*radius*.72,height*(.6+(k%3)*.08),Math.sin(a)*radius*.72),delta=tip.clone().sub(base);
     const limb=mesh(new T.CylinderGeometry(.10,.26,delta.length(),6),bark,0,0,0,g);limb.position.copy(base).add(tip).multiplyScalar(.5);limb.quaternion.setFromUnitVectors(new T.Vector3(0,1,0),delta.normalize());
    }
-   const crowns=new T.InstancedMesh(crownGeo,leaf,7);
-   for(let i=0;i<7;i++){
-    const a=i*2.39996+seed*.7,r=i===0?0:radius*.64;
-    grovePosition.set(Math.cos(a)*r,height*(.66+(i%3)*.055),Math.sin(a)*r);
-    groveScale.set(radius*(i===0?1.12:.72),radius*(.48+(i%3)*.09),radius*(i===0?1.03:.78));
+   // One broad core with overlapping, uneven outer sprays reads as a connected leafy crown.
+   const canopyLobes=[
+    [0,.65,0,1.12,.62,1.02],[-.43,.68,.10,.76,.49,.78],[.48,.73,-.16,.83,.55,.76],[-.15,.82,.49,.72,.51,.74],[.22,.61,-.48,.77,.47,.83]
+   ];
+   const crowns=new T.InstancedMesh(crownGeo,leaf,canopyLobes.length);
+   for(let i=0;i<canopyLobes.length;i++){
+    const [ox,oy,oz,sx,sy,sz]=canopyLobes[i],a=seed*.37;
+    grovePosition.set((ox*Math.cos(a)-oz*Math.sin(a))*radius,height*oy,(ox*Math.sin(a)+oz*Math.cos(a))*radius);
+    groveScale.set(radius*sx,radius*sy,radius*sz);
     groveMatrix.compose(grovePosition,groveRotation,groveScale);crowns.setMatrixAt(i,groveMatrix);
    }
    g.add(crowns);trees.push({object:g,mats:[bark,leaf],height:height+2,radius:radius*1.5,alpha:1,swayPhase:seed*.23,sway:.022,baseRotation:g.rotation.z});
