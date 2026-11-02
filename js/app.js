@@ -5152,7 +5152,60 @@ class CampusApp {
     }
   }
 
+  restoreWholeBuildingForXray() {
+    const buildingId = this.selectedBuilding;
+    const wasDrilled = (this.selectedFloor && this.selectedFloor !== 'all') || this.floorSliceGroup.children.length > 0;
+    this.exitFloorDrillDown();
+    this.selectedWard = 'ALL';
+    this.selectedRoomCode = null;
+    const badge = document.getElementById('selected-ward-badge');
+    if (badge) badge.innerText = '全部';
+    for (const id of ['step-2-ward-wrap', 'step-3-mode-wrap']) {
+      const step = document.getElementById(id);
+      if (step) step.style.display = 'none';
+    }
+    document.getElementById('ward-source-notice')?.remove();
+    const hover = document.getElementById('building-hover-canvas-card');
+    if (hover) hover.style.display = 'none';
+    for (const mesh of Object.values(this.buildingMeshes)) if (mesh) mesh.visible = true;
+    this.mode = 'orbit';
+    this.controls.enabled = true;
+    if (wasDrilled || buildingId) {
+      this.cameraPositionTween?.stop();
+      this.cameraTargetTween?.stop();
+    }
+    this.camera.clearViewOffset();
+
+    const building = this.buildingMeshes[buildingId];
+    if (building) {
+      // Frame the real exterior, including roof/canopy, before making it transparent.
+      building.updateWorldMatrix(true, true);
+      const box = new THREE.Box3().setFromObject(building);
+      if (!box.isEmpty()) {
+        const target = box.getCenter(new THREE.Vector3());
+        const direction = new THREE.Vector3(.65, .45, 1).normalize();
+        const right = new THREE.Vector3().crossVectors(new THREE.Vector3(0, 1, 0), direction).normalize();
+        const up = new THREE.Vector3().crossVectors(direction, right).normalize();
+        const viewport = this.getWardViewport();
+        const tan = Math.tan(THREE.MathUtils.degToRad(this.camera.fov / 2));
+        const tanH = tan * this.camera.aspect * viewport.width / this.container.clientWidth;
+        const safeHeight = Math.max(1, viewport.height - 2 * Math.abs(viewport.offsetY));
+        const tanV = tan * safeHeight / this.container.clientHeight;
+        let distance = 1;
+        for (const x of [box.min.x, box.max.x]) for (const y of [box.min.y, box.max.y]) for (const z of [box.min.z, box.max.z]) {
+          const v = new THREE.Vector3(x, y, z).sub(target);
+          distance = Math.max(distance, v.dot(direction) + Math.abs(v.dot(right)) / tanH / .9,
+            v.dot(direction) + Math.abs(v.dot(up)) / tanV / .9);
+        }
+        this.controls.target.copy(target);
+        this.camera.position.copy(target).addScaledVector(direction, distance);
+      }
+    }
+    this.controls.update();
+  }
+
   enableXrayMode() {
+    this.restoreWholeBuildingForXray();
     // 依使用者需求：透視時影子應消失！關閉陽光投影與建築物陰影投射，消除黑色大片陰影
     if (this.sunLight) {
       this.sunLight.castShadow = false;
