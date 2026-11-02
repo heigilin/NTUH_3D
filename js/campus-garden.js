@@ -49,7 +49,7 @@
    {name:'irregular-branching',bark:0x9b866a,leaf:0x8b9e65,accent:0x8b9d6f}
   ];
   // Open sprays of individual pointed leaves replace solid spherical crowns.
-  const foliageGeometry=(phase,branchCount=9,leavesPerBranch=24)=>{
+  const foliageGeometry=(phase,branchCount=9,leavesPerBranch=24,leafScale=1)=>{
    const vertices=[],tri=(a,b,c)=>vertices.push(...a,...b,...c);
    const rand=n=>{const v=Math.sin(n*127.1+phase*311.7)*43758.5453;return v-Math.floor(v);};
    for(let branch=0;branch<branchCount;branch++){
@@ -57,7 +57,7 @@
     for(let j=0;j<leavesPerBranch;j++){
      const t=.15+.85*rand(branch*53+j),a=angle+(rand(j+branch*31)-.5)*1.3;
      const center=new T.Vector3(Math.cos(a)*t*reach,(rand(j*7+branch)-.5)*.65+.2*Math.sin(t*3),Math.sin(a)*t*reach);
-     const length=.13+rand(j+branch*83)*.16,width=length*(.35+rand(j*3)*.2);
+     const length=(.13+rand(j+branch*83)*.16)*leafScale,width=length*(.35+rand(j*3)*.2);
      const along=new T.Vector3(Math.cos(a+.3),.15+rand(j*11)*.6,Math.sin(a+.3)).normalize().multiplyScalar(length);
      const side=new T.Vector3(-Math.sin(a),.3*Math.sin(j),Math.cos(a)).normalize().multiplyScalar(width);
      const tip=center.clone().add(along),root=center.clone().sub(along),left=center.clone().add(side),right=center.clone().sub(side);
@@ -67,7 +67,7 @@
    const geo=new T.BufferGeometry();geo.setAttribute('position',new T.Float32BufferAttribute(vertices,3));geo.computeVertexNormals();return geo;
   };
   const coneGeo=new T.ConeGeometry(1,1,8),
-   twigGeo=new T.CylinderGeometry(1,1.45,1,5),leafSprigGeo=foliageGeometry(5.1,5,14);
+   twigGeo=new T.CylinderGeometry(1,1.45,1,5),leafSprigGeo=foliageGeometry(5.1,7,20,3.6);
   function airyCanopy(parent,{radius,centerY,startY,height,seed,bark,leaf,arms=7}){
    const up=new T.Vector3(0,1,0),delta=new T.Vector3(),mid=new T.Vector3(),q=new T.Quaternion(),scale=new T.Vector3(),matrix=new T.Matrix4();
    const branches=new T.InstancedMesh(twigGeo,bark,arms*2),sprigs=new T.InstancedMesh(leafSprigGeo,leaf,arms*4);
@@ -82,8 +82,8 @@
     for(let j=0;j<4;j++){
      const t=.38+j*.19,pos=base.clone().lerp(tip,t),spread=(j%2?1:-1)*radius*.055;
      pos.x+=Math.cos(a+Math.PI/2)*spread;pos.z+=Math.sin(a+Math.PI/2)*spread;pos.y+=Math.sin(seed*.11+i+j)*radius*.035;
-     const size=radius*(.115+((seed+i*5+j*3)%4)*.012),spin=(i*4+j)*2.39996+seed*.03;
-     q.setFromAxisAngle(up,spin);scale.set(size*1.12,size*.78,size*.94);matrix.compose(pos,q,scale);sprigs.setMatrixAt(sprigIndex++,matrix);
+     const size=Math.max(.38,radius*(.15+((seed+i*5+j*3)%4)*.012)),spin=(i*4+j)*2.39996+seed*.03;
+     q.setFromAxisAngle(up,spin);scale.set(size*1.22,size*.9,size*1.08);matrix.compose(pos,q,scale);sprigs.setMatrixAt(sprigIndex++,matrix);
     }
    }
    branches.instanceMatrix.needsUpdate=true;sprigs.instanceMatrix.needsUpdate=true;parent.add(branches,sprigs);
