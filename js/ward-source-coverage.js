@@ -5,6 +5,10 @@
   api.apply=function(root){
     original(root);
     for(const [building,floors]of Object.entries(root))for(const[floor,l]of Object.entries(floors)){
+      if(building==='HEALTH_BUILDING'){
+        l.sourceCoverage={status:'simulated',sourceWards:[...new Set((l.rooms||[]).map(r=>r.ward))],message:'正式病房平面圖尚未提供；此處為依病房清冊建立的模擬配置'};
+        continue;
+      }
       const ignored=building==='E01_MAIN'&&['1F','2F','10F'].includes(floor);
       const sources=Object.keys(l.sourceTraceWards||{});
       if(ignored){l.sourceCoverage={status:'excluded',message:'依使用者指示不在本次病房校核範圍'};continue;}

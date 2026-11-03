@@ -295,6 +295,23 @@
       "description": "宗邁建築師事務所設計、達欣工程承造。中山南路立面並排經典四棟暖黃色二丁掛磚病房大樓 (A/B/C/D棟)、中央挑高15層深色玻璃中庭、正面三連三角山牆迎賓車道大廳與頂樓直升機停機坪 [H]。"
     },
     {
+      "id": "HEALTH_BUILDING",
+      "campus": "west",
+      "code": "HB-MAIN",
+      "name": "健康大樓",
+      "category": "住院病房／研究辦公",
+      "floors": 14,
+      "basementFloors": 4,
+      "floorHeight": 3.6,
+      "height": 50.4,
+      "color": "#9b624d",
+      "roofColor": "#d8c7ad",
+      "highlightBorder": true,
+      "position": { "x": -31.0, "z": -25.0 },
+      "dimensions": { "width": 36.0, "depth": 26.0 },
+      "description": "臺北市中正區中山南路12號，位於兒醫大樓與西址北區之間。地上14層、地下4層；7至12樓為病房區，13至14樓為研究辦公。外觀與平面為比例示意，非實測或正式圖面。"
+    },
+    {
       "id": "CHILD_HOSPITAL",
       "campus": "children",
       "code": "CH-MAIN",

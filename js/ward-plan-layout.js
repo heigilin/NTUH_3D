@@ -132,7 +132,7 @@
   // Auxiliary buildings import offset plan coordinates. Rebase each floor to
   // its own building center before the renderer adds the campus position.
   for (const [buildingId, floors] of Object.entries(root || {})) {
-    if (buildingId === 'E01_MAIN') continue;
+    if (buildingId === 'E01_MAIN' || buildingId === 'HEALTH_BUILDING') continue;
     for (const layout of Object.values(floors)) {
     const rooms = (layout.rooms || []).filter(r => r.bounds);
     if (!rooms.length) continue;

@@ -39,6 +39,10 @@
         this.createChildrenHospital({...b, position:{x:0,z:0}, dimensions:{width:b.dimensions.depth,depth:b.dimensions.width}}, childModel);
         bGroup.add(childModel);
 
+      } else if (b.id === 'HEALTH_BUILDING') {
+
+        this.createHealthBuilding(b, bGroup);
+
       } else if (b.id === 'E01_MAIN') {
 
         this.createEastMain(b, bGroup);
@@ -1937,6 +1941,26 @@
 
       }
 
+    },
+
+    createHealthBuilding(b, parent) {
+      const w=b.dimensions.width,d=b.dimensions.depth,h=b.height,px=b.position.x,pz=b.position.z;
+      const brick=new THREE.MeshStandardMaterial({color:0x9b624d,roughness:.78});
+      const stone=new THREE.MeshStandardMaterial({color:0xd8c7ad,roughness:.68});
+      const glass=new THREE.MeshStandardMaterial({color:0x536d75,roughness:.3,metalness:.12});
+      const body=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),brick);
+      body.position.set(px,h/2,pz);parent.add(body);
+      for(let floor=1;floor<=b.floors;floor++){
+        const y=floor*b.floorHeight;
+        const band=new THREE.Mesh(new THREE.BoxGeometry(w*1.006,.22,d*1.006),stone);
+        band.position.set(px,y,pz);parent.add(band);
+        const windowBand=new THREE.Mesh(new THREE.BoxGeometry(w*.72,1.05,.12),glass);
+        windowBand.position.set(px,y-b.floorHeight/2,pz+d/2+.08);parent.add(windowBand);
+      }
+      const roof=new THREE.Mesh(new THREE.BoxGeometry(w*1.04,.55,d*1.04),stone);
+      roof.position.set(px,h+.25,pz);parent.add(roof);
+      const atrium=new THREE.Mesh(new THREE.BoxGeometry(6,h*.78,.2),glass);
+      atrium.position.set(px,h*.52,pz+d/2+.16);parent.add(atrium);
     }
 
   };
