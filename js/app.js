@@ -1,5 +1,48 @@
 // js/app.js - 3D 智慧院區導覽與感管動態空間監測系統 (鳥瞰擬 3D 配置圖、時間軸轉床動線、感管個案監控)
 
+// H 病房代碼屬於健康大樓；目前院區平面圖資料沒有該棟的圖面，
+// 因此在平面圖幾何、搜尋與樓層清單建立前先排除，避免錯掛到東址大樓。
+function isHealthBuildingWard(ward) {
+  return /H/i.test(String(ward || ''));
+}
+
+function removeHealthBuildingWardsFromPlans(layouts, floorplans) {
+  Object.entries(layouts || {}).forEach(([buildingId, floors]) => {
+    Object.entries(floors || {}).forEach(([floor, layout]) => {
+      const originalRooms = Array.isArray(layout.rooms) ? layout.rooms : [];
+      Object.entries(layout).forEach(([key, value]) => {
+        if (!Array.isArray(value)) return;
+        layout[key] = value.filter(item => !(item && typeof item === 'object' && isHealthBuildingWard(item.ward)));
+        layout[key].forEach(item => {
+          if (Array.isArray(item?.connects)) item.connects = item.connects.filter(ward => !isHealthBuildingWard(ward));
+        });
+      });
+      if (layout.sourceTraceWards && typeof layout.sourceTraceWards === 'object') {
+        Object.keys(layout.sourceTraceWards).forEach(ward => {
+          if (isHealthBuildingWard(ward)) delete layout.sourceTraceWards[ward];
+        });
+      }
+
+      const remainingRooms = layout.rooms || [];
+      if (originalRooms.length && !remainingRooms.length && originalRooms.every(room => isHealthBuildingWard(room.ward))) {
+        delete floors[floor];
+        if (floorplans?.[buildingId]) delete floorplans[buildingId][floor];
+      }
+    });
+  });
+
+  Object.values(floorplans || {}).forEach(floors => {
+    Object.entries(floors || {}).forEach(([floor, plan]) => {
+      if (!Array.isArray(plan.wards)) return;
+      const originalWards = plan.wards;
+      plan.wards = originalWards.filter(ward => !isHealthBuildingWard(ward));
+      if (originalWards.length && !plan.wards.length) delete floors[floor];
+    });
+  });
+}
+
+removeHealthBuildingWardsFromPlans(window.WARD_3D_LAYOUT_DATA, window.FLOORPLANS_DATA);
+
 class CampusApp {
 
   constructor() {
@@ -1116,7 +1159,7 @@ class CampusApp {
     }
 
     if (buildingId === 'E01_MAIN') {
-      return [
+      const floors = [
         { tag: '1F', label: '1F', icon: '🏢' },
         { tag: '2F', label: '2F', icon: '🏢' },
         { tag: '3F', label: '3F', icon: '🏢' },
@@ -1133,6 +1176,13 @@ class CampusApp {
         { tag: '14F', label: '14F', icon: '🏢' },
         { tag: '15F', label: '15F', icon: '🏢' }
       ];
+      return floors.filter(({ tag }) => {
+        const layout = this.ward3DData[buildingId]?.[tag];
+        const plan = this.floorplansData[buildingId]?.[tag];
+        if (!layout && !plan) return false;
+        return !!layout?.rooms?.some(room => room.bounds && !isHealthBuildingWard(room.ward))
+          || !!plan?.wards?.some(ward => !isHealthBuildingWard(ward));
+      });
     } else if (buildingId === 'CHILD_HOSPITAL') {
       return [
         { tag: '1F', label: '1F', icon: '🏢' },
