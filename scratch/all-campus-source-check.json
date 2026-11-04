@@ -1,0 +1,1723 @@
+{
+  "conflicts": [],
+  "bedIssues": [],
+  "stationIssues": [],
+  "floors": [
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 4,
+      "sourceWards": [
+        "7B",
+        "7C",
+        "7A",
+        "7D"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 4,
+      "sourceWards": [
+        "12B",
+        "12C",
+        "12A",
+        "12D"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "1F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 0,
+      "sourceWards": []
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "2F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 0,
+      "sourceWards": []
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 0,
+      "sourceWards": [
+        "03A1",
+        "03A2",
+        "03B1",
+        "03B2",
+        "03C"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 0,
+      "sourceWards": [
+        "04C1",
+        "04C2",
+        "04D1",
+        "04A1",
+        "04A2",
+        "04B1",
+        "04B2"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 5,
+      "sourceWards": [
+        "05C",
+        "5CVI",
+        "05B",
+        "05A",
+        "05D"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 4,
+      "sourceWards": [
+        "6C",
+        "6D",
+        "06B",
+        "06A"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 4,
+      "sourceWards": [
+        "08B",
+        "08C",
+        "08A",
+        "08D"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 4,
+      "sourceWards": [
+        "09B",
+        "09C",
+        "09A",
+        "09D"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "10F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 0,
+      "sourceWards": []
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 4,
+      "sourceWards": [
+        "11B",
+        "11C",
+        "11A",
+        "11D"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 4,
+      "sourceWards": [
+        "13B",
+        "13C",
+        "13A",
+        "13D"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 4,
+      "sourceWards": [
+        "14A",
+        "14B",
+        "14C",
+        "14D"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 4,
+      "sourceWards": [
+        "15B",
+        "15C",
+        "15A",
+        "15D"
+      ]
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "5F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "5W2"
+      ]
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "2F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "5W2"
+      ]
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "1F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "05W1"
+      ]
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "3F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 2,
+      "sourceWards": [
+        "06W3",
+        "05W3"
+      ]
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "4F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 2,
+      "sourceWards": [
+        "05W4"
+      ]
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "5F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 2,
+      "sourceWards": [
+        "05PW",
+        "05PE"
+      ]
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "6F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "06PE"
+      ]
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "8F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "08PE"
+      ]
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "9F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "09PW"
+      ]
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 2,
+      "sourceWards": [
+        "0PNO",
+        "0PNI",
+        "0PII",
+        "0PIM"
+      ]
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 3,
+      "sourceWards": [
+        "11PW",
+        "11PE",
+        "11PB"
+      ]
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "12F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 2,
+      "sourceWards": [
+        "12PW",
+        "12PE"
+      ]
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "13F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 2,
+      "sourceWards": [
+        "13PW",
+        "13PE"
+      ]
+    },
+    {
+      "building": "W02_WEST",
+      "floor": "2F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "03W2"
+      ]
+    },
+    {
+      "building": "W02_EAST",
+      "floor": "2F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "03E2"
+      ]
+    },
+    {
+      "building": "W03_WEST",
+      "floor": "1F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "04W1"
+      ]
+    },
+    {
+      "building": "W03_WEST",
+      "floor": "2F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "04W2"
+      ]
+    },
+    {
+      "building": "W03_EAST",
+      "floor": "1F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "04E1"
+      ]
+    },
+    {
+      "building": "W03_EAST",
+      "floor": "2F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "04E2"
+      ]
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "2F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "06E2"
+      ]
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "3F",
+      "rawStationCorridorAfter": 0,
+      "sourceStations": 1,
+      "sourceWards": [
+        "05E3"
+      ]
+    }
+  ],
+  "provenance": [
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14A",
+      "source": "E_14F.pdf",
+      "sourceBeds": 36,
+      "placed": 35,
+      "unplaced": 1,
+      "schematic": 0,
+      "rooms": 19
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14B",
+      "source": "E_14F.pdf",
+      "sourceBeds": 2,
+      "placed": 2,
+      "unplaced": 0,
+      "schematic": 18,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14C",
+      "source": "E_14F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14D",
+      "source": "E_14F.pdf",
+      "sourceBeds": 38,
+      "placed": 34,
+      "unplaced": 4,
+      "schematic": 0,
+      "rooms": 18
+    },
+    {
+      "building": "W03_EAST",
+      "floor": "1F",
+      "ward": "04E1",
+      "source": "4E1.pdf",
+      "sourceBeds": 36,
+      "placed": 36,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 12
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05C",
+      "source": "E_05F.pdf",
+      "sourceBeds": 30,
+      "placed": 28,
+      "unplaced": 2,
+      "schematic": 0,
+      "rooms": 15
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "5CVI",
+      "source": "E_05F.pdf",
+      "sourceBeds": 30,
+      "placed": 30,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 30
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03A1",
+      "source": "E_03F.pdf",
+      "sourceBeds": 15,
+      "placed": 15,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 8
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03A2",
+      "source": "E_03F.pdf",
+      "sourceBeds": 9,
+      "placed": 9,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 9
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "ward": "6C",
+      "source": "E_06F.pdf",
+      "sourceBeds": 0,
+      "placed": 0,
+      "unplaced": 0,
+      "schematic": 36,
+      "rooms": 19
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "ward": "6D",
+      "source": "E_06F.pdf",
+      "sourceBeds": 0,
+      "placed": 0,
+      "unplaced": 0,
+      "schematic": 37,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03B1",
+      "source": "E_03F.pdf",
+      "sourceBeds": 9,
+      "placed": 8,
+      "unplaced": 1,
+      "schematic": 0,
+      "rooms": 8
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03B2",
+      "source": "E_03F.pdf",
+      "sourceBeds": 9,
+      "placed": 8,
+      "unplaced": 1,
+      "schematic": 0,
+      "rooms": 8
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03C",
+      "source": "E_03F.pdf",
+      "sourceBeds": 18,
+      "placed": 18,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 18
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04C1",
+      "source": "E_04F.pdf",
+      "sourceBeds": 14,
+      "placed": 14,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 9
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04C2",
+      "source": "E_04F.pdf",
+      "sourceBeds": 9,
+      "placed": 9,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 9
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04D1",
+      "source": "E_04F.pdf",
+      "sourceBeds": 10,
+      "placed": 10,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 1
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7B",
+      "source": "E_07F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7C",
+      "source": "E_07F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08B",
+      "source": "E_08F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08C",
+      "source": "E_08F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09B",
+      "source": "E_09F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09C",
+      "source": "E_09F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11B",
+      "source": "E_11F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11C",
+      "source": "E_11F.pdf",
+      "sourceBeds": 1,
+      "placed": 1,
+      "unplaced": 0,
+      "schematic": 19,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12B",
+      "source": "E_12F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12C",
+      "source": "E_12F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13B",
+      "source": "E_13F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13C",
+      "source": "E_13F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "ward": "15B",
+      "source": "E_15F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "ward": "15C",
+      "source": "E_15F.pdf",
+      "sourceBeds": 13,
+      "placed": 12,
+      "unplaced": 1,
+      "schematic": 0,
+      "rooms": 12
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05B",
+      "source": "E_05F.pdf",
+      "sourceBeds": 30,
+      "placed": 27,
+      "unplaced": 3,
+      "schematic": 0,
+      "rooms": 14
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "ward": "06B",
+      "source": "E_06F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7A",
+      "source": "E_07F.pdf",
+      "sourceBeds": 37,
+      "placed": 32,
+      "unplaced": 5,
+      "schematic": 0,
+      "rooms": 17
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7D",
+      "source": "E_07F.pdf",
+      "sourceBeds": 37,
+      "placed": 33,
+      "unplaced": 4,
+      "schematic": 0,
+      "rooms": 18
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08A",
+      "source": "E_08F.pdf",
+      "sourceBeds": 0,
+      "placed": 0,
+      "unplaced": 0,
+      "schematic": 20,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08D",
+      "source": "E_08F.pdf",
+      "sourceBeds": 37,
+      "placed": 33,
+      "unplaced": 4,
+      "schematic": 0,
+      "rooms": 18
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09A",
+      "source": "E_09F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09D",
+      "source": "E_09F.pdf",
+      "sourceBeds": 32,
+      "placed": 32,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 18
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11A",
+      "source": "E_11F.pdf",
+      "sourceBeds": 37,
+      "placed": 35,
+      "unplaced": 2,
+      "schematic": 0,
+      "rooms": 19
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11D",
+      "source": "E_11F.pdf",
+      "sourceBeds": 0,
+      "placed": 0,
+      "unplaced": 0,
+      "schematic": 18,
+      "rooms": 18
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12A",
+      "source": "E_12F.pdf",
+      "sourceBeds": 37,
+      "placed": 37,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 20
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12D",
+      "source": "E_12F.pdf",
+      "sourceBeds": 37,
+      "placed": 33,
+      "unplaced": 4,
+      "schematic": 0,
+      "rooms": 18
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13A",
+      "source": "E_13F.pdf",
+      "sourceBeds": 35,
+      "placed": 35,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 19
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13D",
+      "source": "E_13F.pdf",
+      "sourceBeds": 37,
+      "placed": 33,
+      "unplaced": 4,
+      "schematic": 0,
+      "rooms": 18
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "ward": "15A",
+      "source": "E_15F.pdf",
+      "sourceBeds": 0,
+      "placed": 0,
+      "unplaced": 0,
+      "schematic": 18,
+      "rooms": 18
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "ward": "15D",
+      "source": "E_15F.pdf",
+      "sourceBeds": 0,
+      "placed": 0,
+      "unplaced": 0,
+      "schematic": 1,
+      "rooms": 1
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04A1",
+      "source": "E_04F.pdf",
+      "sourceBeds": 10,
+      "placed": 10,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 10
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04A2",
+      "source": "E_04F.pdf",
+      "sourceBeds": 10,
+      "placed": 10,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 10
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04B1",
+      "source": "E_04F.pdf",
+      "sourceBeds": 10,
+      "placed": 10,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 10
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04B2",
+      "source": "E_04F.pdf",
+      "sourceBeds": 10,
+      "placed": 10,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 10
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05A",
+      "source": "E_05F.pdf",
+      "sourceBeds": 32,
+      "placed": 30,
+      "unplaced": 2,
+      "schematic": 0,
+      "rooms": 14
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05D",
+      "source": "E_05F.pdf",
+      "sourceBeds": 32,
+      "placed": 31,
+      "unplaced": 1,
+      "schematic": 0,
+      "rooms": 14
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "ward": "06A",
+      "source": "E_06F.pdf",
+      "sourceBeds": 36,
+      "placed": 35,
+      "unplaced": 1,
+      "schematic": 0,
+      "rooms": 18
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "5F",
+      "ward": "05PW",
+      "source": "05PW_05PE.pdf",
+      "sourceBeds": 8,
+      "placed": 8,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 8
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "5F",
+      "ward": "05PE",
+      "source": "05PW_05PE.pdf",
+      "sourceBeds": 31,
+      "placed": 31,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 11
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "6F",
+      "ward": "06PE",
+      "source": "06PE.pdf",
+      "sourceBeds": 16,
+      "placed": 16,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 16
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "8F",
+      "ward": "08PE",
+      "source": "08PE.pdf",
+      "sourceBeds": 20,
+      "placed": 17,
+      "unplaced": 3,
+      "schematic": 0,
+      "rooms": 17
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "9F",
+      "ward": "09PW",
+      "source": "09PW.pdf",
+      "sourceBeds": 19,
+      "placed": 14,
+      "unplaced": 5,
+      "schematic": 0,
+      "rooms": 9
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "ward": "11PW",
+      "source": "11PE_11PW.pdf",
+      "sourceBeds": 24,
+      "placed": 24,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 14
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "ward": "11PE",
+      "source": "11PE_11PW.pdf",
+      "sourceBeds": 24,
+      "placed": 24,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 14
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "12F",
+      "ward": "12PW",
+      "source": "12PE_12PW.pdf",
+      "sourceBeds": 36,
+      "placed": 36,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 16
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "12F",
+      "ward": "12PE",
+      "source": "12PE_12PW.pdf",
+      "sourceBeds": 36,
+      "placed": 36,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 16
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "13F",
+      "ward": "13PW",
+      "source": "13PE_13PW.pdf",
+      "sourceBeds": 36,
+      "placed": 36,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 16
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "13F",
+      "ward": "13PE",
+      "source": "13PE_13PW.pdf",
+      "sourceBeds": 36,
+      "placed": 36,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 16
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "ward": "0PNO",
+      "source": "0PNO_0PNI.pdf",
+      "sourceBeds": 36,
+      "placed": 36,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 4
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "ward": "0PNI",
+      "source": "0PNO_0PNI.pdf",
+      "sourceBeds": 25,
+      "placed": 25,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 5
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "ward": "0PII",
+      "source": "0PNO_0PNI.pdf",
+      "sourceBeds": 20,
+      "placed": 16,
+      "unplaced": 4,
+      "schematic": 0,
+      "rooms": 6
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "ward": "0PIM",
+      "source": "0PNO_0PNI.pdf",
+      "sourceBeds": 12,
+      "placed": 12,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 4
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "ward": "11PB",
+      "source": "11PE_11PW.pdf",
+      "sourceBeds": 111,
+      "placed": 0,
+      "unplaced": 111,
+      "schematic": 2,
+      "rooms": 2
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "1F",
+      "ward": "05W1",
+      "source": "5W1.pdf",
+      "sourceBeds": 25,
+      "placed": 25,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 13
+    },
+    {
+      "building": "W03_WEST",
+      "floor": "2F",
+      "ward": "04W2",
+      "source": "4W2.pdf",
+      "sourceBeds": 33,
+      "placed": 30,
+      "unplaced": 3,
+      "schematic": 0,
+      "rooms": 10
+    },
+    {
+      "building": "W03_EAST",
+      "floor": "2F",
+      "ward": "04E2",
+      "source": "4E2.pdf",
+      "sourceBeds": 31,
+      "placed": 31,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 10
+    },
+    {
+      "building": "W03_WEST",
+      "floor": "1F",
+      "ward": "04W1",
+      "source": "4W1.pdf",
+      "sourceBeds": 25,
+      "placed": 23,
+      "unplaced": 2,
+      "schematic": 0,
+      "rooms": 9
+    },
+    {
+      "building": "W02_WEST",
+      "floor": "2F",
+      "ward": "03W2",
+      "source": "3W2.pdf",
+      "sourceBeds": 36,
+      "placed": 0,
+      "unplaced": 36,
+      "schematic": 9,
+      "rooms": 9
+    },
+    {
+      "building": "W02_EAST",
+      "floor": "2F",
+      "ward": "03E2",
+      "source": "3E2.pdf",
+      "sourceBeds": 33,
+      "placed": 0,
+      "unplaced": 33,
+      "schematic": 10,
+      "rooms": 10
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "2F",
+      "ward": "5W2",
+      "source": "5W2.pdf",
+      "sourceBeds": 36,
+      "placed": 36,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 16
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "5F",
+      "ward": "5W2",
+      "source": "5W2.pdf",
+      "sourceBeds": 36,
+      "placed": 36,
+      "unplaced": 0,
+      "schematic": 0,
+      "rooms": 16
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "3F",
+      "ward": "06W3",
+      "source": "5W3_6W3.pdf",
+      "sourceBeds": 26,
+      "placed": 0,
+      "unplaced": 26,
+      "schematic": 22,
+      "rooms": 9
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "3F",
+      "ward": "05W3",
+      "source": "5W3_6W3.pdf",
+      "sourceBeds": 32,
+      "placed": 32,
+      "unplaced": 0,
+      "schematic": 2,
+      "rooms": 21
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "2F",
+      "ward": "06E2",
+      "source": "6E2.pdf",
+      "sourceBeds": 21,
+      "placed": 15,
+      "unplaced": 6,
+      "schematic": 0,
+      "rooms": 6
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "3F",
+      "ward": "05E3",
+      "source": "5E3.pdf",
+      "sourceBeds": 48,
+      "placed": 0,
+      "unplaced": 48,
+      "schematic": 25,
+      "rooms": 16
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "4F",
+      "ward": "05W4",
+      "source": "5W4.pdf",
+      "sourceBeds": 42,
+      "placed": 0,
+      "unplaced": 42,
+      "schematic": 38,
+      "rooms": 19
+    }
+  ],
+  "idIssues": [],
+  "rawCorridorIssues": [],
+  "coverage": [
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "7B",
+        "7C",
+        "7A",
+        "7D"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "12B",
+        "12C",
+        "12A",
+        "12D"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "1F",
+      "status": "excluded",
+      "message": "依使用者指示不在本次病房校核範圍"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "2F",
+      "status": "excluded",
+      "message": "依使用者指示不在本次病房校核範圍"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "03A1",
+        "03A2",
+        "03B1",
+        "03B2",
+        "03C"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "04C1",
+        "04C2",
+        "04D1",
+        "04A1",
+        "04A2",
+        "04B1",
+        "04B2"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "05C",
+        "5CVI",
+        "05B",
+        "05A",
+        "05D"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "6C",
+        "6D",
+        "06B",
+        "06A"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "08B",
+        "08C",
+        "08A",
+        "08D"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "09B",
+        "09C",
+        "09A",
+        "09D"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "10F",
+      "status": "excluded",
+      "message": "依使用者指示不在本次病房校核範圍"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "11B",
+        "11C",
+        "11A",
+        "11D"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "13B",
+        "13C",
+        "13A",
+        "13D"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "14A",
+        "14B",
+        "14C",
+        "14D"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "15B",
+        "15C",
+        "15A",
+        "15D"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "5F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "5W2"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "2F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "5W2"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "1F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "05W1"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "3F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "06W3",
+        "05W3"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "4F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "05W4"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "5F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "05PW",
+        "05PE"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "1F",
+      "status": "missing-source",
+      "message": "未提供可核實的本層病房原圖；舊示範套圖已撤回，資料保留待核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "2F",
+      "status": "missing-source",
+      "message": "未提供可核實的本層病房原圖；舊示範套圖已撤回，資料保留待核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "3F",
+      "status": "missing-source",
+      "message": "未提供可核實的本層病房原圖；舊示範套圖已撤回，資料保留待核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "4F",
+      "status": "missing-source",
+      "message": "未提供可核實的本層病房原圖；舊示範套圖已撤回，資料保留待核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "6F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "06PE"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "7F",
+      "status": "missing-source",
+      "message": "未提供可核實的本層病房原圖；舊示範套圖已撤回，資料保留待核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "8F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "08PE"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "9F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "09PW"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "0PNO",
+        "0PNI",
+        "0PII",
+        "0PIM"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對",
+      "notes": [
+        "11PB依使用者最新指認，已改為11PW旁兩間觀察室，歸11樓。",
+        "新生兒開放區床號集中示意，未把床號清單補畫成個別隔間。"
+      ]
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "11PW",
+        "11PE",
+        "11PB"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "12F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "12PW",
+        "12PE"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "13F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "13PW",
+        "13PE"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "14F",
+      "status": "excluded",
+      "message": "依使用者指示忽略兒醫14樓；已撤下混用5樓的錯誤套圖，來源床號仍保留"
+    },
+    {
+      "building": "W02_WEST",
+      "floor": "1F",
+      "status": "missing-source",
+      "message": "未提供可核實的本層病房原圖；舊示範套圖已撤回，資料保留待核對"
+    },
+    {
+      "building": "W02_WEST",
+      "floor": "2F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "03W2"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W02_EAST",
+      "floor": "1F",
+      "status": "missing-source",
+      "message": "未提供可核實的本層病房原圖；舊示範套圖已撤回，資料保留待核對"
+    },
+    {
+      "building": "W02_EAST",
+      "floor": "2F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "03E2"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W03_WEST",
+      "floor": "1F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "04W1"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W03_WEST",
+      "floor": "2F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "04W2"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W03_EAST",
+      "floor": "1F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "04E1"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W03_EAST",
+      "floor": "2F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "04E2"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "1F",
+      "status": "missing-source",
+      "message": "未提供可核實的本層病房原圖；舊示範套圖已撤回，資料保留待核對"
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "2F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "06E2"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "3F",
+      "status": "source-approximated",
+      "sourceWards": [
+        "05E3"
+      ],
+      "message": "依本層原圖矩形近似；門位、尺寸與床位精確位置仍需核對"
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "4F",
+      "status": "missing-source",
+      "message": "未提供可核實的本層病房原圖；舊示範套圖已撤回，資料保留待核對"
+    }
+  ]
+}

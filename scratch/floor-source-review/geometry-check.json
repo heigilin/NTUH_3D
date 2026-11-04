@@ -1,0 +1,163 @@
+[
+  {
+    "floor": 3,
+    "conflicts": [],
+    "crossings": [],
+    "links": 5,
+    "reviewed": [
+      "03A1",
+      "03A2",
+      "03B1",
+      "03B2",
+      "03C"
+    ],
+    "unplacedBeds": 2
+  },
+  {
+    "floor": 4,
+    "conflicts": [],
+    "crossings": [],
+    "links": 5,
+    "reviewed": [
+      "04A1",
+      "04A2",
+      "04B1",
+      "04B2",
+      "04C1",
+      "04C2",
+      "04D1"
+    ],
+    "unplacedBeds": 0
+  },
+  {
+    "floor": 5,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "05C",
+      "5CVI",
+      "05B",
+      "05A",
+      "05D"
+    ],
+    "unplacedBeds": 8
+  },
+  {
+    "floor": 6,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "6C",
+      "6D",
+      "06B",
+      "06A"
+    ],
+    "unplacedBeds": 1
+  },
+  {
+    "floor": 7,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "7B",
+      "7C",
+      "7A",
+      "7D"
+    ],
+    "unplacedBeds": 9
+  },
+  {
+    "floor": 8,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "08B",
+      "08C",
+      "08A",
+      "08D"
+    ],
+    "unplacedBeds": 4
+  },
+  {
+    "floor": 9,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "09B",
+      "09C",
+      "09A",
+      "09D"
+    ],
+    "unplacedBeds": 66
+  },
+  {
+    "floor": 11,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "11B",
+      "11C",
+      "11A",
+      "11D"
+    ],
+    "unplacedBeds": 2
+  },
+  {
+    "floor": 12,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "12B",
+      "12C",
+      "12A",
+      "12D"
+    ],
+    "unplacedBeds": 4
+  },
+  {
+    "floor": 13,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "13B",
+      "13C",
+      "13A",
+      "13D"
+    ],
+    "unplacedBeds": 4
+  },
+  {
+    "floor": 14,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "14A",
+      "14B",
+      "14C",
+      "14D"
+    ],
+    "unplacedBeds": 5
+  },
+  {
+    "floor": 15,
+    "conflicts": [],
+    "crossings": [],
+    "links": 3,
+    "reviewed": [
+      "15B",
+      "15C",
+      "15A",
+      "15D"
+    ],
+    "unplacedBeds": 1
+  }
+]

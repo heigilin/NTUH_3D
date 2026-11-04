@@ -1,0 +1,16 @@
+const assert=require('node:assert/strict'),path=require('node:path'),fs=require('node:fs');const root=path.resolve(__dirname,'..');global.window={};
+for(const f of ['rooms-data','ward-3d-layout-data','ward-bed-ids'])require(path.join(root,'js/data',f+'.js'));
+for(const f of ['ward-source-traces','ward-plan-layout','ward-plan-geometry','ward-plan-2d'])require(path.join(root,'js',f+'.js'));
+const g=window.WardPlanGeometry;g.prepare(window.WARD_3D_LAYOUT_DATA,g.rawCorridors);
+const l=window.WARD_3D_LAYOUT_DATA.E01_MAIN['14F'],c=l.facilities.filter(f=>f.ward==='14C');
+const dirty=c.find(f=>f.name==='污物室'),hall=c.find(f=>f.name==='鋼琴講堂'),room=l.rooms.find(r=>r.ward==='14C'&&r.roomCode==='01');
+assert(Math.abs(g.rect(dirty.bounds).l-g.rect(hall.bounds).l)<1e-6);
+assert(Math.abs(g.rect(dirty.bounds).b-g.rect(hall.bounds).t)<1e-6);
+assert(!g.hit(g.rect(dirty.bounds),g.rect(room.bounds)));
+const links=l.displayCorridors.filter(c=>c.isInterWing);assert.equal(links.length,3);
+for(const link of links)for(const r of [...l.rooms,...l.nursingStations,...l.facilities])assert(!g.hit(g.rect(link.bounds),g.rect(r.bounds)),link.id+' overlaps '+(r.roomName||r.name));
+assert.equal(g.components(l.displayCorridors.filter(c=>['14B','14C'].includes(c.ward)||c.isInterWing)),1);
+const s=window.WardPlan2D.scene('E01_MAIN','14F','ALL');assert.equal(s.corridors.filter(c=>c.isInterWing).length,3);
+const app=fs.readFileSync(path.join(root,'js/app.js'),'utf8');
+for(const ctx of ['rctx','lctx','nctx','bctx'])assert(!app.includes(ctx+'.stroke()'),ctx+' label still framed');
+console.log('PASS: source-aligned utility bay above the lecture hall; B-C passage connects both ward aisles and is clear of rooms/desks/facilities; label frames removed.');

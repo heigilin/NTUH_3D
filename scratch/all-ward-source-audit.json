@@ -1,0 +1,5849 @@
+{
+  "date": "2026-10-31",
+  "scope": "病房結構幾何初篩；東址1、2、10樓依使用者指定排除；原圖逐間重建分開紀錄",
+  "wards": 122,
+  "conflictWards": 4,
+  "roomSpaceConflictPairs": 29,
+  "sourceRebuilt": 54,
+  "rows": [
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7B",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_07F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_07F.pdf，重建B區兩排病室與護理站；沒有直接複製舊套版座標。",
+        "南排15與16之間保留原圖南北棟連通口。",
+        "病室／公共空間採內接矩形；門、浴廁與斜角仍為近似。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7C",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_07F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_07F.pdf，重建C區病室相對位置。",
+        "北排10與11之間保留原圖南北棟連通口。",
+        "只使用來源床號；來源缺少的病室不補造床位。矩形不包含所有浴廁、前室與小凹角。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7A",
+      "rooms": 17,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_07F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_07F.pdf核對北棟A區排列，保留教室、工作人員及影像空間造成的病室缺口。",
+        "病室、護理站及服務空間採內接矩形，前室／浴廁與斜角未逐段描繪。",
+        "沒有來源床號的區域不製造床位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7D",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_07F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_07F.pdf重建南棟D區；不將工作人員用膳／會議區誤畫成病室。",
+        "矩形為原圖內接近似；未知或版本不同的床號保留待定位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12B",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_12F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_12F.pdf，重建B區兩排病室與護理站；沒有直接複製舊套版座標。",
+        "南排15與16之間保留原圖南北棟連通口。",
+        "病室／公共空間採內接矩形；門、浴廁與斜角仍為近似。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12C",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_12F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_12F.pdf，重建C區病室相對位置。",
+        "北排10與11之間保留原圖南北棟連通口。",
+        "只使用來源床號；來源缺少的病室不補造床位。矩形不包含所有浴廁、前室與小凹角。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12A",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_12F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_12F.pdf核對北棟A區排列，保留教室、工作人員及影像空間造成的病室缺口。",
+        "病室、護理站及服務空間採內接矩形，前室／浴廁與斜角未逐段描繪。",
+        "沒有來源床號的區域不製造床位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12D",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_12F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_12F.pdf重建南棟D區；不將工作人員用膳／會議區誤畫成病室。",
+        "矩形為原圖內接近似；未知或版本不同的床號保留待定位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03A1",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_03F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依原圖將03A1定位於北側西半部，06/05/03/02/01在北排，07/08/09在南排。",
+        "03A1病室與03A2負壓病室不交換床號歸屬；病室採矩形內接近似，未描繪凹角、浴廁及所有附屬空間。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03A2",
+      "rooms": 9,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_03F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_03F.pdf補齊9間負壓病室、各室前室、07入口前室、開放護理區、護理長室、會談室、更衣及浴廁、醫材備藥、儀器、污物、電氣、管道與鄰近N2樓梯。",
+        "原圖護理區未畫出獨立實體櫃台，因此以可通行的平面區域呈現並隱藏護理站文字，不把護理區當成阻擋走道的房間。",
+        "07東側依原圖為封閉空間，已移除先前示意走道；通往N2的走道在07前室北側。",
+        "西側核心區含相鄰的會談、更衣與浴廁；房間外框採矩形內接近似，前室門口凹角、家屬更衣室L形小內縮與精細門扇未逐段描繪。床位位置與尺寸為示意，非施工或隔離壓差設計圖。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03B1",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_03F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "按E_03F.pdf西側3B1的病室、前室、實驗室與護理區邊界定位。",
+        "清單10床保留；原圖相應南排標為總醫師辦公室／值班室，沒有以猜測把10床塞入辦公室。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03B2",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_03F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依東側3B2單元定位，保持11至20來源床號，沒有把東單元改回01至10。",
+        "原圖以一、二、三、五至九表示單元內病室；依清單沿用11、12、13、15至19。20床保留待唯一位置確認，不視為錯誤床號。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03C",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_03F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "按E_03F.pdf兩個開放護理單元重建，不使用普通雙排病房套版。東單元仍使用床號清單11至20。",
+        "原圖同時有中文「加護病房（十）」與明確阿拉伯數字「10病室」；保留兩處空間，只在10病室放置一次10床，沒有重複床號。",
+        "東北角依可辨識小隔間呈現13、15；床位在各區內為示意，非實測床具座標。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04A1",
+      "rooms": 10,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_04F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_04F.pdf北棟病室主牆邊界重畫寬深比例，沒有再以縮小的內接塊代替病室。",
+        "4A1／4B1在西、4A2／4B2在東；4B2的11病室位於清潔間東側。",
+        "護理區依原圖以可通行的開放區域呈現；矩形仍近似門口小凹角與斜角，並非施工尺寸。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04A2",
+      "rooms": 10,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_04F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_04F.pdf北棟病室主牆邊界重畫寬深比例，沒有再以縮小的內接塊代替病室。",
+        "4A1／4B1在西、4A2／4B2在東；4B2的11病室位於清潔間東側。",
+        "護理區依原圖以可通行的開放區域呈現；矩形仍近似門口小凹角與斜角，並非施工尺寸。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04B1",
+      "rooms": 10,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_04F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_04F.pdf北棟病室主牆邊界重畫寬深比例，沒有再以縮小的內接塊代替病室。",
+        "4A1／4B1在西、4A2／4B2在東；4B2的11病室位於清潔間東側。",
+        "護理區依原圖以可通行的開放區域呈現；矩形仍近似門口小凹角與斜角，並非施工尺寸。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04B2",
+      "rooms": 10,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_04F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_04F.pdf北棟病室主牆邊界重畫寬深比例，沒有再以縮小的內接塊代替病室。",
+        "4A1／4B1在西、4A2／4B2在東；4B2的11病室位於清潔間東側。",
+        "護理區依原圖以可通行的開放區域呈現；矩形仍近似門口小凹角與斜角，並非施工尺寸。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04C1",
+      "rooms": 9,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_04F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_04F.pdf西側4C1的05／06、備藥區、正壓病房分隔線及南側01／02／03定位。",
+        "北排07至10依清單保留兩床配置，沒有把雙床視為兩間病室。",
+        "護理區為開放地坪，沒有另外在走道中放置櫃台障礙。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04C2",
+      "rooms": 9,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_04F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_04F.pdf東側4C2分隔線恢復北排11、10、09、08、07、06，保留原床號。",
+        "原圖部分文字只標11／9／7，但分隔線仍有相鄰格位；依床號清單保留完整北排。",
+        "原圖東側（3）未有03床號，不改號補造床位，依其空間保留。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "ward": "04D1",
+      "rooms": 1,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_04F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "E_04F.pdf的4D1為開放護理及加護區，沒有按床號清單虛構9間帶牆病室。",
+        "全部10個來源床位識別碼原樣保留在加護病房區，5列2排床位僅為區內示意，不宣稱原圖已標出每個床位的精確座標。",
+        "辦公、會議、衛教、診察、換液、檢查及設備空間依原圖相對位置保留。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05C",
+      "rooms": 15,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_05F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_05F.pdf重建南側5C，未與北側東邊ICU區混用座標。",
+        "原圖可辨認5C13，未能確認5C12位置；12床號保留為待定位。",
+        "病室採內接矩形，未描繪浴廁、前室及小凹角；床位位置為示意。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "5CVI",
+      "rooms": 30,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_05F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_05F.pdf北側東邊ICU區房號定位，維持5CVI床號歸屬。",
+        "原圖ICU-01及02位於西南角；03至20在北排；21至33在南排，依原圖跳號。",
+        "房間採內接矩形，未描繪門口小凹角；床位位置為示意。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05B",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_05F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "E_05F.pdf原圖B區南排06至12，10與11之間為南北棟連通口。",
+        "原圖未能確認5B13、15至18之南排病室；不按床號清單另外製造房間。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05A",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_05F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_05F.pdf重建5A，北排06、07、08、09、10、12，12為較寬空間；沒有按舊套版補造11。",
+        "病室使用內接矩形，浴廁與門口凹角未完整描繪；11來源床號保留待定位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05D",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_05F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_05F.pdf重建5D；南排06／07／08、衛教室、09／10／11，不按原套版連續房號填滿。",
+        "北排東側依原圖17／16／15／12定位；無法在原圖定位的床號保留待核對。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "ward": "6C",
+      "rooms": 19,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_06F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "僅依E_06F.pdf南側6C原圖定位，未套用其他樓層。",
+        "原圖南排為21、20、22隔離病房，未補造6C19。",
+        "病室以矩形近似，未完整描繪浴廁、前室及斜角；原圖窗、門及實際尺寸仍待細部校核。",
+        "依使用者要求沿用先前示意床數，共36示意床；床號清單無6C，SCHEMATIC識別碼不代表實際床號。",
+        "床頭、床尾及側邊保留0.45模型單位留白；狹窄病室縮小床位圖示，非實測床具尺寸。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "ward": "6D",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_06F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "僅依E_06F.pdf南側6D原圖定位，未套用其他樓層。",
+        "12、13依可辨識房號與分隔線保留；兩房間重疊文字的用途尚待核對，未擅自合併。",
+        "南排浴廁及前室未畫入病室矩形；未完整描繪護理站斜角與門窗，尺寸仍待細部校核。",
+        "依使用者要求沿用先前示意床數，共37示意床；床號清單無6D，SCHEMATIC識別碼不代表實際床號。",
+        "床頭、床尾及側邊保留0.45模型單位留白；狹窄病室縮小床位圖示，非實測床具尺寸。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "ward": "06B",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_06F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_06F.pdf重建北棟B區，南排15與16之間保留原圖連通口。",
+        "和既有6C／6D使用同一份1190×1684原圖座標，不套用其他樓層。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "ward": "06A",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_06F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_06F.pdf重建北棟6A，06至18分列於北排，教室留在12與13之間。",
+        "原圖6A19標為輔導空間，依公共空間保留；其來源床號待版本核對。",
+        "浴廁、前室與護理站斜角使用內接矩形近似。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08B",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_08F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_08F.pdf，重建B區兩排病室與護理站；沒有直接複製舊套版座標。",
+        "南排15與16之間保留原圖南北棟連通口。",
+        "病室／公共空間採內接矩形；門、浴廁與斜角仍為近似。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08C",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_08F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_08F.pdf，重建C區病室相對位置。",
+        "北排10與11之間保留原圖南北棟連通口。",
+        "只使用來源床號；來源缺少的病室不補造床位。矩形不包含所有浴廁、前室與小凹角。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08A",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_08F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_08F.pdf核對北棟A區排列，保留教室、工作人員及影像空間造成的病室缺口。",
+        "病室、護理站及服務空間採內接矩形，前室／浴廁與斜角未逐段描繪。",
+        "沒有來源床號的區域不製造床位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08D",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_08F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_08F.pdf重建南棟D區；不將工作人員用膳／會議區誤畫成病室。",
+        "矩形為原圖內接近似；未知或版本不同的床號保留待定位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09B",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_09F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_09F.pdf，重建B區兩排病室與護理站；沒有直接複製舊套版座標。",
+        "南排15與16之間保留原圖南北棟連通口。",
+        "病室／公共空間採內接矩形；門、浴廁與斜角仍為近似。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09C",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_09F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_09F.pdf，重建C區病室相對位置。",
+        "北排10與11之間保留原圖南北棟連通口。",
+        "只使用來源床號；來源缺少的病室不補造床位。矩形不包含所有浴廁、前室與小凹角。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09A",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_09F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_09F.pdf核對北棟A區排列，保留教室、工作人員及影像空間造成的病室缺口。",
+        "病室、護理站及服務空間採內接矩形，前室／浴廁與斜角未逐段描繪。",
+        "沒有來源床號的區域不製造床位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09D",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_09F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_09F.pdf重建南棟D區；不將工作人員用膳／會議區誤畫成病室。",
+        "矩形為原圖內接近似；未知或版本不同的床號保留待定位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11B",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_11F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_11F.pdf，重建B區兩排病室與護理站；沒有直接複製舊套版座標。",
+        "南排15與16之間保留原圖南北棟連通口。",
+        "病室／公共空間採內接矩形；門、浴廁與斜角仍為近似。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11C",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_11F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_11F.pdf，重建C區病室相對位置。",
+        "北排10與11之間保留原圖南北棟連通口。",
+        "只使用來源床號；來源缺少的病室不補造床位。矩形不包含所有浴廁、前室與小凹角。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11A",
+      "rooms": 19,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_11F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_11F.pdf核對北棟A區排列，保留教室、工作人員及影像空間造成的病室缺口。",
+        "病室、護理站及服務空間採內接矩形，前室／浴廁與斜角未逐段描繪。",
+        "沒有來源床號的區域不製造床位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11D",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_11F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_11F.pdf重建南棟D區；不將工作人員用膳／會議區誤畫成病室。",
+        "矩形為原圖內接近似；未知或版本不同的床號保留待定位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13B",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_13F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_13F.pdf，重建B區兩排病室與護理站；沒有直接複製舊套版座標。",
+        "南排15與16之間保留原圖南北棟連通口。",
+        "病室／公共空間採內接矩形；門、浴廁與斜角仍為近似。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13C",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_13F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_13F.pdf，重建C區病室相對位置。",
+        "北排10與11之間保留原圖南北棟連通口。",
+        "只使用來源床號；來源缺少的病室不補造床位。矩形不包含所有浴廁、前室與小凹角。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13A",
+      "rooms": 19,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_13F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_13F.pdf核對北棟A區排列，保留教室、工作人員及影像空間造成的病室缺口。",
+        "病室、護理站及服務空間採內接矩形，前室／浴廁與斜角未逐段描繪。",
+        "沒有來源床號的區域不製造床位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13D",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_13F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_13F.pdf重建南棟D區；不將工作人員用膳／會議區誤畫成病室。",
+        "矩形為原圖內接近似；未知或版本不同的床號保留待定位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14A",
+      "rooms": 19,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_14F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "污物室依原圖位於設備器材室北端靠走道側，與設備器材室左界對齊。",
+        "原圖 14A02 西南邊界有內縮；目前採內接矩形，未畫出該小段凹角。",
+        "原圖沒有可確認的 14A22 房號，來源床號保留為未定位。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14B",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_14F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "護理站斜角及 14B02 西側內縮暫採內接矩形；未補畫樓梯、電梯核心內部。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14C",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_14F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "護理站斜角及 14C02 西側內縮暫採內接矩形；未補畫樓梯、電梯核心內部。",
+        "污物室依原圖位於鋼琴講堂上方，與講堂左界對齊；講堂西側內縮仍採內接矩形。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14D",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_14F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "原圖 14D12～14D13 範圍標為工作人員用膳室，沒有把床號清單轉成兩間病室。",
+        "護理站斜角及 14D02 西側內縮暫採內接矩形；未補畫樓梯、電梯核心內部。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "ward": "15B",
+      "rooms": 20,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_15F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "逐層比對E_15F.pdf，重建B區兩排病室與護理站；沒有直接複製舊套版座標。",
+        "南排15與16之間保留原圖南北棟連通口。",
+        "病室／公共空間採內接矩形；門、浴廁與斜角仍為近似。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "ward": "15C",
+      "rooms": 12,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_15F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依E_15F.pdf逐間定位15C；05、06、09、10、11為較寬病室，不能套用一般C區的12格北排。",
+        "原圖未確認15C02；保留其床號待定位。病室使用內接矩形，前室及浴廁未完整描繪。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "ward": "15A",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_15F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依本層E_15F.pdf核對北棟A區排列，保留教室、工作人員及影像空間造成的病室缺口。",
+        "病室、護理站及服務空間採內接矩形，前室／浴廁與斜角未逐段描繪。",
+        "15A未列於來源床號檔：每間病室補1床示意，非已確認的實際床數；示意識別碼與正式床號分開。"
+      ]
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "ward": "15D",
+      "rooms": 1,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "E_15F.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "E_15F.pdf南棟D區為景福病房及其會議、服務空間，不能套用一般20間病室。",
+        "未有15D床號清單，僅依原圖畫出可確認區域，沒有推估房號或床位。"
+      ]
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "5F",
+      "ward": "5W2",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "5W2.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "2F",
+      "ward": "5W2",
+      "rooms": 18,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "5W2.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "1F",
+      "ward": "05W1",
+      "rooms": 15,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "5W1.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "3F",
+      "ward": "06W3",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "W04_WEST",
+      "floor": "4F",
+      "ward": "05W4",
+      "rooms": 22,
+      "conflicts": [
+        {
+          "a": "05W4區 01病室",
+          "b": "05W4區 21病室"
+        },
+        {
+          "a": "05W4區 02病室",
+          "b": "05W4區 21病室"
+        },
+        {
+          "a": "05W4區 02病室",
+          "b": "05W4區 22病室"
+        },
+        {
+          "a": "05W4區 03病室",
+          "b": "05W4區 22病室"
+        },
+        {
+          "a": "05W4區 03病室",
+          "b": "⚠️ 05W4 污物室"
+        },
+        {
+          "a": "05W4區 05病室",
+          "b": "⚠️ 05W4 污物室"
+        },
+        {
+          "a": "05W4區 05病室",
+          "b": "🧹 05W4 清潔間"
+        },
+        {
+          "a": "05W4區 06病室",
+          "b": "🧹 05W4 清潔間"
+        }
+      ],
+      "duplicates": [],
+      "source": "5W4.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "5F",
+      "ward": "05PW",
+      "rooms": 8,
+      "conflicts": [
+        {
+          "a": "05PW-01 兒科病室",
+          "b": "05PW 負壓隔離房"
+        },
+        {
+          "a": "05PW-02 兒科病室",
+          "b": "05PW 負壓隔離房"
+        },
+        {
+          "a": "05PW-03 兒科病室",
+          "b": "05PW 負壓隔離房"
+        },
+        {
+          "a": "05PW-04 兒科病室",
+          "b": "05PW 清潔間"
+        },
+        {
+          "a": "05PW-05 兒科病室",
+          "b": "05PW 清潔間"
+        },
+        {
+          "a": "05PW-06 兒科病室",
+          "b": "05PW 污物室"
+        },
+        {
+          "a": "05PW-06 兒科病室",
+          "b": "05PW 清潔間"
+        },
+        {
+          "a": "05PW-07 兒科病室",
+          "b": "05PW 污物室"
+        },
+        {
+          "a": "05PW-07 兒科病室",
+          "b": "05PW 清潔間"
+        },
+        {
+          "a": "05PW-08 兒科病室",
+          "b": "05PW 污物室"
+        }
+      ],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "5F",
+      "ward": "05PE",
+      "rooms": 8,
+      "conflicts": [
+        {
+          "a": "05PE-02 兒科病室",
+          "b": "05PE 負壓隔離房"
+        },
+        {
+          "a": "05PE-04 兒科病室",
+          "b": "05PE 清潔間"
+        },
+        {
+          "a": "05PE-06 兒科病室",
+          "b": "05PE 污物室"
+        },
+        {
+          "a": "05PE-06 兒科病室",
+          "b": "05PE 清潔間"
+        },
+        {
+          "a": "05PE-08 兒科病室",
+          "b": "05PE 污物室"
+        }
+      ],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "1F",
+      "ward": "01PW",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "1F",
+      "ward": "01PE",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "1F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "1F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "2F",
+      "ward": "02PW",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "2F",
+      "ward": "02PE",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "2F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "2F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "3F",
+      "ward": "03PW",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "3F",
+      "ward": "03PE",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "3F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "3F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "4F",
+      "ward": "04PW",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "4F",
+      "ward": "04PE",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "4F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "4F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "6F",
+      "ward": "06PE",
+      "rooms": 16,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "06PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "6F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "6F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "7F",
+      "ward": "07PW",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "7F",
+      "ward": "07PE",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "7F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "7F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "8F",
+      "ward": "08PE",
+      "rooms": 16,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "08PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "8F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "8F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "9F",
+      "ward": "09PW",
+      "rooms": 16,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "09PW.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "9F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "9F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "ward": "10PW",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "ward": "10PE",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "10F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "ward": "11PB",
+      "rooms": 5,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "ward": "11PW",
+      "rooms": 5,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "11PE_11PW.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "ward": "11PE",
+      "rooms": 5,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "11PE_11PW.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "11F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "12F",
+      "ward": "12PE",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "12PE_12PW.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "12F",
+      "ward": "12PW",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "12PE_12PW.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "12F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "12F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "13F",
+      "ward": "13PE",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "13PE_13PW.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "13F",
+      "ward": "13PW",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "13PE_13PW.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "13F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "13F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "14F",
+      "ward": "14PW",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "14F",
+      "ward": "14PE",
+      "rooms": 8,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "14F",
+      "ward": "05PW",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "CHILD_HOSPITAL",
+      "floor": "14F",
+      "ward": "05PE",
+      "rooms": 0,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "05PW_05PE.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W02_WEST",
+      "floor": "1F",
+      "ward": "W02-1F",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "W02_WEST",
+      "floor": "2F",
+      "ward": "03W2",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "3W2.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W02_EAST",
+      "floor": "1F",
+      "ward": "W02-1F",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "W02_EAST",
+      "floor": "2F",
+      "ward": "03E2",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "3E2.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W03_WEST",
+      "floor": "1F",
+      "ward": "04W1",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "4W1.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W03_WEST",
+      "floor": "2F",
+      "ward": "04W2",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "4W2.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W03_EAST",
+      "floor": "1F",
+      "ward": "04E1",
+      "rooms": 12,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "4E1.pdf",
+      "sourceReviewed": true,
+      "status": "依原圖重建，矩形近似邊界見備註",
+      "notes": [
+        "依原圖維持12間病室在走廊同側，18與20之間保留原有護理及辦公空間間隔。",
+        "依使用者補充圖恢復護理站、辦公室與走道對面的訪談／治療室、研究及治療室、中庭、污物室及復健講堂；保留原圖名稱，污物室不改稱清潔間。",
+        "病室牆面採矩形外框近似，尚未描繪浴廁凹角及18號靠護理區的不規則邊界；床位保留來源清單，床位位置為示意。"
+      ]
+    },
+    {
+      "building": "W03_EAST",
+      "floor": "2F",
+      "ward": "04E2",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "4E2.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "1F",
+      "ward": "W04-1F",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "2F",
+      "ward": "06E2",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": "6E2.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "3F",
+      "ward": "05E3",
+      "rooms": 21,
+      "conflicts": [
+        {
+          "a": "05E3區 02病室",
+          "b": "05E3區 48病室"
+        },
+        {
+          "a": "05E3區 06病室",
+          "b": "05E3區 48病室"
+        },
+        {
+          "a": "05E3區 06病室",
+          "b": "⚠️ 05E3 污物室"
+        },
+        {
+          "a": "05E3區 08病室",
+          "b": "⚠️ 05E3 污物室"
+        },
+        {
+          "a": "05E3區 08病室",
+          "b": "🧹 05E3 清潔間"
+        },
+        {
+          "a": "05E3區 10病室",
+          "b": "🧹 05E3 清潔間"
+        }
+      ],
+      "duplicates": [],
+      "source": "5E3.pdf",
+      "sourceReviewed": false,
+      "status": "原圖待逐間重建",
+      "notes": []
+    },
+    {
+      "building": "W04_EAST",
+      "floor": "4F",
+      "ward": "W04-4F",
+      "rooms": 14,
+      "conflicts": [],
+      "duplicates": [],
+      "source": null,
+      "sourceReviewed": false,
+      "status": "缺少可對應原圖，待確認",
+      "notes": []
+    }
+  ],
+  "quarantine": [
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7A",
+      "roomCode": "17",
+      "bedId": "T0-07A -17-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7A",
+      "roomCode": "21",
+      "bedId": "T0-07A -21-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7A",
+      "roomCode": "21",
+      "bedId": "T0-07A -21-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7A",
+      "roomCode": "21",
+      "bedId": "T0-07A -21-03",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7A",
+      "roomCode": "21",
+      "bedId": "T0-07A -21-05",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7D",
+      "roomCode": "12",
+      "bedId": "T0-07D -12-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7D",
+      "roomCode": "12",
+      "bedId": "T0-07D -12-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7D",
+      "roomCode": "13",
+      "bedId": "T0-07D -13-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "7F",
+      "ward": "7D",
+      "roomCode": "13",
+      "bedId": "T0-07D -13-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-7A",
+        "name": "12A護理站",
+        "ward": "7A",
+        "bounds": {
+          "x": -5.92,
+          "y": 0,
+          "z": -40.8,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#00bcd4"
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-7B",
+        "name": "12B護理站",
+        "ward": "7B",
+        "bounds": {
+          "x": -5.92,
+          "y": 0,
+          "z": -26.4,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#2196f3"
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-7C",
+        "name": "12C護理站",
+        "ward": "7C",
+        "bounds": {
+          "x": 1.68,
+          "y": 0,
+          "z": 15.2,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#4caf50"
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-7D",
+        "name": "12D護理站",
+        "ward": "7D",
+        "bounds": {
+          "x": 1.68,
+          "y": 0,
+          "z": 36,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#ff9800"
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12D",
+      "roomCode": "12",
+      "bedId": "T0-12D -12-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12D",
+      "roomCode": "12",
+      "bedId": "T0-12D -12-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12D",
+      "roomCode": "13",
+      "bedId": "T0-12D -13-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "12F",
+      "ward": "12D",
+      "roomCode": "13",
+      "bedId": "T0-12D -13-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03A1-DIRTY",
+        "roomName": "⚠️ 03A1 污物室",
+        "ward": "03A1",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 18.88,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.8,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03A1-CLEAN",
+        "roomName": "🧹 03A1 清潔間",
+        "ward": "03A1",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 23.88,
+          "y": 0,
+          "z": -56.2,
+          "width": 5.2,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-03A1",
+        "name": "03A1 護理站",
+        "ward": "03A1",
+        "bounds": {
+          "x": -5.92,
+          "y": 0,
+          "z": -40.8,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#4caf50"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03A2-DIRTY",
+        "roomName": "⚠️ 03A2 污物室",
+        "ward": "03A2",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -17.52,
+          "y": 0,
+          "z": -43.8,
+          "width": 3.2,
+          "depth": 4.4,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03A2-CLEAN",
+        "roomName": "🧹 03A2 清潔間",
+        "ward": "03A2",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -8.52,
+          "y": 0,
+          "z": -49.8,
+          "width": 2.8,
+          "depth": 3.6,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-03A2",
+        "name": "03A2 護理站",
+        "ward": "03A2",
+        "bounds": {
+          "x": 5.92,
+          "y": 0,
+          "z": -40.8,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#2196f3"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03B1-DIRTY",
+        "roomName": "⚠️ 03B1 污物室",
+        "ward": "03B1",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -6.48,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03B1-CLEAN",
+        "roomName": "🧹 03B1 清潔間",
+        "ward": "03B1",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -1.68,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-03B1",
+        "name": "03B1 護理站",
+        "ward": "03B1",
+        "bounds": {
+          "x": -5.92,
+          "y": 0,
+          "z": -26.4,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#ff9800"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03B2-DIRTY",
+        "roomName": "⚠️ 03B2 污物室",
+        "ward": "03B2",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 23.88,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03B2-CLEAN",
+        "roomName": "🧹 03B2 清潔間",
+        "ward": "03B2",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 28.88,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-03B2",
+        "name": "03B2 護理站",
+        "ward": "03B2",
+        "bounds": {
+          "x": 5.92,
+          "y": 0,
+          "z": -26.4,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#9c27b0"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03C-DIRTY",
+        "roomName": "⚠️ 03C 污物室",
+        "ward": "03C",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 34.48,
+          "y": 0,
+          "z": 16,
+          "width": 4.8,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03C-CLEAN",
+        "roomName": "🧹 03C 清潔間",
+        "ward": "03C",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 39.48,
+          "y": 0,
+          "z": 16,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-03C",
+        "name": "03C 護理站",
+        "ward": "03C",
+        "bounds": {
+          "x": 1.68,
+          "y": 0,
+          "z": 15.2,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#00bcd4"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "原圖重建ICU區後，舊套版設施保留待定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "原圖重建ICU區後，舊套版設施保留待定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03B1",
+      "roomCode": "10",
+      "bedId": "T0-03B1-10-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "3F",
+      "ward": "03B2",
+      "roomCode": "20",
+      "bedId": "T0-03B2-20-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04A1-DIRTY",
+        "roomName": "⚠️ 04A1 污物室",
+        "ward": "04A1",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -29.42,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.6,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04A1-CLEAN",
+        "roomName": "🧹 04A1 清潔間",
+        "ward": "04A1",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -24.02,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-04A1",
+        "name": "04A1 護理站",
+        "ward": "04A1",
+        "bounds": {
+          "x": 5.92,
+          "y": 0,
+          "z": -40.8,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#9c27b0"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04A2-DIRTY",
+        "roomName": "⚠️ 04A2 污物室",
+        "ward": "04A2",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -37.92,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.6,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04A2-CLEAN",
+        "roomName": "🧹 04A2 清潔間",
+        "ward": "04A2",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -32.52,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-04A2",
+        "name": "04A2 護理站",
+        "ward": "04A2",
+        "bounds": {
+          "x": -5.92,
+          "y": 0,
+          "z": -40.8,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#4caf50"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04B1-DIRTY",
+        "roomName": "⚠️ 04B1 污物室",
+        "ward": "04B1",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 12.42,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04B1-CLEAN",
+        "roomName": "🧹 04B1 清潔間",
+        "ward": "04B1",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 21.18,
+          "y": 0,
+          "z": -13.2,
+          "width": 5.2,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-04B1",
+        "name": "04B1 護理站",
+        "ward": "04B1",
+        "bounds": {
+          "x": 5.92,
+          "y": 0,
+          "z": -26.4,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#2196f3"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04B2-DIRTY",
+        "roomName": "⚠️ 04B2 污物室",
+        "ward": "04B2",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -1.68,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04B2-CLEAN",
+        "roomName": "🧹 04B2 清潔間",
+        "ward": "04B2",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 3.12,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-04B2",
+        "name": "04B2 護理站",
+        "ward": "04B2",
+        "bounds": {
+          "x": -5.92,
+          "y": 0,
+          "z": -26.4,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#00bcd4"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04C1-DIRTY",
+        "roomName": "⚠️ 04C1 污物室",
+        "ward": "04C1",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 24.88,
+          "y": 0,
+          "z": 5,
+          "width": 4.8,
+          "depth": 8.4,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04C1-CLEAN",
+        "roomName": "🧹 04C1 清潔間",
+        "ward": "04C1",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 29.68,
+          "y": 0,
+          "z": 5,
+          "width": 4.8,
+          "depth": 8.4,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-04C1",
+        "name": "04C1 護理站",
+        "ward": "04C1",
+        "bounds": {
+          "x": 1.68,
+          "y": 0,
+          "z": 15.2,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#e91e63"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04C2-DIRTY",
+        "roomName": "⚠️ 04C2 污物室",
+        "ward": "04C2",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 34.48,
+          "y": 0,
+          "z": 16,
+          "width": 4.8,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04C2-CLEAN",
+        "roomName": "🧹 04C2 清潔間",
+        "ward": "04C2",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 39.48,
+          "y": 0,
+          "z": 16,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-04C2",
+        "name": "04C2 護理站",
+        "ward": "04C2",
+        "bounds": {
+          "x": 5.92,
+          "y": 0,
+          "z": 15.2,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#00bcd4"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04D1-DIRTY",
+        "roomName": "⚠️ 04D1 污物室",
+        "ward": "04D1",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 1.52,
+          "y": 0,
+          "z": 49.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "04D1-CLEAN",
+        "roomName": "🧹 04D1 清潔間",
+        "ward": "04D1",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 16.28,
+          "y": 0,
+          "z": 49.2,
+          "width": 5.2,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-04D1",
+        "name": "04D1 護理站",
+        "ward": "04D1",
+        "bounds": {
+          "x": 1.68,
+          "y": 0,
+          "z": 36,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#ff9800"
+      },
+      "reason": "依使用者要求移除舊套版公共空間"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-STAIR-S5",
+        "name": "S5安全梯",
+        "type": "stair",
+        "bounds": {
+          "x": 35.48,
+          "y": 0,
+          "z": 47.6,
+          "width": 3.6,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖重建區重疊，保留待定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "原圖重建ICU區後，舊套版設施保留待定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "4F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "原圖重建ICU區後，舊套版設施保留待定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "5F舊套版公共空間與原圖重建區重疊，保留待定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-STAIR-N2",
+        "name": "N2安全梯",
+        "type": "stair",
+        "bounds": {
+          "x": 28.28,
+          "y": 0,
+          "z": -57.2,
+          "width": 3.6,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "5F舊套版公共空間與原圖重建區重疊，保留待定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05C",
+      "roomCode": "12",
+      "bedId": "T0-05C -12-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05C",
+      "roomCode": "12",
+      "bedId": "T0-05C -12-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05B",
+      "roomCode": "13",
+      "bedId": "T0-05B -13-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05B",
+      "roomCode": "13",
+      "bedId": "T0-05B -13-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05B",
+      "roomCode": "18",
+      "bedId": "T0-05B -18-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05A",
+      "roomCode": "11",
+      "bedId": "T0-05A -11-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05A",
+      "roomCode": "11",
+      "bedId": "T0-05A -11-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "5F",
+      "ward": "05D",
+      "roomCode": "13",
+      "bedId": "T0-05D -13-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-VIS",
+        "name": "訪客電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": -9.32,
+          "y": 0,
+          "z": 25.4,
+          "width": 7.6,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "6F",
+      "ward": "06A",
+      "roomCode": "19",
+      "bedId": "T0-06A -19-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08D",
+      "roomCode": "12",
+      "bedId": "T0-08D -12-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08D",
+      "roomCode": "12",
+      "bedId": "T0-08D -12-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08D",
+      "roomCode": "13",
+      "bedId": "T0-08D -13-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "8F",
+      "ward": "08D",
+      "roomCode": "13",
+      "bedId": "T0-08D -13-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "01",
+        "roomName": "09HS區 01病室",
+        "ward": "09HS",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -20.86,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.64,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "01-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "02",
+        "roomName": "09HS區 02病室",
+        "ward": "09HS",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -16.22,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.64,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "02-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03",
+        "roomName": "09HS區 03病室",
+        "ward": "09HS",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -15.58,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.64,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "03-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "05",
+        "roomName": "09HS區 05病室",
+        "ward": "09HS",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -10.94,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.64,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "05-1",
+          "05-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "06",
+        "roomName": "09HS區 06病室",
+        "ward": "09HS",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -6.22,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.8,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "06-1",
+          "06-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "07",
+        "roomName": "09HS區 07病室",
+        "ward": "09HS",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 8.98,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.8,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "07-1",
+          "07-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "08",
+        "roomName": "09HS區 08病室",
+        "ward": "09HS",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 13.78,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.8,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "08-1",
+          "08-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "09",
+        "roomName": "09HS區 09病室",
+        "ward": "09HS",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 18.58,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.8,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "09-1",
+          "09-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "10",
+        "roomName": "09HS區 10病室",
+        "ward": "09HS",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 23.38,
+          "y": 0,
+          "z": -56.2,
+          "width": 4.8,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "10-1",
+          "10-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "11",
+        "roomName": "09HS區 11病室",
+        "ward": "09HS",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 28.38,
+          "y": 0,
+          "z": -56.2,
+          "width": 5.2,
+          "depth": 7.6,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "11-1",
+          "11-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "12",
+        "roomName": "09HS區 12病室",
+        "ward": "09HS",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -33.42,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.6,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "12-1",
+          "12-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "13",
+        "roomName": "09HS區 13病室",
+        "ward": "09HS",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -28.02,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "13-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "15",
+        "roomName": "09HS區 15病室",
+        "ward": "09HS",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -22.82,
+          "y": 0,
+          "z": -39.8,
+          "width": 5.2,
+          "depth": 12.4,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "15-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "16",
+        "roomName": "09HS區 16病室",
+        "ward": "09HS",
+        "roomType": "三人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -17.42,
+          "y": 0,
+          "z": -39.8,
+          "width": 5.6,
+          "depth": 12.4,
+          "height": 1.2
+        },
+        "bedCount": 3,
+        "isNegativePressure": false,
+        "beds": [
+          "16-1",
+          "16-2",
+          "16-3"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "17",
+        "roomName": "09HS區 17病室",
+        "ward": "09HS",
+        "roomType": "三人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 16.38,
+          "y": 0,
+          "z": -39.2,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 3,
+        "isNegativePressure": false,
+        "beds": [
+          "17-1",
+          "17-2",
+          "17-3"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "18",
+        "roomName": "09HS區 18病室",
+        "ward": "09HS",
+        "roomType": "三人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 21.58,
+          "y": 0,
+          "z": -39.2,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 3,
+        "isNegativePressure": false,
+        "beds": [
+          "18-1",
+          "18-2",
+          "18-3"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "19",
+        "roomName": "09HS區 19病室",
+        "ward": "09HS",
+        "roomType": "三人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 26.58,
+          "y": 0,
+          "z": -39.2,
+          "width": 4.8,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 3,
+        "isNegativePressure": false,
+        "beds": [
+          "19-1",
+          "19-2",
+          "19-3"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "09HS-DIRTY",
+        "roomName": "⚠️ 09HS 污物室",
+        "ward": "09HS",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 32.18,
+          "y": 0,
+          "z": -39.2,
+          "width": 6.4,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "09HS-CLEAN",
+        "roomName": "🧹 09HS 清潔間",
+        "ward": "09HS",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -13.02,
+          "y": 0,
+          "z": -43.8,
+          "width": 3.2,
+          "depth": 4.4,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "01",
+        "roomName": "09HN區 01病室",
+        "ward": "09HN",
+        "roomType": "三人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -32.02,
+          "y": 0,
+          "z": -27.2,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 3,
+        "isNegativePressure": false,
+        "beds": [
+          "01-1",
+          "01-2",
+          "01-3"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "02",
+        "roomName": "09HN區 02病室",
+        "ward": "09HN",
+        "roomType": "三人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -26.82,
+          "y": 0,
+          "z": -27.2,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 3,
+        "isNegativePressure": false,
+        "beds": [
+          "02-1",
+          "02-2",
+          "02-3"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03",
+        "roomName": "09HN區 03病室",
+        "ward": "09HN",
+        "roomType": "三人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -21.62,
+          "y": 0,
+          "z": -30.4,
+          "width": 5.2,
+          "depth": 9.6,
+          "height": 1.2
+        },
+        "bedCount": 3,
+        "isNegativePressure": false,
+        "beds": [
+          "03-1",
+          "03-2",
+          "03-3"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "05",
+        "roomName": "09HN區 05病室",
+        "ward": "09HN",
+        "roomType": "三人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -16.22,
+          "y": 0,
+          "z": -30.4,
+          "width": 5.6,
+          "depth": 9.6,
+          "height": 1.2
+        },
+        "bedCount": 3,
+        "isNegativePressure": false,
+        "beds": [
+          "05-1",
+          "05-2",
+          "05-3"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "06",
+        "roomName": "09HN區 06病室",
+        "ward": "09HN",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -26.3,
+          "y": 0,
+          "z": -13.2,
+          "width": 5.44,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "06-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "07",
+        "roomName": "09HN區 07病室",
+        "ward": "09HN",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -21.18,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "07-1",
+          "07-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "08",
+        "roomName": "09HN區 08病室",
+        "ward": "09HN",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -16.38,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "08-1",
+          "08-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "09",
+        "roomName": "09HN區 09病室",
+        "ward": "09HN",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -11.58,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "09-1",
+          "09-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "10",
+        "roomName": "09HN區 10病室",
+        "ward": "09HN",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -6.78,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "10-1",
+          "10-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "11",
+        "roomName": "09HN區 11病室",
+        "ward": "09HN",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -1.98,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "11-1",
+          "11-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "12",
+        "roomName": "09HN區 12病室",
+        "ward": "09HN",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 2.82,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "12-1",
+          "12-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "13",
+        "roomName": "09HN區 13病室",
+        "ward": "09HN",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 7.62,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "13-1",
+          "13-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "15",
+        "roomName": "09HN區 15病室",
+        "ward": "09HN",
+        "roomType": "雙人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 12.42,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 2,
+        "isNegativePressure": false,
+        "beds": [
+          "15-1",
+          "15-2"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "16",
+        "roomName": "09HN區 16病室",
+        "ward": "09HN",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 21.18,
+          "y": 0,
+          "z": -13.2,
+          "width": 5.2,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "16-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "17",
+        "roomName": "09HN區 17病室",
+        "ward": "09HN",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 26.18,
+          "y": 0,
+          "z": -13.2,
+          "width": 4.8,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "17-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "18",
+        "roomName": "09HN區 18病室",
+        "ward": "09HN",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 31.18,
+          "y": 0,
+          "z": -13.2,
+          "width": 5.2,
+          "depth": 8.8,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "18-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "19",
+        "roomName": "09HN區 19病室",
+        "ward": "09HN",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 21.38,
+          "y": 0,
+          "z": -27.2,
+          "width": 5.6,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "19-1"
+        ]
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "09HN-DIRTY",
+        "roomName": "⚠️ 09HN 污物室",
+        "ward": "09HN",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 26.98,
+          "y": 0,
+          "z": -27.2,
+          "width": 5.6,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "09HN-CLEAN",
+        "roomName": "🧹 09HN 清潔間",
+        "ward": "09HN",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 31.78,
+          "y": 0,
+          "z": -27.2,
+          "width": 4,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-09HS",
+        "name": "09HS 護理站",
+        "ward": "09HS",
+        "bounds": {
+          "x": -5.92,
+          "y": 0,
+          "z": -40.8,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#9c27b0"
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-09HN",
+        "name": "09HN 護理站",
+        "ward": "09HN",
+        "bounds": {
+          "x": -5.92,
+          "y": 0,
+          "z": -26.4,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#e91e63"
+      },
+      "reason": "E_09F.pdf未能確認HN/HS位置；舊套版重疊A/B，保留待核對版本"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "01",
+      "bedId": "T0-09HS-01-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "02",
+      "bedId": "T0-09HS-02-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "03",
+      "bedId": "T0-09HS-03-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "05",
+      "bedId": "T0-09HS-05-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "05",
+      "bedId": "T0-09HS-05-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "06",
+      "bedId": "T0-09HS-06-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "06",
+      "bedId": "T0-09HS-06-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "07",
+      "bedId": "T0-09HS-07-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "07",
+      "bedId": "T0-09HS-07-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "08",
+      "bedId": "T0-09HS-08-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "08",
+      "bedId": "T0-09HS-08-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "09",
+      "bedId": "T0-09HS-09-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "09",
+      "bedId": "T0-09HS-09-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "10",
+      "bedId": "T0-09HS-10-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "10",
+      "bedId": "T0-09HS-10-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "11",
+      "bedId": "T0-09HS-11-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "11",
+      "bedId": "T0-09HS-11-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "12",
+      "bedId": "T0-09HS-12-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "12",
+      "bedId": "T0-09HS-12-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "13",
+      "bedId": "T0-09HS-13-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "15",
+      "bedId": "T0-09HS-15-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "16",
+      "bedId": "T0-09HS-16-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "16",
+      "bedId": "T0-09HS-16-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "16",
+      "bedId": "T0-09HS-16-03",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "17",
+      "bedId": "T0-09HS-17-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "17",
+      "bedId": "T0-09HS-17-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "17",
+      "bedId": "T0-09HS-17-03",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "18",
+      "bedId": "T0-09HS-18-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "18",
+      "bedId": "T0-09HS-18-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "18",
+      "bedId": "T0-09HS-18-03",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "19",
+      "bedId": "T0-09HS-19-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "19",
+      "bedId": "T0-09HS-19-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HS",
+      "roomCode": "19",
+      "bedId": "T0-09HS-19-03",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "01",
+      "bedId": "T0-09HN-01-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "01",
+      "bedId": "T0-09HN-01-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "01",
+      "bedId": "T0-09HN-01-03",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "02",
+      "bedId": "T0-09HN-02-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "02",
+      "bedId": "T0-09HN-02-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "02",
+      "bedId": "T0-09HN-02-03",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "03",
+      "bedId": "T0-09HN-03-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "03",
+      "bedId": "T0-09HN-03-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "03",
+      "bedId": "T0-09HN-03-03",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "05",
+      "bedId": "T0-09HN-05-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "05",
+      "bedId": "T0-09HN-05-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "05",
+      "bedId": "T0-09HN-05-03",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "06",
+      "bedId": "T0-09HN-06-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "07",
+      "bedId": "T0-09HN-07-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "07",
+      "bedId": "T0-09HN-07-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "08",
+      "bedId": "T0-09HN-08-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "08",
+      "bedId": "T0-09HN-08-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "09",
+      "bedId": "T0-09HN-09-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "09",
+      "bedId": "T0-09HN-09-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "10",
+      "bedId": "T0-09HN-10-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "10",
+      "bedId": "T0-09HN-10-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "11",
+      "bedId": "T0-09HN-11-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "11",
+      "bedId": "T0-09HN-11-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "12",
+      "bedId": "T0-09HN-12-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "12",
+      "bedId": "T0-09HN-12-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "13",
+      "bedId": "T0-09HN-13-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "13",
+      "bedId": "T0-09HN-13-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "15",
+      "bedId": "T0-09HN-15-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "15",
+      "bedId": "T0-09HN-15-02",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "16",
+      "bedId": "T0-09HN-16-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "17",
+      "bedId": "T0-09HN-17-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "18",
+      "bedId": "T0-09HN-18-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "9F",
+      "ward": "09HN",
+      "roomCode": "19",
+      "bedId": "T0-09HN-19-01",
+      "reason": "原圖未確認HN/HS位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "01",
+        "roomName": "01A1區 01病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -33.42,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.6,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "01-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "02",
+        "roomName": "01A1區 02病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -28.02,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "02-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "03",
+        "roomName": "01A1區 03病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -22.82,
+          "y": 0,
+          "z": -39.8,
+          "width": 5.2,
+          "depth": 12.4,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "03-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "05",
+        "roomName": "01A1區 05病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -17.42,
+          "y": 0,
+          "z": -39.8,
+          "width": 5.6,
+          "depth": 12.4,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "05-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "06",
+        "roomName": "01A1區 06病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 16.38,
+          "y": 0,
+          "z": -39.2,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "06-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "07",
+        "roomName": "01A1區 07病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 21.58,
+          "y": 0,
+          "z": -39.2,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "07-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "08",
+        "roomName": "01A1區 08病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 26.58,
+          "y": 0,
+          "z": -39.2,
+          "width": 4.8,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "08-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "09",
+        "roomName": "01A1區 09病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": 32.18,
+          "y": 0,
+          "z": -39.2,
+          "width": 6.4,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "09-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "10",
+        "roomName": "01A1區 10病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -13.02,
+          "y": 0,
+          "z": -43.8,
+          "width": 3.2,
+          "depth": 4.4,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "10-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "11",
+        "roomName": "01A1區 11病室",
+        "ward": "01A1",
+        "roomType": "單人房",
+        "category": "PATIENT_ROOM",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -4.02,
+          "y": 0,
+          "z": -49.8,
+          "width": 2.8,
+          "depth": 3.6,
+          "height": 1.2
+        },
+        "bedCount": 1,
+        "isNegativePressure": false,
+        "beds": [
+          "11-1"
+        ]
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "01A1-DIRTY",
+        "roomName": "⚠️ 01A1 污物室",
+        "ward": "01A1",
+        "roomType": "污物集中管制室",
+        "category": "DIRTY_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -29.42,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.6,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "rooms",
+      "item": {
+        "roomCode": "01A1-CLEAN",
+        "roomName": "🧹 01A1 清潔間",
+        "ward": "01A1",
+        "roomType": "無菌備品與清潔室",
+        "category": "CLEAN_UTILITY",
+        "areaPing": 8,
+        "areaM2": 26.5,
+        "bounds": {
+          "x": -24.02,
+          "y": 0,
+          "z": -44.8,
+          "width": 5.2,
+          "depth": 11.2,
+          "height": 1.2
+        },
+        "bedCount": 0,
+        "isNegativePressure": false,
+        "beds": []
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "nursingStations",
+      "item": {
+        "id": "NS-01A1",
+        "name": "01A1 護理站",
+        "ward": "01A1",
+        "bounds": {
+          "x": 5.92,
+          "y": 0,
+          "z": -40.8,
+          "width": 8,
+          "depth": 8,
+          "height": 1.2
+        },
+        "color": "#ff9800"
+      },
+      "reason": "病房代碼樓層與目前樓層不符"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11A",
+      "roomCode": "12",
+      "bedId": "T0-11A -12-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "11F",
+      "ward": "11A",
+      "roomCode": "12",
+      "bedId": "T0-11A -12-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13D",
+      "roomCode": "12",
+      "bedId": "T0-13D -12-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13D",
+      "roomCode": "12",
+      "bedId": "T0-13D -12-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13D",
+      "roomCode": "13",
+      "bedId": "T0-13D -13-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "13F",
+      "ward": "13D",
+      "roomCode": "13",
+      "bedId": "T0-13D -13-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-VIS",
+        "name": "訪客電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": -9.32,
+          "y": 0,
+          "z": 25.4,
+          "width": 7.6,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "14F舊套版公共空間，尚未依原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "14F舊套版公共空間，尚未依原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "14F舊套版公共空間，尚未依原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "14F舊套版公共空間，尚未依原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-STAIR-N1",
+        "name": "N1安全梯",
+        "type": "stair",
+        "bounds": {
+          "x": -38.92,
+          "y": 0,
+          "z": -57.2,
+          "width": 3.6,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "14F舊套版公共空間，尚未依原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-STAIR-N2",
+        "name": "N2安全梯",
+        "type": "stair",
+        "bounds": {
+          "x": 28.28,
+          "y": 0,
+          "z": -57.2,
+          "width": 3.6,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "14F舊套版公共空間，尚未依原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-STAIR-S4",
+        "name": "S4安全梯",
+        "type": "stair",
+        "bounds": {
+          "x": -31.32,
+          "y": 0,
+          "z": 47.6,
+          "width": 3.6,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "14F舊套版公共空間，尚未依原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-STAIR-S5",
+        "name": "S5安全梯",
+        "type": "stair",
+        "bounds": {
+          "x": 35.48,
+          "y": 0,
+          "z": 47.6,
+          "width": 3.6,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "14F舊套版公共空間，尚未依原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14A",
+      "roomCode": "22",
+      "bedId": "T0-14A -22-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14D",
+      "roomCode": "12",
+      "bedId": "T0-14D -12-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14D",
+      "roomCode": "12",
+      "bedId": "T0-14D -12-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14D",
+      "roomCode": "13",
+      "bedId": "T0-14D -13-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "14F",
+      "ward": "14D",
+      "roomCode": "13",
+      "bedId": "T0-14D -13-02",
+      "reason": "來源平面圖尚無可確認房間位置"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-N",
+        "name": "北病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 3.28,
+          "y": 0,
+          "z": -31.6,
+          "width": 8.8,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-BED-S",
+        "name": "南病床電梯廳",
+        "type": "elevator",
+        "bounds": {
+          "x": 12.48,
+          "y": 0,
+          "z": 25.4,
+          "width": 8,
+          "depth": 4.4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-ELEV-CARGO",
+        "name": "載物電梯室",
+        "type": "elevator",
+        "bounds": {
+          "x": 4.88,
+          "y": 0,
+          "z": -35.8,
+          "width": 5.6,
+          "depth": 3.6,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "kind": "facilities",
+      "item": {
+        "id": "FAC-STAIR-S5",
+        "name": "S5安全梯",
+        "type": "stair",
+        "bounds": {
+          "x": 35.48,
+          "y": 0,
+          "z": 47.6,
+          "width": 3.6,
+          "depth": 4,
+          "height": 1.2
+        }
+      },
+      "reason": "舊套版公共空間與本層原圖B/C配置重疊，待原圖定位"
+    },
+    {
+      "building": "E01_MAIN",
+      "floor": "15F",
+      "ward": "15C",
+      "roomCode": "02",
+      "bedId": "T0-15C -02-01",
+      "reason": "來源平面圖尚無可確認房間位置"
+    }
+  ]
+}

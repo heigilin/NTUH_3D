@@ -304,12 +304,14 @@
       "basementFloors": 4,
       "floorHeight": 3.6,
       "height": 50.4,
-      "color": "#9b624d",
-      "roofColor": "#d8c7ad",
+      "color": "#9e3f36",
+      "roofColor": "#dfd4c2",
       "highlightBorder": true,
-      "position": { "x": -31.0, "z": -25.0 },
-      "dimensions": { "width": 36.0, "depth": 26.0 },
-      "description": "臺北市中正區中山南路12號，位於兒醫大樓與西址北區之間。地上14層、地下4層；7至12樓為病房區，13至14樓為研究辦公。外觀與平面為比例示意，非實測或正式圖面。"
+      "position": { "x": 6.0, "z": -25.0 },
+      "dimensions": { "width": 32.0, "depth": 26.0 },
+      "description": "臺北市中正區中山南路12號，面臨中山南路，北鄰兒醫大樓並以空橋相接。下層為經典紅磚飾白色橫條紋，上層為米黃花崗石材配連續深色橫窗，東北側帶深凹藍色帷幕造型天井。",
+      "entranceDirection": "east",
+      "entranceRoad": "中山南路"
     },
     {
       "id": "CHILD_HOSPITAL",

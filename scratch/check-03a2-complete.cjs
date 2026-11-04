@@ -1,0 +1,15 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');global.window=global;
+for(const f of ['js/data/rooms-data.js','js/data/ward-3d-layout-data.js','js/data/ward-bed-ids.js','js/ward-source-traces.js','js/ward-plan-layout.js','js/ward-plan-geometry.js','js/ward-plan-2d.js'])vm.runInThisContext(fs.readFileSync(f,'utf8'));
+const l=WARD_3D_LAYOUT_DATA.E01_MAIN['3F'],g=WardPlanGeometry;g.prepare(WARD_3D_LAYOUT_DATA,g.rawCorridors);
+const spaces=[...l.rooms,...l.facilities,...l.nursingStations].filter(r=>r.ward==='03A2');const overlaps=[];
+for(let i=0;i<spaces.length;i++)for(let j=i+1;j<spaces.length;j++)if(g.hit(g.rect(spaces[i].bounds),g.rect(spaces[j].bounds)))overlaps.push([spaces[i].roomName||spaces[i].name,spaces[j].roomName||spaces[j].name]);
+const roomCorridor=[];for(const c of l.sourceTraceCorridors.filter(c=>c.ward==='03A2'))for(const r of [...l.rooms,...l.facilities,...l.nursingStations])if(g.hit(g.rect(c.bounds),g.rect(r.bounds)))roomCorridor.push([c.name,r.roomName||r.name]);
+const owned=l.rooms.filter(r=>r.ward==='03A2'),beds=l.beds.filter(r=>r.ward==='03A2'),ante=l.facilities.filter(r=>r.ward==='03A2'&&r.type==='anteroom');
+assert.equal(owned.length,9);assert.equal(beds.length,9);assert.deepEqual(beds.map(b=>b.bedId).sort(),Object.values(WARD_BED_IDS['03A2']).flat().sort());assert.equal(ante.length,10);
+assert(!l.nursingStations.some(n=>n.ward==='03A2'),'Open nursing area must not become a physical counter');
+assert.equal(l.sourceTraceCorridors.filter(c=>c.ward==='03A2'&&c.isNursingArea).length,5);
+assert(!l.sourceTraceCorridors.some(c=>c.name==='03A2東側走道'),'Closed space must not become an aisle');
+assert.deepEqual(overlaps,[]);assert.deepEqual(roomCorridor,[]);
+assert.equal(g.components([...l.displayCorridors.filter(c=>c.ward==='03A2'),...ante]),1,'Controlled route through anteroom to N2 must be connected');
+const scene=WardPlan2D.scene('E01_MAIN','3F','03A2');assert(scene.spaces.some(s=>s.label==='浴廁（更衣區）'),'Source labels containing 區 must not be stripped');
+const report={spaces:spaces.length,patientRooms:owned.length,beds:beds.length,anterooms:ante.length,overlaps,roomCorridor,components:g.components(l.displayCorridors.filter(c=>c.ward==='03A2'))};fs.writeFileSync('scratch/03a2-spaces-audit.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

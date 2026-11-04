@@ -1,0 +1,123 @@
+{
+  "floor": "11F",
+  "source": "11PE_11PW.pdf",
+  "rooms": [
+    {
+      "name": "觀察室北",
+      "sourceRect": {
+        "x": 395,
+        "y": 232,
+        "w": 87,
+        "h": 57
+      },
+      "bounds": {
+        "x": 2.1136363636363633,
+        "z": -6.92215909090909,
+        "y": 0,
+        "width": 3.064772727272727,
+        "depth": 2.0079545454545453,
+        "height": 1.2
+      },
+      "door": {
+        "side": "east",
+        "offset": 0.21999999999999995,
+        "width": 0.6425454545454545,
+        "sourceChecked": false,
+        "accessId": "TRACE-11PB-CORRIDOR-0-safe-0",
+        "accessKind": "corridor",
+        "gap": 0.10568181818181799,
+        "validation": "clear-access",
+        "basis": "clear geometric approach to corridor/anteroom; precise door bay pending source"
+      }
+    },
+    {
+      "name": "觀察室南",
+      "sourceRect": {
+        "x": 395,
+        "y": 292,
+        "w": 87,
+        "h": 57
+      },
+      "bounds": {
+        "x": 2.1136363636363633,
+        "z": -4.8085227272727264,
+        "y": 0,
+        "width": 3.064772727272727,
+        "depth": 2.0079545454545453,
+        "height": 1.2
+      },
+      "door": {
+        "side": "east",
+        "offset": 0.21999999999999995,
+        "width": 0.6425454545454545,
+        "sourceChecked": false,
+        "accessId": "TRACE-11PB-CORRIDOR-0-safe-0",
+        "accessKind": "corridor",
+        "gap": 0.10568181818181799,
+        "validation": "clear-access",
+        "basis": "clear geometric approach to corridor/anteroom; precise door bay pending source"
+      }
+    }
+  ],
+  "beds": [
+    {
+      "bedId": "SCHEMATIC-CHILD_HOSPITAL-11F-11PB-觀察室北-SYMBOL",
+      "displayLabel": "11PB觀察室北 床位示意（非實際床數）",
+      "roomCode": "觀察室北",
+      "ward": "11PB",
+      "x": 3.12935606060606,
+      "y": 0.35,
+      "z": -6.92215909090909,
+      "width": 1.0333333333333334,
+      "depth": 0.3381818181818182,
+      "height": 0.7,
+      "rotation": 0,
+      "headSide": "east",
+      "axis": "east-west",
+      "isSchematic": true,
+      "symbolOnly": true,
+      "bedLabel": "示意",
+      "clearance": 0.45
+    },
+    {
+      "bedId": "SCHEMATIC-CHILD_HOSPITAL-11F-11PB-觀察室南-SYMBOL",
+      "displayLabel": "11PB觀察室南 床位示意（非實際床數）",
+      "roomCode": "觀察室南",
+      "ward": "11PB",
+      "x": 3.12935606060606,
+      "y": 0.35,
+      "z": -4.8085227272727264,
+      "width": 1.0333333333333334,
+      "depth": 0.3381818181818182,
+      "height": 0.7,
+      "rotation": 0,
+      "headSide": "east",
+      "axis": "east-west",
+      "isSchematic": true,
+      "symbolOnly": true,
+      "bedLabel": "示意",
+      "clearance": 0.45
+    }
+  ],
+  "sourceIdsRetained": 111,
+  "sourceBedIdsUnassigned": true,
+  "corridor": {
+    "x": 4.227272727272727,
+    "z": -6.552272727272728,
+    "y": 0,
+    "width": 0.9511363636363637,
+    "depth": 5.565909090909091,
+    "height": 1.2
+  },
+  "twoD": [
+    {
+      "id": "SCHEMATIC-CHILD_HOSPITAL-11F-11PB-觀察室北-SYMBOL",
+      "label": "示意"
+    },
+    {
+      "id": "SCHEMATIC-CHILD_HOSPITAL-11F-11PB-觀察室南-SYMBOL",
+      "label": "示意"
+    }
+  ],
+  "other11FWardsUnchanged": true
+}

@@ -1,0 +1,9 @@
+{
+  "rooms3D": 1224,
+  "rooms2D": 2448,
+  "compactRooms": 263,
+  "noClearArea": [],
+  "bedOverlap": [],
+  "examples": [],
+  "sourceGeometryUnchanged": true
+}

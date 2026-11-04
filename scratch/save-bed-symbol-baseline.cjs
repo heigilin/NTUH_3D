@@ -1,0 +1,1 @@
+const fs=require('fs');require('./inspect-all-campus-missing-beds.cjs');fs.writeFileSync('scratch/before-all-campus-bed-symbols/layout.json',JSON.stringify(WARD_3D_LAYOUT_DATA));fs.writeFileSync('scratch/before-all-campus-bed-symbols/bed-ids.json',JSON.stringify(WARD_BED_IDS));

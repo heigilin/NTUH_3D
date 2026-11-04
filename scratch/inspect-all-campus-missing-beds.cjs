@@ -1,0 +1,8 @@
+const fs=require('fs'),vm=require('vm');global.window=global;const html=fs.readFileSync('index.html','utf8');let paths=[...html.matchAll(/<script[^>]+src="(js\/[^"?]+)(?:\?[^" ]*)?"/g)].map(m=>m[1]).filter(p=>p.startsWith('js/data/')||/^js\/ward-/.test(p));for(const p of paths)vm.runInThisContext(fs.readFileSync(p,'utf8'),{filename:p});WardPlanGeometry.prepare(WARD_3D_LAYOUT_DATA,WardPlanGeometry.rawCorridors);
+const missing=[],sourceOnly=[],groups={},fac=[];let total=0;for(const[b,floors]of Object.entries(WARD_3D_LAYOUT_DATA))for(const[f,l]of Object.entries(floors)){
+for(const r of l.rooms||[]){const beds=l.beds.filter(q=>q.ward===r.ward&&q.roomCode===r.roomCode);const patient=r.category==='PATIENT_ROOM'||r.category==='ISOLATION'||r.bedCount>0||/^\d+$/.test(r.roomCode);if(!patient||/DIRTY|CLEAN/i.test(r.roomCode))continue;total++;if(!beds.length)missing.push({b,f,ward:r.ward,code:r.roomCode,name:r.roomName,cat:r.category,count:r.bedCount,bounds:r.bounds,source:r.sourcePlan,sourceBedIds:r.sourceBedIds});}
+for(const item of l.sourceUnplacedSpaces||[])if(/病房|病室/.test(item.item?.roomName||item.item?.name||''))sourceOnly.push({b,f,...item});
+for(const q of l.facilities||[])if(/病房|病室/.test(q.name||q.roomName||'')&&!/前室|護理|走道/.test(q.name||q.roomName||''))fac.push({b,f,...q});
+}
+for(const r of missing){let key=r.b+'/'+r.f+'/'+r.ward;(groups[key]??=[]).push(r.code)}
+fs.writeFileSync('scratch/all-campus-missing-beds-before.json',JSON.stringify({total,missing,sourceOnly,fac},null,2));console.log(JSON.stringify({paths,total,missing:missing.length,groups,sourceOnly:sourceOnly.length,fac},null,2));

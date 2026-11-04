@@ -1,0 +1,36 @@
+/* Close actions occupy a dedicated corner, never a wrapping tool row. */
+button.window-close {
+ position:absolute; top:10px; right:10px; z-index:5;
+ display:inline-flex; align-items:center; justify-content:center; gap:5px;
+ width:78px; min-width:78px; height:34px; padding:6px 10px;
+ margin:0; border:1px solid #e5aaa4; border-radius:8px;
+ background:#fff1ef; color:#a53730; font-family:inherit; font-size:13px; font-weight:700; line-height:1.2;
+ white-space:nowrap; cursor:pointer;
+}
+button.window-close:hover { background:#fce0db; color:#852c27; }
+button.window-close:focus-visible { outline:3px solid #397b8e; outline-offset:2px; }
+.ward-canvas-header {
+ position:relative; display:grid; grid-template-columns:minmax(0,1fr);
+ height:auto; min-height:58px; flex-shrink:0; padding:10px 18px; gap:8px;
+}
+.ward-canvas-title-group { min-width:0; min-height:34px; padding-right:92px; flex-wrap:wrap; }
+.ward-canvas-title { overflow-wrap:anywhere; }
+.ward-canvas-tools-bar { max-width:100%; overflow-x:auto; padding-bottom:3px; }
+.ward-canvas-tools-bar > * { flex-shrink:0; }
+.ward-canvas-body { min-height:0; }
+.canvas-markup-toolbar {
+ box-sizing:border-box; max-width:calc(100vw - 24px); flex-wrap:wrap;
+ padding-right:100px; border-radius:16px;
+}
+.canvas-markup-toolbar .toolbar-tool-group,
+.canvas-markup-toolbar .toolbar-actions { flex-wrap:wrap; }
+.hover-card-header { position:relative; min-height:36px; padding-right:88px; }
+.hover-card-header .window-close { top:0; right:0; }
+.orient-header { position:relative; min-height:36px; padding-right:88px; flex-wrap:wrap; gap:6px; }
+.orient-header .window-close { top:0; right:0; }
+@media(max-width:600px) {
+ .ward-canvas-modal { padding:8px; }
+ .ward-canvas-dialog { width:100%; height:calc(100dvh - 16px); }
+ .ward-canvas-header { padding:10px; }
+ .canvas-markup-toolbar { left:12px; transform:none; width:calc(100vw - 24px); }
+}

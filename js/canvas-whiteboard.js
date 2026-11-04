@@ -144,8 +144,8 @@ class CanvasWhiteboardManager {
         <button id="btn-markup-undo" class="action-btn" title="復原上一步">↩️ 復原</button>
         <button id="btn-markup-clear" class="action-btn" title="清除所有筆跡">🗑️ 清除</button>
         <button id="btn-markup-export" class="action-btn primary" title="下載標註圖檔">💾 下載截圖</button>
-        <button id="btn-markup-close" class="action-btn close-btn" title="關閉畫布">✖️ 結束畫布</button>
       </div>
+      <button id="btn-markup-close" class="action-btn close-btn window-close" title="關閉畫布" aria-label="關閉畫布">✕ 關閉</button>
     `;
 
     document.body.appendChild(bar);
@@ -431,7 +431,7 @@ class CanvasWhiteboardManager {
     mCtx.fillStyle = '#ffffff';
     mCtx.font = 'bold 16px "Noto Sans TC", sans-serif';
     const nowStr = new Date().toLocaleString('zh-TW', { hour12: false });
-    mCtx.fillText(`臺大醫院 3D 智慧院區標註導覽檔 (${nowStr})`, 28, merged.height - 24);
+    mCtx.fillText(`臺大醫院智慧監測系統標註檔 (${nowStr})`, 28, merged.height - 24);
 
     const link = document.createElement('a');
     link.download = `NTUH_3D_Annotation_${Date.now()}.png`;
@@ -483,8 +483,8 @@ class CanvasWhiteboardManager {
             <button id="btn-wcanvas-clear" class="w-action-btn" title="清除手繪">🗑️</button>
             <button id="btn-wcanvas-export" class="w-action-btn primary" title="儲存畫布圖檔">💾 下載圖檔</button>
             <button id="btn-wcanvas-switch-3d" class="w-action-btn primary" style="background:#0284c7;color:#fff;" title="切換至 3D 鳥瞰透視圖">🏢 3D 透視</button>
-            <button id="btn-wcanvas-close" class="w-action-btn close" title="關閉">✖️ 關閉</button>
           </div>
+          <button id="btn-wcanvas-close" class="w-action-btn close window-close" title="關閉平面圖" aria-label="關閉平面圖">✕ 關閉</button>
         </div>
 
         <div class="ward-canvas-body" id="ward-canvas-body">

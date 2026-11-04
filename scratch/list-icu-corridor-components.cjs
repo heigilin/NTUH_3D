@@ -1,0 +1,3 @@
+require('./check-icu-3-4.cjs');
+for(const f of ['3F','4F']){const a=WARD_3D_LAYOUT_DATA.E01_MAIN[f].displayCorridors,remaining=new Set(a.map((_,i)=>i)),groups=[];
+while(remaining.size){const q=[remaining.values().next().value];remaining.delete(q[0]);const found=[];while(q.length){const i=q.pop();found.push(a[i].name);let r=WardPlanGeometry.rect(a[i].bounds);for(const j of remaining){let s=WardPlanGeometry.rect(a[j].bounds),x=Math.min(r.r,s.r)-Math.max(r.l,s.l),z=Math.min(r.b,s.b)-Math.max(r.t,s.t);if(x>=-1e-6&&z>=-1e-6&&(x>1e-6||z>1e-6)){remaining.delete(j);q.push(j);}}}groups.push(found);}console.log(f,JSON.stringify(groups));}

@@ -1,0 +1,11 @@
+{
+  "rooms": 16,
+  "north": 7,
+  "south": 9,
+  "bedSymbols": 25,
+  "formalBedIdsPreserved": 48,
+  "rawCorridorComponents": 1,
+  "spaceOverlaps": 0,
+  "corridorCrossings": 0,
+  "unrelatedRoomsAndBedsUnchanged": true
+}

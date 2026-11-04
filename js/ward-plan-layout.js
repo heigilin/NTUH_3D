@@ -7,6 +7,14 @@
     spaceFontSize(text, pixelsPerUnit=24) {
       return pixelsPerUnit * (/安全梯/.test(String(text)) ? 1.5 : 1);
     },
+    patientFontSize(room,pixelsPerUnit=1) {
+      // A source annex may leave a smaller sleeping area. Use a modest
+      // caption reduction there, never the old 0.38-unit compact-room size.
+      const b=room.bounds,z=room.bedBounds;
+      const fraction=room.bedZoneFraction??(b&&z?z.width*z.depth/(b.width*b.depth):1);
+      const size=room.bedCount>=3?Math.max(.72,Math.min(.92,.92*Math.sqrt(fraction))):.92;
+      return size*pixelsPerUnit;
+    },
     room(r) {
       if(r.displayRoomLabel)return r.displayRoomLabel;
       const code=String(r.roomCode||'').trim();
@@ -18,7 +26,7 @@
     },
     station(point) {
       const raw=point.ward||String(point.name||point.label||'').match(/(?:^|\s)([0-9]+[A-Za-z][A-Za-z0-9]*)/)?.[1]||'';
-      const name=String(raw).replace(/^([0-9])(?=[A-Za-z])/,'0$1');
+      const name=String(raw).replace(/^([1-9])(?=[A-Za-z])/,'0$1');
       return name ? name+' 護理站' : '護理站';
     },
     openStations(layout,corridors) {
@@ -30,10 +38,19 @@
       }
       return [...selected.values()];
     },
-    // Largest readable strip in a room that does not intersect any bed footprint.
-    place(room, beds, text=room.label||'') {
+    // Move patient-room captions into the largest bed-free area. Bed count
+    // must not impose a smaller font; both renderers use their normal size.
+    place(room, beds, text=room.label||'', preferredSize=0) {
       if(/^\d{1,2}[A-Za-z]?$/.test(String(text))){
-        const available=this.spaceBox(room,beds,String(text));
+        const available=this.spaceBox(room,beds,String(text),.035);
+        // An unlabelled in-room annex is a soft display exclusion. If the
+        // ordinary caption cannot fit outside it, move across that area
+        // before reducing the font; bed footprints remain hard exclusions.
+        const fits=p=>p.clear&&p.w>=String(text).length*.68*preferredSize&&p.h>=1.15*preferredSize;
+        if(preferredSize&& !fits(available)&&beds.some(b=>b.captionSoft)){
+          const moved=this.spaceBox(room,beds.filter(b=>!b.captionSoft),String(text),.035);
+          if(fits(moved))return {...moved,movedAcrossAnnex:true};
+        }
         if(available.clear)return available;
       }
       const margin=Math.min(room.w,room.h)*0.035;
@@ -54,8 +71,8 @@
       return {x:left,y:top,w:right-left,h:Math.min((right-left)/3.6,(bottom-top)*.2),clear:false};
     },
     // Use the interior of each service space, with proportional edge clearance.
-    spaceBox(room, obstacles=[], text='') {
-      const margin=Math.min(room.w,room.h)*0.07;
+    spaceBox(room, obstacles=[], text='', edgeMargin=.07) {
+      const margin=Math.min(room.w,room.h)*edgeMargin;
       const inner={x:room.x+margin,y:room.y+margin,w:room.w-2*margin,h:room.h-2*margin};
       const hit=(a,b)=>a.x<b.x+b.w-1e-6&&a.x+a.w>b.x+1e-6&&a.y<b.y+b.h-1e-6&&a.y+a.h>b.y+1e-6;
       const blocks=obstacles.filter(b=>hit(inner,b));
@@ -264,7 +281,10 @@
         // Preserve a realistic bed width first; reduce edge clearance when a
         // narrow room cannot fit both the target beds and the requested gaps.
         const between=fourBed?.25:slots.length===3?.12:.2;
-        const requestedSideGap=clearance??window.WardBedPlacement.sideClearance;
+        // Spread three ordinary beds throughout their source sleeping zone.
+        // End margins must not consume most of the space between the beds.
+        // This calculation is independent of caption size and placement.
+        const requestedSideGap=clearance??(slots.length===3?Math.min(window.WardBedPlacement.sideClearance,rb.depth*.08):window.WardBedPlacement.sideClearance);
         const maxSideGap=Math.max(0,(rb.depth-displayWidth*perSide-between*(perSide-1))/2);
         const sideGap=Math.min(requestedSideGap,maxSideGap);
         const depth=Math.min(displayWidth,Math.max(.1,(rb.depth-sideGap*2-between*(perSide-1))/perSide));

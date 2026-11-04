@@ -1,0 +1,47 @@
+[
+  {
+    "floor": "3F",
+    "wards": [
+      "03A1",
+      "03A2",
+      "03B1",
+      "03B2",
+      "03C"
+    ],
+    "conflicts": [],
+    "crossings": [],
+    "network": 2,
+    "networkWithAnterooms": 1,
+    "unplaced": [
+      {
+        "ward": "03B1",
+        "roomCode": "10",
+        "bedId": "T0-03B1-10-01",
+        "reason": "來源平面圖尚無可確認房間位置"
+      },
+      {
+        "ward": "03B2",
+        "roomCode": "20",
+        "bedId": "T0-03B2-20-01",
+        "reason": "來源平面圖尚無可確認房間位置"
+      }
+    ]
+  },
+  {
+    "floor": "4F",
+    "wards": [
+      "04A1",
+      "04A2",
+      "04B1",
+      "04B2",
+      "04C1",
+      "04C2",
+      "04D1"
+    ],
+    "conflicts": [],
+    "crossings": [],
+    "network": 2,
+    "networkWithAnterooms": 1,
+    "unplaced": []
+  }
+]

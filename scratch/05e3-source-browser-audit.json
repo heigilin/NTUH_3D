@@ -1,0 +1,1 @@
+{"rendered":4,"errors":[],"bedChecks":[{"b":"W04_EAST","f":"3F","w":"ALL","expected":25,"rendered":25},{"b":"W04_EAST","f":"3F","w":"05E3","expected":25,"rendered":25}],"stationChecks":[{"b":"W04_EAST","f":"3F","w":"ALL","expected":["05E3 護理站"],"rendered":["05E3 護理站"]},{"b":"W04_EAST","f":"3F","w":"05E3","expected":["05E3 護理站"],"rendered":["05E3 護理站"]}]}

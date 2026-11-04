@@ -1,0 +1,30 @@
+[
+  {
+    "query": "OPII",
+    "result": "兒童醫療大樓 0PII 病房區 (10F)\n病房區"
+  },
+  {
+    "query": "OPNI",
+    "result": "兒童醫療大樓 0PNI 病房區 (10F)\n病房區\n兒童醫療大樓 10F (0PNO/0PNI)\n平面圖"
+  },
+  {
+    "query": "0PII",
+    "result": "兒童醫療大樓 0PII 病房區 (10F)\n病房區"
+  },
+  {
+    "query": "0PNI",
+    "result": "兒童醫療大樓 0PNI 病房區 (10F)\n病房區\n兒童醫療大樓 10F (0PNO/0PNI)\n平面圖"
+  },
+  {
+    "query": "opii",
+    "result": "兒童醫療大樓 0PII 病房區 (10F)\n病房區"
+  },
+  {
+    "query": "opni",
+    "result": "兒童醫療大樓 0PNI 病房區 (10F)\n病房區\n兒童醫療大樓 10F (0PNO/0PNI)\n平面圖"
+  },
+  {
+    "query": "07C",
+    "result": "東址大樓 7C 病房區 (7F)\n病房區"
+  }
+]

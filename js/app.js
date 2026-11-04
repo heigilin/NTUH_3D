@@ -1141,8 +1141,11 @@ class CampusApp {
           || !!plan?.wards?.length;
       });
     } else if (buildingId === 'HEALTH_BUILDING') {
-      return ['7F', '9F', '10F', '12F'].filter(tag => this.ward3DData[buildingId]?.[tag]?.rooms?.length)
-        .map(tag => ({ tag, label: tag, icon: '🏥', featured: tag === '7F' }));
+      const floors = [];
+      for (let f = 1; f <= 14; f++) {
+        floors.push({ tag: `${f}F`, label: `${f}F`, icon: f >= 7 && f <= 12 ? '🏥' : '🏢', featured: f === 7 });
+      }
+      return floors;
     } else if (buildingId === 'CHILD_HOSPITAL') {
       return [
         { tag: '1F', label: '1F', icon: '🏢' },
@@ -1466,33 +1469,32 @@ class CampusApp {
     };
 
     if (openPanel) {
-
       if (buildingId === 'E01_MAIN') {
-
         this.tweenCamera(
-
           new THREE.Vector3(b.position.x - 85, 45, b.position.z + 55),
-
           new THREE.Vector3(b.position.x - 5, 20, b.position.z),
-
           1000
-
         );
-
-      } else {
-
+      } else if (buildingId === 'HEALTH_BUILDING') {
+        // Look at East facade facing Zhongshan South Road with skybridge and arcade
         this.tweenCamera(
-
-          new THREE.Vector3(b.position.x, b.height + 40, b.position.z + 55),
-
-          new THREE.Vector3(b.position.x, b.height / 2, b.position.z),
-
+          new THREE.Vector3(b.position.x + 56, 28, b.position.z + 10),
+          new THREE.Vector3(b.position.x, 22, b.position.z),
           1000
-
         );
-
+      } else if (buildingId === 'CHILD_HOSPITAL') {
+        this.tweenCamera(
+          new THREE.Vector3(b.position.x + 60, 32, b.position.z + 15),
+          new THREE.Vector3(b.position.x, 22, b.position.z),
+          1000
+        );
+      } else {
+        this.tweenCamera(
+          new THREE.Vector3(b.position.x, b.height + 40, b.position.z + 55),
+          new THREE.Vector3(b.position.x, b.height / 2, b.position.z),
+          1000
+        );
       }
-
     }
 
     this.sliceBuildingFloor(buildingId, 'all');
@@ -1910,19 +1912,18 @@ class CampusApp {
         }
 
         const labelBeds=(wardLayout.beds||[]).filter(bed=>bed.ward===rm.ward&&bed.roomCode===rm.roomCode).map(bed=>({x:bed.x-(bed.width||1.8)/2,y:bed.z-(bed.depth||0.9)/2,w:bed.width||1.8,h:bed.depth||0.9}));
-        labelBeds.push(...(rm.annexBounds||[]).map(q=>({x:q.x-q.width/2,y:q.z-q.depth/2,w:q.width,h:q.depth})));
+        labelBeds.push(...(rm.annexBounds||[]).map(q=>({x:q.x-q.width/2,y:q.z-q.depth/2,w:q.width,h:q.depth,captionSoft:true})));
         const isServiceSpace=rm.openBay||/DIRTY|CLEAN/i.test(rm.roomCode)||(!rm.bedCount&&!/^\d+$/.test(rm.roomCode));
-        const compactMultiBedRoom=(rm.bedCount||0)>=3&&rm.bounds.width*rm.bounds.depth<18;
         const labelArea={x:rb.x-rb.width/2,y:rb.z-rb.depth/2,w:rb.width,h:rb.depth};
-        const labelBox=rm.openBay?window.WardPlanLabels.place(labelArea,labelBeds):isServiceSpace?window.WardPlanLabels.spaceBox(labelArea):window.WardPlanLabels.place(labelArea,labelBeds,window.WardPlanLabels.room(rm));
+        const patientFontLimit=Math.min(window.WardPlanLabels.patientFontSize(rm),buildingId==='W04_WEST'&&/^(?:0?[56]W)/.test(String(rm.ward||''))?.65:.92);
+        const labelBox=rm.openBay?window.WardPlanLabels.place(labelArea,labelBeds):isServiceSpace?window.WardPlanLabels.spaceBox(labelArea):window.WardPlanLabels.place(labelArea,labelBeds,window.WardPlanLabels.room(rm),patientFontLimit);
         const roomCanvas = document.createElement('canvas');
         const labelDensity=Math.min(120,2048/Math.max(labelBox.w,labelBox.h));
         roomCanvas.width = Math.max(1,Math.ceil(labelBox.w*labelDensity));
         roomCanvas.height = Math.max(1,Math.ceil(labelBox.h*labelDensity));
         const rctx = roomCanvas.getContext('2d');
         rctx.fillStyle = '#102f43';
-        const westFiveSixRoom=buildingId==='W04_WEST'&&/^(?:0?[56]W)/.test(String(rm.ward||''));
-        const roomLabelLimit=isServiceSpace ? window.WardPlanLabels.spaceFontSize(window.WardPlanLabels.room(rm),labelDensity) : (compactMultiBedRoom ? 0.38 : westFiveSixRoom ? 0.65 : 0.92)*labelDensity;
+        const roomLabelLimit=isServiceSpace ? window.WardPlanLabels.spaceFontSize(window.WardPlanLabels.room(rm),labelDensity) : patientFontLimit*labelDensity;
         window.WardPlanLabels.draw(rctx,window.WardPlanLabels.room(rm),roomCanvas.width/2,roomCanvas.height/2,roomCanvas.width,roomCanvas.height,roomLabelLimit);
         const rLabelMesh = new THREE.Mesh(
           new THREE.PlaneGeometry(labelBox.w,labelBox.h),
@@ -3498,7 +3499,9 @@ class CampusApp {
 
     input.addEventListener('input', (e) => {
 
-      const val = e.target.value.trim().toUpperCase();
+      // Accept the visually similar letter O for these zero-prefixed units.
+      // Preserve what the user types; search and selected titles use the IDs.
+      const val = e.target.value.trim().toUpperCase().replace(/\bO(?=P(?:NI|II)\b)/g,'0');
 
       if (!val) {
 
@@ -3512,7 +3515,7 @@ class CampusApp {
 
       const matches = [];
       const normalizeWard = value => String(value || '').toUpperCase().replace(/^0+(?=\d)/, '');
-      const wardCodes = [...val.matchAll(/\d{1,2}[A-Z]{1,2}\d{0,2}/g)]
+      const wardCodes = [...val.matchAll(/\d{1,2}[A-Z]{1,3}\d{0,2}/g)]
         .map(match => normalizeWard(match[0]))
         .filter(code => !/^\d{1,2}F\d*$/.test(code));
       const requestedCampus = /兒醫/.test(val) ? 'children' : /東址/.test(val) ? 'east' : /西址/.test(val) ? 'west' : null;

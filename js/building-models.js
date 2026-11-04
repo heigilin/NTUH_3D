@@ -1944,23 +1944,568 @@
     },
 
     createHealthBuilding(b, parent) {
-      const w=b.dimensions.width,d=b.dimensions.depth,h=b.height,px=b.position.x,pz=b.position.z;
-      const brick=new THREE.MeshStandardMaterial({color:0x9b624d,roughness:.78});
-      const stone=new THREE.MeshStandardMaterial({color:0xd8c7ad,roughness:.68});
-      const glass=new THREE.MeshStandardMaterial({color:0x536d75,roughness:.3,metalness:.12});
-      const body=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),brick);
-      body.position.set(px,h/2,pz);parent.add(body);
-      for(let floor=1;floor<=b.floors;floor++){
-        const y=floor*b.floorHeight;
-        const band=new THREE.Mesh(new THREE.BoxGeometry(w*1.006,.22,d*1.006),stone);
-        band.position.set(px,y,pz);parent.add(band);
-        const windowBand=new THREE.Mesh(new THREE.BoxGeometry(w*.72,1.05,.12),glass);
-        windowBand.position.set(px,y-b.floorHeight/2,pz+d/2+.08);parent.add(windowBand);
+      const w = b.dimensions.width;
+      const d = b.dimensions.depth;
+      const h = b.height;
+      const px = b.position.x;
+      const pz = b.position.z;
+
+      const hbGroup = new THREE.Group();
+      hbGroup.name = 'health-building-structure';
+      hbGroup.position.set(px, 0, pz);
+      hbGroup.userData = { buildingId: b.id, data: b };
+
+      // ---- Materials ----
+      // Lower podium terracotta red brick (matching photo)
+      const matBrick = new THREE.MeshStandardMaterial({
+        color: 0x9e3f36,
+        roughness: 0.74,
+        metalness: 0.05
+      });
+      const matBrickDark = new THREE.MeshStandardMaterial({
+        color: 0x82332c,
+        roughness: 0.78
+      });
+      // Upper tower warm sandstone beige (matching photo)
+      const matStone = new THREE.MeshStandardMaterial({
+        color: 0xdfd4c2,
+        roughness: 0.65,
+        metalness: 0.04
+      });
+      const matStoneLight = new THREE.MeshStandardMaterial({
+        color: 0xf0e9dc,
+        roughness: 0.52
+      });
+      // Crisp white horizontal stripes / louvers (distinctive feature from photo)
+      const matWhiteStripe = new THREE.MeshStandardMaterial({
+        color: 0xf8f6f0,
+        roughness: 0.38
+      });
+      // Dark architectural ribbon glass
+      const matGlass = new THREE.MeshStandardMaterial({
+        color: 0x1a2c38,
+        roughness: 0.18,
+        metalness: 0.5
+      });
+      // Vivid blue-cyan reflective curtain wall slot (prominent right-side vertical slot in photo)
+      const matAtriumGlass = new THREE.MeshStandardMaterial({
+        color: 0x1d7ca8,
+        emissive: 0x092233,
+        roughness: 0.12,
+        metalness: 0.65
+      });
+      // 1F ground lobby glass
+      const matLobbyGlass = new THREE.MeshStandardMaterial({
+        color: 0x486978,
+        roughness: 0.15,
+        metalness: 0.3,
+        transparent: true,
+        opacity: 0.78
+      });
+      // Dark structural columns / frames / mullions
+      const matDarkCol = new THREE.MeshStandardMaterial({
+        color: 0x2b2e33,
+        roughness: 0.38,
+        metalness: 0.4
+      });
+      // Skybridge metallic cladding
+      const matSkybridge = new THREE.MeshStandardMaterial({
+        color: 0xb5bcc4,
+        roughness: 0.42,
+        metalness: 0.35
+      });
+      // Sidewalk paving
+      const matSidewalk = new THREE.MeshStandardMaterial({
+        color: 0xc8c3b6,
+        roughness: 0.88
+      });
+      // Trees
+      const matTrunk = new THREE.MeshStandardMaterial({ color: 0x5a4233, roughness: 0.9 });
+      const matLeaves = new THREE.MeshStandardMaterial({ color: 0x2e6b35, roughness: 0.75 });
+
+      const podiumHeight = 22.0; // 1F ~ 6F (podium)
+      const towerHeight = h - podiumHeight; // 7F ~ 14F (tower: 28.4m)
+
+      // ==========================================
+      // 1. 1F GROUND ARCADE & LOBBY (y: 0 ~ 4.5m)
+      // ==========================================
+      // Arcade base slab / entrance floor
+      const baseSlab = new THREE.Mesh(
+        new THREE.BoxGeometry(w + 0.4, 0.3, d + 0.4),
+        matStoneLight
+      );
+      baseSlab.position.set(0, 0.15, 0);
+      hbGroup.add(baseSlab);
+
+      // Recessed lobby core wall (1F interior wall)
+      const lobbyCore = new THREE.Mesh(
+        new THREE.BoxGeometry(w - 2.8, 4.2, d - 1.2),
+        matBrickDark
+      );
+      lobbyCore.position.set(-1.4, 2.25, 0);
+      hbGroup.add(lobbyCore);
+
+      // 1F East-facing lobby transparent glass wall (facing Zhongshan S. Rd)
+      const lobbyGlass = new THREE.Mesh(
+        new THREE.BoxGeometry(0.12, 3.8, d - 2.4),
+        matLobbyGlass
+      );
+      lobbyGlass.position.set(w / 2 - 2.8, 2.2, 0);
+      hbGroup.add(lobbyGlass);
+
+      // 1F Arcade structural square columns along East sidewalk
+      const colZList = [-10.5, -5.5, -0.5, 4.5, 9.5];
+      colZList.forEach(cz => {
+        const col = new THREE.Mesh(
+          new THREE.BoxGeometry(0.75, 4.2, 0.75),
+          matDarkCol
+        );
+        col.position.set(w / 2 - 0.5, 2.25, cz);
+        hbGroup.add(col);
+      });
+
+      // Arcade ceiling soffit
+      const soffit = new THREE.Mesh(
+        new THREE.BoxGeometry(3.2, 0.3, d),
+        matDarkCol
+      );
+      soffit.position.set(w / 2 - 1.5, 4.35, 0);
+      hbGroup.add(soffit);
+
+      // Cantilevered entrance canopy at main entrance (East facade center)
+      const canopy = new THREE.Mesh(
+        new THREE.BoxGeometry(4.8, 0.28, 7.6),
+        matDarkCol
+      );
+      canopy.position.set(w / 2 + 1.2, 4.2, 0);
+      hbGroup.add(canopy);
+
+      // Canopy glass / trim
+      const canopyTrim = new THREE.Mesh(
+        new THREE.BoxGeometry(5.0, 0.08, 7.8),
+        matStoneLight
+      );
+      canopyTrim.position.set(w / 2 + 1.2, 4.36, 0);
+      hbGroup.add(canopyTrim);
+
+      // ==========================================
+      // 2. 2F ~ 6F RED BRICK PODIUM (y: 4.5m ~ 22.0m)
+      // ==========================================
+      // Main brick mass
+      const podiumBody = new THREE.Mesh(
+        new THREE.BoxGeometry(w, podiumHeight - 4.5, d),
+        matBrick
+      );
+      podiumBody.position.set(0, 4.5 + (podiumHeight - 4.5) / 2, 0);
+      hbGroup.add(podiumBody);
+
+      // Floor-by-floor horizontal ribbon windows + white louver stripes
+      const podiumFloorH = (podiumHeight - 4.5) / 5; // 3.5m per floor
+      for (let i = 0; i < 5; i++) {
+        const fy = 4.5 + i * podiumFloorH;
+
+        // East facade (Zhongshan S. Rd) ribbon window
+        const winE = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 1.28, d - 1.8),
+          matGlass
+        );
+        winE.position.set(w / 2 + 0.06, fy + 1.85, 0);
+        hbGroup.add(winE);
+
+        // East window horizontal mullion
+        const mulE = new THREE.Mesh(
+          new THREE.BoxGeometry(0.16, 0.06, d - 1.8),
+          matWhiteStripe
+        );
+        mulE.position.set(w / 2 + 0.08, fy + 1.85, 0);
+        hbGroup.add(mulE);
+
+        // West facade ribbon window
+        const winW = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 1.28, d - 1.8),
+          matGlass
+        );
+        winW.position.set(-w / 2 - 0.06, fy + 1.85, 0);
+        hbGroup.add(winW);
+
+        // North & South facade ribbon windows
+        const winN = new THREE.Mesh(
+          new THREE.BoxGeometry(w - 2.0, 1.28, 0.12),
+          matGlass
+        );
+        winN.position.set(0, fy + 1.85, -d / 2 - 0.06);
+        hbGroup.add(winN);
+
+        const winS = new THREE.Mesh(
+          new THREE.BoxGeometry(w - 2.0, 1.28, 0.12),
+          matGlass
+        );
+        winS.position.set(0, fy + 1.85, d / 2 + 0.06);
+        hbGroup.add(winS);
+
+        // Distinctive white horizontal stripes on East facade spandrel wall (matching photo)
+        const stripeYOffsets = [0.32, 0.65, 0.98];
+        stripeYOffsets.forEach(sy => {
+          const stripeE = new THREE.Mesh(
+            new THREE.BoxGeometry(0.08, 0.08, d + 0.04),
+            matWhiteStripe
+          );
+          stripeE.position.set(w / 2 + 0.04, fy + sy, 0);
+          hbGroup.add(stripeE);
+
+          // Wrap stripe slightly around North and South corners
+          const stripeN = new THREE.Mesh(
+            new THREE.BoxGeometry(w + 0.04, 0.08, 0.08),
+            matWhiteStripe
+          );
+          stripeN.position.set(0, fy + sy, -d / 2 - 0.04);
+          hbGroup.add(stripeN);
+
+          const stripeS = new THREE.Mesh(
+            new THREE.BoxGeometry(w + 0.04, 0.08, 0.08),
+            matWhiteStripe
+          );
+          stripeS.position.set(0, fy + sy, d / 2 + 0.04);
+          hbGroup.add(stripeS);
+        });
+
+        // Window header white line
+        const headerStripe = new THREE.Mesh(
+          new THREE.BoxGeometry(0.08, 0.09, d + 0.04),
+          matWhiteStripe
+        );
+        headerStripe.position.set(w / 2 + 0.04, fy + 2.75, 0);
+        hbGroup.add(headerStripe);
       }
-      const roof=new THREE.Mesh(new THREE.BoxGeometry(w*1.04,.55,d*1.04),stone);
-      roof.position.set(px,h+.25,pz);parent.add(roof);
-      const atrium=new THREE.Mesh(new THREE.BoxGeometry(6,h*.78,.2),glass);
-      atrium.position.set(px,h*.52,pz+d/2+.16);parent.add(atrium);
+
+      // Cornice dividing podium from upper tower at 22.0m
+      const podiumCornice = new THREE.Mesh(
+        new THREE.BoxGeometry(w + 0.5, 0.55, d + 0.5),
+        matStoneLight
+      );
+      podiumCornice.position.set(0, podiumHeight + 0.27, 0);
+      hbGroup.add(podiumCornice);
+
+      // ==========================================
+      // 3. 7F ~ 14F BEIGE STONE TOWER (y: 22.0m ~ 50.4m)
+      //    WITH ARCHITECTURAL RECESSED BLUE CURTAIN WALL SLOT
+      // ==========================================
+      // Define the slot geometry parameters:
+      // In photo: slot is on right (north) side of east facade, spans 8F ~ 13F.
+      const slotZMin = -6.8;
+      const slotZMax = -2.2;
+      const slotZCenter = (slotZMin + slotZMax) / 2; // -4.5
+      const slotWidth = slotZMax - slotZMin;        // 4.6m
+      const slotDepth = 1.6;                        // 1.6m deep recess
+      const slotBottomY = podiumHeight + 3.55;      // begins above 7F (y = 25.55m)
+      const slotTopY = podiumHeight + 7 * 3.55;     // capped at 14F header (y = 46.85m)
+      const slotH = slotTopY - slotBottomY;         // 21.3m
+
+      // Tower Floor 7F (continuous full-width base under the slot)
+      const tower7F = new THREE.Mesh(
+        new THREE.BoxGeometry(w, 3.55, d),
+        matStone
+      );
+      tower7F.position.set(0, podiumHeight + 3.55 / 2, 0);
+      hbGroup.add(tower7F);
+
+      // Tower South Mass (from z = slotZMax to z = +d/2) for 8F ~ 13F
+      const southDepth = d / 2 - slotZMax; // 13 - (-2.2) = 15.2m
+      const southCenterZ = slotZMax + southDepth / 2;
+      const towerSouthMass = new THREE.Mesh(
+        new THREE.BoxGeometry(w, slotH, southDepth),
+        matStone
+      );
+      towerSouthMass.position.set(0, slotBottomY + slotH / 2, southCenterZ);
+      hbGroup.add(towerSouthMass);
+
+      // Tower North Mass (from z = -d/2 to z = slotZMin) for 8F ~ 13F
+      const northDepth = slotZMin - (-d / 2); // -6.8 - (-13) = 6.2m
+      const northCenterZ = -d / 2 + northDepth / 2;
+      const towerNorthMass = new THREE.Mesh(
+        new THREE.BoxGeometry(w, slotH, northDepth),
+        matStone
+      );
+      towerNorthMass.position.set(0, slotBottomY + slotH / 2, northCenterZ);
+      hbGroup.add(towerNorthMass);
+
+      // Tower Recessed Middle Core behind slot (recessed by slotDepth from east facade)
+      const recessedCoreWidth = w - slotDepth;
+      const towerRecessedCore = new THREE.Mesh(
+        new THREE.BoxGeometry(recessedCoreWidth, slotH, slotWidth),
+        matStone
+      );
+      towerRecessedCore.position.set(-slotDepth / 2, slotBottomY + slotH / 2, slotZCenter);
+      hbGroup.add(towerRecessedCore);
+
+      // Tower 14F & Roof Header (spans continuously above the slot, capping it as in photo)
+      const headerH = h - slotTopY; // 50.4 - 46.85 = 3.55m
+      const tower14F = new THREE.Mesh(
+        new THREE.BoxGeometry(w, headerH, d),
+        matStone
+      );
+      tower14F.position.set(0, slotTopY + headerH / 2, 0);
+      hbGroup.add(tower14F);
+
+      // ---- The Vivid Blue Recessed Curtain Wall Glass Slot ----
+      const slotGlass = new THREE.Mesh(
+        new THREE.BoxGeometry(0.12, slotH - 0.1, slotWidth - 0.2),
+        matAtriumGlass
+      );
+      slotGlass.position.set(w / 2 - slotDepth + 0.06, slotBottomY + slotH / 2, slotZCenter);
+      hbGroup.add(slotGlass);
+
+      // Slot interior frame (stone reveals)
+      const slotTopFrame = new THREE.Mesh(
+        new THREE.BoxGeometry(slotDepth + 0.1, 0.4, slotWidth + 0.2),
+        matStoneLight
+      );
+      slotTopFrame.position.set(w / 2 - slotDepth / 2, slotTopY, slotZCenter);
+      hbGroup.add(slotTopFrame);
+
+      const slotBottomFrame = new THREE.Mesh(
+        new THREE.BoxGeometry(slotDepth + 0.1, 0.4, slotWidth + 0.2),
+        matStoneLight
+      );
+      slotBottomFrame.position.set(w / 2 - slotDepth / 2, slotBottomY, slotZCenter);
+      hbGroup.add(slotBottomFrame);
+
+      // Slot vertical mullions (white/light metal dividing glass into 3 vertical panels)
+      [-1.15, 1.15].forEach(mz => {
+        const vMull = new THREE.Mesh(
+          new THREE.BoxGeometry(0.18, slotH - 0.1, 0.08),
+          matWhiteStripe
+        );
+        vMull.position.set(w / 2 - slotDepth + 0.1, slotBottomY + slotH / 2, slotZCenter + mz);
+        hbGroup.add(vMull);
+      });
+
+      // Upper floor continuous ribbon windows on tower facades
+      const towerFloorH = towerHeight / 8; // ~3.55m per floor
+      for (let i = 0; i < 8; i++) {
+        const fy = podiumHeight + i * towerFloorH;
+
+        // East facade: south segment ribbon window
+        const winE1 = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 1.35, southDepth - 1.2),
+          matGlass
+        );
+        winE1.position.set(w / 2 + 0.06, fy + 1.85, southCenterZ);
+        hbGroup.add(winE1);
+
+        // East facade: north segment ribbon window
+        const winE2 = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 1.35, northDepth - 1.2),
+          matGlass
+        );
+        winE2.position.set(w / 2 + 0.06, fy + 1.85, northCenterZ);
+        hbGroup.add(winE2);
+
+        // West facade continuous ribbon window
+        const winW = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 1.35, d - 2.0),
+          matGlass
+        );
+        winW.position.set(-w / 2 - 0.06, fy + 1.85, 0);
+        hbGroup.add(winW);
+
+        // North & South facade ribbon windows
+        const winN = new THREE.Mesh(
+          new THREE.BoxGeometry(w - 2.0, 1.35, 0.12),
+          matGlass
+        );
+        winN.position.set(0, fy + 1.85, -d / 2 - 0.06);
+        hbGroup.add(winN);
+
+        const winS = new THREE.Mesh(
+          new THREE.BoxGeometry(w - 2.0, 1.35, 0.12),
+          matGlass
+        );
+        winS.position.set(0, fy + 1.85, d / 2 + 0.06);
+        hbGroup.add(winS);
+
+        // Stone horizontal belt courses between floors (across South and North tower segments)
+        const beltSouth = new THREE.Mesh(
+          new THREE.BoxGeometry(0.14, 0.22, southDepth + 0.05),
+          matStoneLight
+        );
+        beltSouth.position.set(w / 2 + 0.07, fy, southCenterZ);
+        hbGroup.add(beltSouth);
+
+        const beltNorth = new THREE.Mesh(
+          new THREE.BoxGeometry(0.14, 0.22, northDepth + 0.05),
+          matStoneLight
+        );
+        beltNorth.position.set(w / 2 + 0.07, fy, northCenterZ);
+        hbGroup.add(beltNorth);
+      }
+
+      // ==========================================
+      // 4. SKYBRIDGE TO 兒醫大樓 (North Facade 2F~3F)
+      // ==========================================
+      const bridgeZSpan = 8.5; // reaches from z = -d/2 (-13.0) to z = -21.5
+      const bridgeX = 9.0;
+      const bridgeY = 9.2;
+      const bridgeW = 4.2;
+      const bridgeH = 4.6;
+
+      const skybridgeBody = new THREE.Mesh(
+        new THREE.BoxGeometry(bridgeW, bridgeH, bridgeZSpan),
+        matSkybridge
+      );
+      skybridgeBody.position.set(bridgeX, bridgeY, -d / 2 - bridgeZSpan / 2);
+      hbGroup.add(skybridgeBody);
+
+      // Skybridge side windows
+      const bridgeWinEast = new THREE.Mesh(
+        new THREE.BoxGeometry(0.1, 1.6, bridgeZSpan - 0.8),
+        matGlass
+      );
+      bridgeWinEast.position.set(bridgeX + bridgeW / 2 + 0.05, bridgeY + 0.3, -d / 2 - bridgeZSpan / 2);
+      hbGroup.add(bridgeWinEast);
+
+      const bridgeWinWest = new THREE.Mesh(
+        new THREE.BoxGeometry(0.1, 1.6, bridgeZSpan - 0.8),
+        matGlass
+      );
+      bridgeWinWest.position.set(bridgeX - bridgeW / 2 - 0.05, bridgeY + 0.3, -d / 2 - bridgeZSpan / 2);
+      hbGroup.add(bridgeWinWest);
+
+      // Skybridge ground support columns
+      const bridgeCol1 = new THREE.Mesh(
+        new THREE.BoxGeometry(0.6, bridgeY - bridgeH / 2, 0.6),
+        matDarkCol
+      );
+      bridgeCol1.position.set(bridgeX - 1.2, (bridgeY - bridgeH / 2) / 2, -d / 2 - bridgeZSpan / 2);
+      hbGroup.add(bridgeCol1);
+
+      const bridgeCol2 = new THREE.Mesh(
+        new THREE.BoxGeometry(0.6, bridgeY - bridgeH / 2, 0.6),
+        matDarkCol
+      );
+      bridgeCol2.position.set(bridgeX + 1.2, (bridgeY - bridgeH / 2) / 2, -d / 2 - bridgeZSpan / 2);
+      hbGroup.add(bridgeCol2);
+
+      // ==========================================
+      // 5. ROOF PARAPET & PENTHOUSE & ANTENNA
+      // ==========================================
+      const parapetThickness = 0.4;
+      const parapetHeight = 1.4;
+      const parapetY = h + parapetHeight / 2;
+
+      // North & South parapets
+      const paraN = new THREE.Mesh(
+        new THREE.BoxGeometry(w + 0.2, parapetHeight, parapetThickness),
+        matStoneLight
+      );
+      paraN.position.set(0, parapetY, -d / 2);
+      hbGroup.add(paraN);
+
+      const paraS = new THREE.Mesh(
+        new THREE.BoxGeometry(w + 0.2, parapetHeight, parapetThickness),
+        matStoneLight
+      );
+      paraS.position.set(0, parapetY, d / 2);
+      hbGroup.add(paraS);
+
+      // East & West parapets
+      const paraE = new THREE.Mesh(
+        new THREE.BoxGeometry(parapetThickness, parapetHeight, d + 0.2),
+        matStoneLight
+      );
+      paraE.position.set(w / 2, parapetY, 0);
+      hbGroup.add(paraE);
+
+      const paraW = new THREE.Mesh(
+        new THREE.BoxGeometry(parapetThickness, parapetHeight, d + 0.2),
+        matStoneLight
+      );
+      paraW.position.set(-w / 2, parapetY, 0);
+      hbGroup.add(paraW);
+
+      // Rooftop mechanical plant room / penthouse
+      const penthouse = new THREE.Mesh(
+        new THREE.BoxGeometry(14.0, 4.2, 12.0),
+        matStone
+      );
+      penthouse.position.set(-2.0, h + 2.1, 0);
+      hbGroup.add(penthouse);
+
+      // Penthouse louvers
+      const pentLouver = new THREE.Mesh(
+        new THREE.BoxGeometry(0.12, 2.2, 8.0),
+        matDarkCol
+      );
+      pentLouver.position.set(5.05, h + 2.1, 0);
+      hbGroup.add(pentLouver);
+
+      // Antenna / telecom mast
+      const mastBase = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.18, 0.24, 7.5, 8),
+        matDarkCol
+      );
+      mastBase.position.set(2.0, h + 4.2 + 3.75, 2.0);
+      hbGroup.add(mastBase);
+
+      const mastLight = new THREE.Mesh(
+        new THREE.SphereGeometry(0.22, 8, 8),
+        new THREE.MeshBasicMaterial({ color: 0xff3333 })
+      );
+      mastLight.position.set(2.0, h + 4.2 + 7.5, 2.0);
+      hbGroup.add(mastLight);
+
+      // ==========================================
+      // 6. SIDEWALK & STREETSCAPE TREES (Zhongshan S. Rd)
+      // ==========================================
+      // Pedestrian granite sidewalk
+      const sidewalk = new THREE.Mesh(
+        new THREE.BoxGeometry(4.8, 0.15, d + 8.0),
+        matSidewalk
+      );
+      sidewalk.position.set(w / 2 + 2.4, 0.08, 0);
+      sidewalk.userData = { isLandscape: true };
+      hbGroup.add(sidewalk);
+
+      // Street trees along sidewalk (matching the trees in user photo)
+      const treeZList = [-9.5, -4.0, 2.0, 8.5];
+      treeZList.forEach((tz, idx) => {
+        const treeGroup = new THREE.Group();
+        treeGroup.userData = { isLandscape: true };
+        const treeH = 5.2 + (idx % 2) * 0.8;
+
+        // Trunk
+        const trunk = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.12, 0.16, treeH, 6),
+          matTrunk
+        );
+        trunk.position.set(0, treeH / 2, 0);
+        trunk.userData = { isLandscape: true };
+        treeGroup.add(trunk);
+
+        // Canopy multi-level foliage
+        const canopy1 = new THREE.Mesh(
+          new THREE.SphereGeometry(1.4, 7, 6),
+          matLeaves
+        );
+        canopy1.position.set(0, treeH * 0.85, 0);
+        canopy1.scale.set(1.0, 1.25, 0.9);
+        canopy1.userData = { isLandscape: true };
+        treeGroup.add(canopy1);
+
+        const canopy2 = new THREE.Mesh(
+          new THREE.SphereGeometry(1.1, 6, 5),
+          matLeaves
+        );
+        canopy2.position.set(0.3, treeH + 0.6, -0.2);
+        canopy2.scale.set(0.9, 1.1, 0.85);
+        canopy2.userData = { isLandscape: true };
+        treeGroup.add(canopy2);
+
+        treeGroup.position.set(w / 2 + 3.2, 0, tz);
+        hbGroup.add(treeGroup);
+      });
+
+      parent.add(hbGroup);
     }
 
   };

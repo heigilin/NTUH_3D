@@ -1,0 +1,17 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert/strict'),T=require('../libs/three.min.js');
+const c={THREE:T,document:{getElementById:()=>null},console};c.window=c;c.addEventListener=()=>{};vm.createContext(c);
+for(const p of ['js/data/campus-data.js','js/building-models.js','js/app.js'])vm.runInContext(fs.readFileSync(p,'utf8'),c,{filename:p});
+const app=c.campusApp;app.scene=new T.Scene();app.createGround();
+const b=c.CAMPUS_DATA.buildings.find(b=>b.id==='E01_MAIN');
+const model=c.CampusBuildingModels.build(b),bounds=new T.Box3().setFromObject(model);
+const road=app.scene.getObjectByName('xuzhou-north-carriageway'),walk=app.scene.getObjectByName('east-south-sidewalk');
+assert(road&&walk);
+const roadBounds=new T.Box3().setFromObject(road),walkBounds=new T.Box3().setFromObject(walk),floorSouth=b.position.z+b.dimensions.depth/2;
+const floorNorth=b.position.z-b.dimensions.depth/2;
+assert(bounds.min.z>roadBounds.max.z,'exterior intersects north roadway');
+assert(floorNorth>roadBounds.max.z,'ward footprint intersects north roadway');
+assert(Math.abs(walkBounds.min.z-floorSouth)<1e-6);
+assert(!app.scene.getObjectByName('xuzhou-south-carriageway'),'No invented public road between South ward and medical college');
+assert.equal(road.geometry.parameters.depth,8.5);
+const report={modelSouth:bounds.max.z,wardFootprintSouth:floorSouth,roadIsNorth:true,roadSouth:roadBounds.max.z,sidewalkWidth:1.5,exteriorClearance:bounds.min.z-roadBounds.max.z,wardClearance:floorNorth-roadBounds.max.z,roadWidth:8.5};
+fs.writeFileSync('scratch/east-south-road-audit.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

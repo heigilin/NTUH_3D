@@ -1,0 +1,23 @@
+{
+  "beds": 2315,
+  "movedBeds": 356,
+  "changedRooms": 178,
+  "targets": [
+    {
+      "ward": "12D",
+      "room": "21",
+      "oldGap": 0.13330898466033236,
+      "newGap": 0.5558984660335975,
+      "labelSize": 0.7273238618387272
+    },
+    {
+      "ward": "12D",
+      "room": "20",
+      "oldGap": 0.13330898466033236,
+      "newGap": 0.5558984660335975,
+      "labelSize": 0.7273238618387272
+    }
+  ],
+  "sourceBoundsUnchanged": true,
+  "bedSizesAndIdsUnchanged": true
+}

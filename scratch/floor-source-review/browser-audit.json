@@ -1,0 +1,1404 @@
+{
+  "audit": {
+    "cases": [
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2400,
+        "f": "7F",
+        "labels": 97,
+        "rooms": 75,
+        "spaces": 22,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "7F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "7B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "7F",
+        "labels": 26,
+        "rooms": 20,
+        "spaces": 6,
+        "w": "7C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 544,
+        "f": "7F",
+        "labels": 22,
+        "rooms": 17,
+        "spaces": 5,
+        "w": "7A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 576,
+        "f": "7F",
+        "labels": 23,
+        "rooms": 18,
+        "spaces": 5,
+        "w": "7D"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2496,
+        "f": "12F",
+        "labels": 100,
+        "rooms": 78,
+        "spaces": 22,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "12F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "12B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "12F",
+        "labels": 26,
+        "rooms": 20,
+        "spaces": 6,
+        "w": "12C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "12F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "12A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 576,
+        "f": "12F",
+        "labels": 23,
+        "rooms": 18,
+        "spaces": 5,
+        "w": "12D"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 1024,
+        "f": "1F",
+        "labels": 40,
+        "rooms": 11,
+        "spaces": 29,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 256,
+        "f": "1F",
+        "labels": 13,
+        "rooms": 8,
+        "spaces": 5,
+        "w": "急診"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 256,
+        "f": "1F",
+        "labels": 13,
+        "rooms": 2,
+        "spaces": 11,
+        "w": "影像醫學"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 32,
+        "f": "1F",
+        "labels": 6,
+        "rooms": 0,
+        "spaces": 6,
+        "w": "藥劑部"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 32,
+        "f": "1F",
+        "labels": 5,
+        "rooms": 1,
+        "spaces": 4,
+        "w": "檢驗醫學"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 32,
+        "f": "1F",
+        "labels": 6,
+        "rooms": 0,
+        "spaces": 6,
+        "w": "行政管理"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 192,
+        "f": "1F",
+        "labels": 10,
+        "rooms": 0,
+        "spaces": 10,
+        "w": "醫務行政"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 224,
+        "f": "1F",
+        "labels": 11,
+        "rooms": 0,
+        "spaces": 11,
+        "w": "社會服務"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 1536,
+        "f": "2F",
+        "labels": 56,
+        "rooms": 48,
+        "spaces": 8,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 384,
+        "f": "2F",
+        "labels": 17,
+        "rooms": 12,
+        "spaces": 5,
+        "w": "內科門診"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 384,
+        "f": "2F",
+        "labels": 17,
+        "rooms": 12,
+        "spaces": 5,
+        "w": "外科門診"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 384,
+        "f": "2F",
+        "labels": 17,
+        "rooms": 12,
+        "spaces": 5,
+        "w": "內視鏡中心"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 384,
+        "f": "2F",
+        "labels": 17,
+        "rooms": 12,
+        "spaces": 5,
+        "w": "日間手術"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 1888,
+        "f": "3F",
+        "labels": 97,
+        "rooms": 53,
+        "spaces": 44,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "3F",
+        "labels": 26,
+        "rooms": 18,
+        "spaces": 8,
+        "w": "03C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 352,
+        "f": "3F",
+        "labels": 17,
+        "rooms": 9,
+        "spaces": 8,
+        "w": "03B1"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 352,
+        "f": "3F",
+        "labels": 17,
+        "rooms": 9,
+        "spaces": 8,
+        "w": "03B2"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 256,
+        "f": "3F",
+        "labels": 11,
+        "rooms": 8,
+        "spaces": 3,
+        "w": "03A1"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 288,
+        "f": "3F",
+        "labels": 36,
+        "rooms": 9,
+        "spaces": 27,
+        "w": "03A2"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2336,
+        "f": "4F",
+        "labels": 86,
+        "rooms": 67,
+        "spaces": 19,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 352,
+        "f": "4F",
+        "labels": 16,
+        "rooms": 9,
+        "spaces": 7,
+        "w": "04D1"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 352,
+        "f": "4F",
+        "labels": 16,
+        "rooms": 9,
+        "spaces": 7,
+        "w": "04C1"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 352,
+        "f": "4F",
+        "labels": 16,
+        "rooms": 9,
+        "spaces": 7,
+        "w": "04C2"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 320,
+        "f": "4F",
+        "labels": 12,
+        "rooms": 10,
+        "spaces": 2,
+        "w": "04A1"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 320,
+        "f": "4F",
+        "labels": 11,
+        "rooms": 10,
+        "spaces": 1,
+        "w": "04B1"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 320,
+        "f": "4F",
+        "labels": 12,
+        "rooms": 10,
+        "spaces": 2,
+        "w": "04A2"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 320,
+        "f": "4F",
+        "labels": 11,
+        "rooms": 10,
+        "spaces": 1,
+        "w": "04B2"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2784,
+        "f": "5F",
+        "labels": 115,
+        "rooms": 87,
+        "spaces": 28,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 480,
+        "f": "5F",
+        "labels": 23,
+        "rooms": 15,
+        "spaces": 8,
+        "w": "05C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 960,
+        "f": "5F",
+        "labels": 38,
+        "rooms": 30,
+        "spaces": 8,
+        "w": "5CVI"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 448,
+        "f": "5F",
+        "labels": 17,
+        "rooms": 14,
+        "spaces": 3,
+        "w": "05B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 448,
+        "f": "5F",
+        "labels": 17,
+        "rooms": 14,
+        "spaces": 3,
+        "w": "05A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 448,
+        "f": "5F",
+        "labels": 18,
+        "rooms": 14,
+        "spaces": 4,
+        "w": "05D"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2464,
+        "f": "6F",
+        "labels": 103,
+        "rooms": 77,
+        "spaces": 26,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 608,
+        "f": "6F",
+        "labels": 27,
+        "rooms": 19,
+        "spaces": 8,
+        "w": "6C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "6F",
+        "labels": 27,
+        "rooms": 20,
+        "spaces": 7,
+        "w": "6D"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "6F",
+        "labels": 24,
+        "rooms": 20,
+        "spaces": 4,
+        "w": "06B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 576,
+        "f": "6F",
+        "labels": 24,
+        "rooms": 18,
+        "spaces": 6,
+        "w": "06A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2496,
+        "f": "8F",
+        "labels": 100,
+        "rooms": 78,
+        "spaces": 22,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "8F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "08B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "8F",
+        "labels": 26,
+        "rooms": 20,
+        "spaces": 6,
+        "w": "08C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "8F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "08A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 576,
+        "f": "8F",
+        "labels": 23,
+        "rooms": 18,
+        "spaces": 5,
+        "w": "08D"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2496,
+        "f": "9F",
+        "labels": 100,
+        "rooms": 78,
+        "spaces": 22,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "9F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "09B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "9F",
+        "labels": 26,
+        "rooms": 20,
+        "spaces": 6,
+        "w": "09C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "9F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "09A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 576,
+        "f": "9F",
+        "labels": 23,
+        "rooms": 18,
+        "spaces": 5,
+        "w": "09D"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 1216,
+        "f": "10F",
+        "labels": 44,
+        "rooms": 34,
+        "spaces": 10,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 608,
+        "f": "10F",
+        "labels": 24,
+        "rooms": 17,
+        "spaces": 7,
+        "w": "10HN"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 608,
+        "f": "10F",
+        "labels": 24,
+        "rooms": 17,
+        "spaces": 7,
+        "w": "10HS"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2464,
+        "f": "11F",
+        "labels": 99,
+        "rooms": 77,
+        "spaces": 22,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "11F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "11B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "11F",
+        "labels": 26,
+        "rooms": 20,
+        "spaces": 6,
+        "w": "11C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 608,
+        "f": "11F",
+        "labels": 24,
+        "rooms": 19,
+        "spaces": 5,
+        "w": "11A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 576,
+        "f": "11F",
+        "labels": 23,
+        "rooms": 18,
+        "spaces": 5,
+        "w": "11D"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2464,
+        "f": "13F",
+        "labels": 99,
+        "rooms": 77,
+        "spaces": 22,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "13F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "13B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "13F",
+        "labels": 26,
+        "rooms": 20,
+        "spaces": 6,
+        "w": "13C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 608,
+        "f": "13F",
+        "labels": 24,
+        "rooms": 19,
+        "spaces": 5,
+        "w": "13A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 576,
+        "f": "13F",
+        "labels": 23,
+        "rooms": 18,
+        "spaces": 5,
+        "w": "13D"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 2464,
+        "f": "14F",
+        "labels": 117,
+        "rooms": 77,
+        "spaces": 40,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 608,
+        "f": "14F",
+        "labels": 30,
+        "rooms": 19,
+        "spaces": 11,
+        "w": "14A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "14F",
+        "labels": 28,
+        "rooms": 20,
+        "spaces": 8,
+        "w": "14B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "14F",
+        "labels": 31,
+        "rooms": 20,
+        "spaces": 11,
+        "w": "14C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 576,
+        "f": "14F",
+        "labels": 28,
+        "rooms": 18,
+        "spaces": 10,
+        "w": "14D"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 1632,
+        "f": "15F",
+        "labels": 73,
+        "rooms": 50,
+        "spaces": 23,
+        "w": "ALL"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 640,
+        "f": "15F",
+        "labels": 25,
+        "rooms": 20,
+        "spaces": 5,
+        "w": "15B"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 384,
+        "f": "15F",
+        "labels": 17,
+        "rooms": 12,
+        "spaces": 5,
+        "w": "15C"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 576,
+        "f": "15F",
+        "labels": 23,
+        "rooms": 18,
+        "spaces": 5,
+        "w": "15A"
+      },
+      {
+        "b": "E01_MAIN",
+        "cameraChecks": 32,
+        "f": "15F",
+        "labels": 7,
+        "rooms": 0,
+        "spaces": 7,
+        "w": "15D"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 576,
+        "f": "5F",
+        "labels": 19,
+        "rooms": 16,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 576,
+        "f": "5F",
+        "labels": 19,
+        "rooms": 16,
+        "spaces": 3,
+        "w": "5W2"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 576,
+        "f": "2F",
+        "labels": 19,
+        "rooms": 16,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 576,
+        "f": "2F",
+        "labels": 19,
+        "rooms": 16,
+        "spaces": 3,
+        "w": "5W2"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 480,
+        "f": "1F",
+        "labels": 16,
+        "rooms": 13,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 480,
+        "f": "1F",
+        "labels": 16,
+        "rooms": 13,
+        "spaces": 3,
+        "w": "05W1"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 448,
+        "f": "3F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 448,
+        "f": "3F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "06W3"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 704,
+        "f": "4F",
+        "labels": 23,
+        "rooms": 20,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W04_WEST",
+        "cameraChecks": 704,
+        "f": "4F",
+        "labels": 23,
+        "rooms": 20,
+        "spaces": 3,
+        "w": "05W4"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "5F",
+        "labels": 20,
+        "rooms": 16,
+        "spaces": 4,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "5F",
+        "labels": 10,
+        "rooms": 8,
+        "spaces": 2,
+        "w": "05PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "5F",
+        "labels": 10,
+        "rooms": 8,
+        "spaces": 2,
+        "w": "05PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "1F",
+        "labels": 18,
+        "rooms": 16,
+        "spaces": 2,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "1F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "01PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "1F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "01PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "2F",
+        "labels": 18,
+        "rooms": 16,
+        "spaces": 2,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "2F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "02PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "2F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "02PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "3F",
+        "labels": 18,
+        "rooms": 16,
+        "spaces": 2,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "3F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "03PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "3F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "03PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "4F",
+        "labels": 18,
+        "rooms": 16,
+        "spaces": 2,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "4F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "04PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "4F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "04PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "6F",
+        "labels": 17,
+        "rooms": 16,
+        "spaces": 1,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "6F",
+        "labels": 17,
+        "rooms": 16,
+        "spaces": 1,
+        "w": "06PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "7F",
+        "labels": 18,
+        "rooms": 16,
+        "spaces": 2,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "7F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "07PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "7F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "07PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "8F",
+        "labels": 17,
+        "rooms": 16,
+        "spaces": 1,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "8F",
+        "labels": 17,
+        "rooms": 16,
+        "spaces": 1,
+        "w": "08PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "9F",
+        "labels": 17,
+        "rooms": 16,
+        "spaces": 1,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "9F",
+        "labels": 17,
+        "rooms": 16,
+        "spaces": 1,
+        "w": "09PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "10F",
+        "labels": 18,
+        "rooms": 16,
+        "spaces": 2,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "10F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "10PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "10F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "10PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 480,
+        "f": "11F",
+        "labels": 18,
+        "rooms": 15,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 160,
+        "f": "11F",
+        "labels": 6,
+        "rooms": 5,
+        "spaces": 1,
+        "w": "11PB"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 160,
+        "f": "11F",
+        "labels": 6,
+        "rooms": 5,
+        "spaces": 1,
+        "w": "11PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 160,
+        "f": "11F",
+        "labels": 6,
+        "rooms": 5,
+        "spaces": 1,
+        "w": "11PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "12F",
+        "labels": 18,
+        "rooms": 16,
+        "spaces": 2,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "12F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "12PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "12F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "12PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "13F",
+        "labels": 18,
+        "rooms": 16,
+        "spaces": 2,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "13F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "13PE"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "13F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "13PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 512,
+        "f": "14F",
+        "labels": 18,
+        "rooms": 16,
+        "spaces": 2,
+        "w": "ALL"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "14F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "14PW"
+      },
+      {
+        "b": "CHILD_HOSPITAL",
+        "cameraChecks": 256,
+        "f": "14F",
+        "labels": 9,
+        "rooms": 8,
+        "spaces": 1,
+        "w": "14PE"
+      },
+      {
+        "b": "W02_WEST",
+        "cameraChecks": 448,
+        "f": "1F",
+        "labels": 15,
+        "rooms": 14,
+        "spaces": 1,
+        "w": "ALL"
+      },
+      {
+        "b": "W02_WEST",
+        "cameraChecks": 448,
+        "f": "1F",
+        "labels": 15,
+        "rooms": 14,
+        "spaces": 1,
+        "w": "W02-1F"
+      },
+      {
+        "b": "W02_WEST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W02_WEST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "03W2"
+      },
+      {
+        "b": "W02_EAST",
+        "cameraChecks": 448,
+        "f": "1F",
+        "labels": 15,
+        "rooms": 14,
+        "spaces": 1,
+        "w": "ALL"
+      },
+      {
+        "b": "W02_EAST",
+        "cameraChecks": 448,
+        "f": "1F",
+        "labels": 15,
+        "rooms": 14,
+        "spaces": 1,
+        "w": "W02-1F"
+      },
+      {
+        "b": "W02_EAST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W02_EAST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "03E2"
+      },
+      {
+        "b": "W03_WEST",
+        "cameraChecks": 448,
+        "f": "1F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W03_WEST",
+        "cameraChecks": 448,
+        "f": "1F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "04W1"
+      },
+      {
+        "b": "W03_WEST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W03_WEST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "04W2"
+      },
+      {
+        "b": "W03_EAST",
+        "cameraChecks": 384,
+        "f": "1F",
+        "labels": 23,
+        "rooms": 12,
+        "spaces": 11,
+        "w": "ALL"
+      },
+      {
+        "b": "W03_EAST",
+        "cameraChecks": 384,
+        "f": "1F",
+        "labels": 23,
+        "rooms": 12,
+        "spaces": 11,
+        "w": "04E1"
+      },
+      {
+        "b": "W03_EAST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W03_EAST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "04E2"
+      },
+      {
+        "b": "W04_EAST",
+        "cameraChecks": 448,
+        "f": "1F",
+        "labels": 15,
+        "rooms": 14,
+        "spaces": 1,
+        "w": "ALL"
+      },
+      {
+        "b": "W04_EAST",
+        "cameraChecks": 448,
+        "f": "1F",
+        "labels": 15,
+        "rooms": 14,
+        "spaces": 1,
+        "w": "W04-1F"
+      },
+      {
+        "b": "W04_EAST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W04_EAST",
+        "cameraChecks": 448,
+        "f": "2F",
+        "labels": 15,
+        "rooms": 12,
+        "spaces": 3,
+        "w": "06E2"
+      },
+      {
+        "b": "W04_EAST",
+        "cameraChecks": 672,
+        "f": "3F",
+        "labels": 22,
+        "rooms": 19,
+        "spaces": 3,
+        "w": "ALL"
+      },
+      {
+        "b": "W04_EAST",
+        "cameraChecks": 672,
+        "f": "3F",
+        "labels": 22,
+        "rooms": 19,
+        "spaces": 3,
+        "w": "05E3"
+      },
+      {
+        "b": "W04_EAST",
+        "cameraChecks": 448,
+        "f": "4F",
+        "labels": 15,
+        "rooms": 14,
+        "spaces": 1,
+        "w": "ALL"
+      },
+      {
+        "b": "W04_EAST",
+        "cameraChecks": 448,
+        "f": "4F",
+        "labels": 15,
+        "rooms": 14,
+        "spaces": 1,
+        "w": "W04-4F"
+      }
+    ],
+    "empty": [],
+    "failures": []
+  },
+  "summary": "155 組配置 · 0 項文字／取景異常（配置另見報告） · 0 組無圖資"
+}

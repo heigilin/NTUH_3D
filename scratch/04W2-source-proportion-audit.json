@@ -1,0 +1,43 @@
+{
+  "source": "4W2.pdf",
+  "rooms": 10,
+  "facilities": 17,
+  "stationParts": 2,
+  "beds": 30,
+  "corridorToRoomDepth": 0.36,
+  "stationMainWidthToRoomDepth": 0.73,
+  "sourceRooms": {
+    "11": [
+      381,
+      164,
+      44,
+      101
+    ],
+    "13": [
+      243,
+      164,
+      47,
+      101
+    ],
+    "15": [
+      160,
+      164,
+      49,
+      101
+    ],
+    "17": [
+      25,
+      265,
+      78,
+      77
+    ],
+    "19": [
+      46,
+      219,
+      57,
+      44
+    ]
+  },
+  "overlap": 0,
+  "corridorCrossing": 0
+}

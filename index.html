@@ -8,10 +8,11 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>臺大醫院 3D 智慧院區導覽系統 (Campus 3D Guide)</title>
+  <title>臺大醫院智慧監測系統</title>
 
-  <link rel="stylesheet" href="css/style.css?v=9aca8beea09a">
-  <link rel="stylesheet" href="css/ward-plan-2d.css?v=f83ab02a121b">
+  <link rel="stylesheet" href="css/style.css?v=20261102-close-top-right-1">
+  <link rel="stylesheet" href="css/close-controls.css?v=20261102-close-top-right-1">
+  <link rel="stylesheet" href="css/ward-plan-2d.css">
   <link rel="stylesheet" href="css/header-navigation.css?v=8915bcd10d21">
 
   <!-- Three.js 核心庫與控制器 (支援本地離線與 CDN 備用) -->
@@ -61,7 +62,7 @@
 
       </div>
 
-      <button id="btn-close-hover-card" class="btn-hover-card-close" title="關閉卡片">✕</button>
+      <button id="btn-close-hover-card" class="btn-hover-card-close window-close" title="關閉卡片" aria-label="關閉卡片">✕ 關閉</button>
 
     </div>
 
@@ -133,7 +134,7 @@
 
       <div style="display:flex;align-items:center;gap:4px;">
         <button id="btn-toggle-orient" class="btn-orient-toggle" title="收起或展開調向面板">收起 ▾</button>
-        <button id="btn-close-orient" class="btn-orient-toggle" title="隱藏調向面板" style="padding:2px 7px;">✕</button>
+        <button id="btn-close-orient" class="btn-orient-toggle window-close" title="關閉調向面板" aria-label="關閉調向面板">✕ 關閉</button>
       </div>
 
     </div>
@@ -211,7 +212,7 @@
     <div class="brand-section">
 
 
-      <span class="app-title">臺大醫院 3D 智慧院區導覽系統</span>
+      <span class="app-title">臺大醫院智慧監測系統</span>
 
     </div>
 
@@ -526,44 +527,44 @@
 
   <!-- 獨立資料庫檔案 -->
 
-  <script src="js/data/ground-texture-base64.js?v=b5c83463c6b1"></script>
+  <script src="js/data/ground-texture-base64.js"></script>
 
   <script src="js/data/campus-data.js?v=20261103-health-building-1"></script>
 
-  <script src="js/data/rooms-data.js?v=a2050b6ed96d"></script>
+  <script src="js/data/rooms-data.js"></script>
 
-  <script src="js/data/floorplans-data.js?v=58965ccd9f26"></script>
+  <script src="js/data/floorplans-data.js?v=98e16d2f43ea"></script>
 
-  <script src="js/data/ward-3d-layout-data.js?v=70a2c2afb0c3"></script>
+  <script src="js/data/ward-3d-layout-data.js"></script>
 
-  <script src="js/data/ipc-movements-data.js?v=6e3cf5f62221"></script>
+  <script src="js/data/ipc-movements-data.js"></script>
 
   <!-- 階段 3 引擎模組 -->
 
-  <!-- <script src="js/minimap.js?v=e253d2c7b863"></script> 即時小地圖已刪除 -->
+  <!-- <script src="js/minimap.js"></script> 即時小地圖已刪除 -->
 
-  <script src="js/data/ward-bed-ids.js?v=12e8d6bcd214"></script>
-  <script src="js/ward-source-traces.js?v=d5156b17dc09"></script>
-  <script src="js/ward-source-6f.js?v=710868755d47"></script><script src="js/ward-source-icu-3-4.js?v=e0efd3e2ad5e"></script>
-<script src="js/ward-source-floor-review.js?v=911d0dec5b41"></script>
+  <script src="js/data/ward-bed-ids.js"></script>
+  <script src="js/ward-source-traces.js?v=20261031-all-campus-1"></script>
+  <script src="js/ward-source-6f.js?v=20261031-6f-doors-2"></script><script src="js/ward-source-icu-3-4.js?v=e0efd3e2ad5e"></script>
+<script src="js/ward-source-floor-review.js?v=20261031-all-campus-1"></script>
 <script src="js/ward-source-children.js?v=b5f58f35fd4d"></script>
-<script src="js/ward-source-west.js?v=0f050fcb98a3"></script>
+<script src="js/ward-source-west.js?v=20261031-west-wall-beds-2"></script>
 <script src="js/ward-source-coverage.js?v=20261103-health-building-sim-2"></script>
 <script src="js/data/ward-proportion-review-data.js?v=f174fe8e3c5b"></script><script src="js/ward-source-proportions.js?v=c90484b9218e"></script>
 <script src="js/ward-source-health-building.js?v=20261103-health-building-sim-2"></script>
-<script src="js/ward-plan-layout.js?v=20261102-bedroom-bed-sizing-3"></script><script src="js/ward-door-layout.js?v=4a5f35692fc4"></script>
-  <script src="js/ward-plan-geometry.js?v=114da3d3144d"></script>
-  <script src="js/ward-plan-2d.js?v=20261102-room-label-size-2"></script>
-  <script src="js/canvas-whiteboard.js?v=05674ec6e5aa"></script>
+<script src="js/ward-plan-layout.js?v=20261102-zero-prefix-units-1"></script><script src="js/ward-door-layout.js?v=20261031-6f-doors-2"></script>
+  <script src="js/ward-plan-geometry.js?v=20261031-visible-ward-fit-1"></script>
+  <script src="js/ward-plan-2d.js?v=20261102-bed-label-balance-1"></script>
+  <script src="js/canvas-whiteboard.js?v=20261102-close-top-right-1"></script>
 
   <!-- 標誌性積木造型 3D 建築建構器 -->
 
   <script src="js/building-models.js?v=20261103-health-building-model-2"></script>
 
-  <script src="js/campus-life.js?v=449065e2dc2e"></script>
-  <script src="js/campus-garden-branching.js?v=7f8072c27e7f"></script>
+  <script src="js/campus-life.js?v=20261102-medical-forecourt-1"></script>
+  <script src="js/campus-garden-branching.js?v=20261102-branching-tree-canopies-1"></script>
 
-  <script src="js/campus-medical-leafy.js?v=ee1469909d7a"></script>
+  <script src="js/campus-medical-leafy.js?v=20261102-leafy-museum-trees-2"></script>
   <script src="js/campus-immersion.js?v=20261102-cks-reference-1"></script>
 
   <!-- 應用程式主邏輯腳本 -->

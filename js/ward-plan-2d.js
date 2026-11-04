@@ -33,7 +33,7 @@
       const ids=registry(sourceWard,code);
       const modelRoom=(data.rooms||[]).find(q=>q.ward===sourceWard&&q.roomCode===code);
       r.bedCount=modelRoom?.bedCount||ids.length;
-      r.compactMultiBedRoom=r.bedCount>=3&&!!modelRoom?.bounds&&modelRoom.bounds.width*modelRoom.bounds.depth<18;
+      r.bedZoneFraction=modelRoom?.bedBounds&&modelRoom?.bounds?modelRoom.bedBounds.width*modelRoom.bedBounds.depth/(modelRoom.bounds.width*modelRoom.bounds.depth):1;
       const pixelsPerUnit=modelRoom?.bounds ? w/modelRoom.bounds.width : 24;
       r.door=window.WardRoomDoors?.get(modelRoom||{bounds:{width:w/24,depth:h/24},upper});
       r.pixelsPerUnit=pixelsPerUnit; r.openBay=!!modelRoom?.openBay;
@@ -186,9 +186,9 @@
     s.rooms.forEach(r=>(r.annexes||[]).forEach(q=>{ctx.fillStyle='#edf2f3';ctx.fillRect(q.x,q.y,q.w,q.h);ctx.strokeStyle='#a6b8bf';ctx.lineWidth=.6;ctx.strokeRect(q.x,q.y,q.w,q.h);}));
     s.beds.forEach(b=>{box(b,'#ffffff','#80adbf',0.8);ctx.fillStyle='#d2e9f1';ctx.strokeStyle='#80adbf';ctx.lineWidth=0.8;ctx.beginPath();let labelX;if(b.axis==='north-south'){const north=b.headSide==='north',headY=north?b.y:b.y+b.h;ctx.fillRect(b.x+b.w*.15,b.y+b.h*(north?.08:.74),b.w*.7,b.h*.18);ctx.moveTo(b.x-1,headY);ctx.lineTo(b.x+b.w+1,headY);labelX=b.x+b.w/2;}else{ctx.fillRect(b.x+b.w*(b.headSide==='west'?.08:.74),b.y+b.h*.15,b.w*.18,b.h*.7);const headX=b.headSide==='west'?b.x:b.x+b.w;ctx.moveTo(headX,b.y-1);ctx.lineTo(headX,b.y+b.h+1);labelX=b.x+b.w*(b.headSide==='west'?.65:.35);}ctx.stroke();txt(b.label,labelX,b.y+b.h/2,Math.min(15,Math.min(b.w,b.h)*0.64),C.blue);});
     s.rooms.forEach(r=>{
-      const label=window.WardPlanLabels.place(r,[...s.beds.filter(b=>b.room===r),...(r.annexes||[])]);
+      const roomFontLimit=Math.min(manager.wardActiveBuildingId==='W04_WEST'?15:23,window.WardPlanLabels.patientFontSize(r,25));
+      const label=window.WardPlanLabels.place(r,[...s.beds.filter(b=>b.room===r),...(r.annexes||[]).map(q=>({...q,captionSoft:true}))],r.label,roomFontLimit);
       ctx.fillStyle=C.ink;
-      const roomFontLimit=r.compactMultiBedRoom?9:manager.wardActiveBuildingId==='W04_WEST'?15:23;
       window.WardPlanLabels.draw(ctx,r.label,label.x+label.w/2,label.y+label.h/2,label.w,label.h,roomFontLimit);
     });
     if(s.notice)txt(s.notice,50,s.height-22,16,'#526c7c','left');
